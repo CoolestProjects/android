@@ -1,0 +1,97 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.mttnow.coolestprojects"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+
+    dexOptions {
+        preDexLibraries true
+        javaMaxHeapSize "1g"
+        incremental true
+        dexInProcess = true
+    }
+
+    //Used to ignore duplicated entries added to meta-inf
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice'
+        exclude 'META-INF/notice.txt'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+kapt {
+    generateStubs = true
+}
+
+dependencies {
+    //Dependency Injection
+    kapt 'com.google.dagger:dagger-compiler:2.4'
+    kapt 'com.jakewharton:butterknife-compiler:8.0.1'
+
+    compile 'com.google.dagger:dagger:2.4'
+    compile 'org.glassfish:javax.annotation:10.0-b28'
+    compile 'com.jakewharton:butterknife:8.0.1'
+
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+
+    compile 'io.reactivex:rxandroid:1.2.0'
+    compile 'io.reactivex:rxjava:1.1.5'
+    compile 'com.jakewharton.rxbinding:rxbinding-kotlin:0.4.0'
+    compile 'com.jakewharton.rxbinding:rxbinding-appcompat-v7-kotlin:0.4.0'
+    compile 'com.jakewharton.rxbinding:rxbinding-design-kotlin:0.4.0'
+
+    compile 'com.google.code.gson:gson:2.6.1'
+    compile 'net.danlew:android.joda:2.9.3'
+
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    testCompile 'junit:junit:4.12'
+    testCompile "org.mockito:mockito-core:1.10.19"
+    testCompile 'com.google.truth:truth:0.28'
+}
