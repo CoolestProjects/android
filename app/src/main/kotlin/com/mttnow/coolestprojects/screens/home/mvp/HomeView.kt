@@ -10,7 +10,9 @@ import com.jakewharton.rxbinding.view.clicks
 import com.mttnow.coolestprojects.R
 import com.mttnow.coolestprojects.func.lazyView
 
-
+/**
+ * Compound view for the homescreen
+ */
 class HomeView : FrameLayout {
 
   constructor(context: Context) : super(context) {

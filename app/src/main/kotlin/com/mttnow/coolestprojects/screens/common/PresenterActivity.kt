@@ -5,6 +5,9 @@ import android.os.PersistableBundle
 import android.support.annotation.CallSuper
 import android.support.v7.app.AppCompatActivity
 
+/**
+ * Forwards on the lifecycle events to the presenter
+ */
 abstract class PresenterActivity : AppCompatActivity() {
 
   private var presenter : LifecyclePresenter? = null
