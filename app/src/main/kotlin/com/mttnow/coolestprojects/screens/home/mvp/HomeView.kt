@@ -6,6 +6,8 @@ import android.support.v4.widget.DrawerLayout
 import android.support.v7.widget.Toolbar
 import android.util.AttributeSet
 import android.widget.FrameLayout
+import android.widget.ImageView
+import android.widget.TextView
 import com.jakewharton.rxbinding.view.clicks
 import com.mttnow.coolestprojects.R
 import com.mttnow.coolestprojects.func.lazyView
@@ -34,6 +36,8 @@ class HomeView : FrameLayout {
   val drawerLayout: DrawerLayout by lazyView { findViewById(R.id.home_drawer_layout) }
   val navView: NavigationView by lazyView { findViewById(R.id.left_nav_drawer) }
   val toolbar: Toolbar by lazyView { findViewById(R.id.home_toolbar) }
+  val icon: ImageView by lazyView { findViewById(R.id.icon) }
+  val title: TextView by lazyView { findViewById(R.id.title) }
 
   private fun init(attrs: AttributeSet? = null) {
     inflate(context, R.layout.activity_home, this)

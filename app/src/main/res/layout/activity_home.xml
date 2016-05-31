@@ -1,35 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.v4.widget.DrawerLayout
+<!-- The main content view -->
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/home_drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <!-- The main content view -->
-    <LinearLayout
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/home_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/black"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/home_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
-
-        <TextView
+        <ImageView
+            android:id="@+id/icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello Home!"/>
-    </LinearLayout>
+            android:layout_gravity="center"
+            android:src="@drawable/logo"/>
 
-    <!-- The navigation drawer -->
-    <android.support.design.widget.NavigationView
-        android:id="@+id/left_nav_drawer"
-        android:layout_width="240dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="#111"/>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/nav_view_item_selected"
+            android:textSize="@dimen/title_size"
+            android:visibility="gone"/>
+    </android.support.v7.widget.Toolbar>
 
-</android.support.v4.widget.DrawerLayout>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/home_drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/left_nav_drawer"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="#111"
+            app:itemTextColor="@color/nav_view_item"
+            app:menu="@menu/drawer_menu"/>
+
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>
