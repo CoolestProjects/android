@@ -40,10 +40,9 @@ class HomeActivity : PresenterActivity() {
 
 
     supportActionBar?.setDisplayShowTitleEnabled(false)
-    var toggle = ActionBarDrawerToggle(
-            this, homeView.drawerLayout, homeView.toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+    val toggle = ActionBarDrawerToggle(this, homeView.drawerLayout, homeView.toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
     homeView.drawerLayout.addDrawerListener(toggle)
-    toggle?.syncState()
+    toggle.syncState()
 
     setContentView(homeView)
     return hompresenter
