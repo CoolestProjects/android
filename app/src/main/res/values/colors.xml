@@ -8,4 +8,6 @@
 
     <color name="header_label_color">#262626</color>
     <color name="header_bg">#F3F3F3</color>
+    <color name="sponsor_home_bg">#BBF0F0F0</color>
+    <color name="events_time_bg">#F52A00</color>
 </resources>

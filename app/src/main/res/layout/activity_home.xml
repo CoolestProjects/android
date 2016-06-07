@@ -39,10 +39,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <FrameLayout
+        <LinearLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
+
+            <include layout="@layout/home_layout"/>
+        </LinearLayout>
 
         <android.support.design.widget.NavigationView
             android:id="@+id/left_nav_drawer"
