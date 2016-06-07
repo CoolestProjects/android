@@ -14,4 +14,16 @@
 
     </style>
 
+
+    <style name="headerLabel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/header_bg</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:padding">@dimen/header_padding</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/header_label_color</item>
+        <item name="android:textSize">@dimen/header_text_size</item>
+    </style>
+
 </resources>

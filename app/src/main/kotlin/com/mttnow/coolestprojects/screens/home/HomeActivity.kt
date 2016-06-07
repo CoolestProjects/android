@@ -9,6 +9,7 @@ import com.mttnow.coolestprojects.R
 import com.mttnow.coolestprojects.app.CoolestProjectsApp
 import com.mttnow.coolestprojects.screens.common.LifecyclePresenter
 import com.mttnow.coolestprojects.screens.common.PresenterActivity
+import com.mttnow.coolestprojects.screens.fragments.AboutFragment
 import com.mttnow.coolestprojects.screens.fragments.MapsFragment
 import com.mttnow.coolestprojects.screens.fragments.SpeakersFragment
 import com.mttnow.coolestprojects.screens.fragments.StagesFragment
@@ -25,6 +26,8 @@ class HomeActivity : PresenterActivity() {
 
   @Inject
   lateinit var hompresenter: HomePresenter
+
+  var currentTitle = "";
 
   override fun onCreatePresenter(savedInstanceState: Bundle?): LifecyclePresenter? {
     super.onCreatePresenter(savedInstanceState)
@@ -44,6 +47,13 @@ class HomeActivity : PresenterActivity() {
     homeView.drawerLayout.addDrawerListener(toggle)
     toggle.syncState()
 
+    if(savedInstanceState != null && savedInstanceState.getString("currentTitle") != null &&
+            !savedInstanceState.getString("currentTitle").equals("")) {
+      homeView.icon.visibility = View.GONE
+      homeView.title.visibility = View.VISIBLE
+      homeView.title.text = savedInstanceState.getString("currentTitle")
+    }
+
     setContentView(homeView)
     return hompresenter
   }
@@ -60,8 +70,9 @@ class HomeActivity : PresenterActivity() {
           homeView.title.visibility = View.GONE
         }
         R.id.nav_speakers -> replace(SpeakersFragment(), getString(R.string.title_speakers))
-        R.id.nav_maps -> replace(MapsFragment(), getString(R.string.title_maps))
+        R.id.nav_maps -> replace(MapsFragment.newInstance(), getString(R.string.title_maps))
         R.id.nav_stages -> replace(StagesFragment(), getString(R.string.title_stages))
+        R.id.nav_about -> replace(AboutFragment.newInstance(), getString(R.string.title_about))
         else -> null
       }
       homeView.drawerLayout.closeDrawers()
@@ -72,7 +83,7 @@ class HomeActivity : PresenterActivity() {
   }
 
   private fun replace(fragment: Fragment, title: String) {
-
+    currentTitle = title
     homeView.icon.visibility = View.GONE
     homeView.title.visibility = View.VISIBLE
     homeView.title.text = title
@@ -99,5 +110,9 @@ class HomeActivity : PresenterActivity() {
       homeView.title.visibility = View.GONE
       homeView.navView.menu.findItem(R.id.nav_home).isChecked = true
     }
+  }
+  override fun onSaveInstanceState(outState: Bundle?) {
+    super.onSaveInstanceState(outState)
+    outState?.putString("currentTitle", currentTitle)
   }
 }
