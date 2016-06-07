@@ -9,6 +9,7 @@ import com.mttnow.coolestprojects.app.dagger.DaggerAppComponent
 class CoolestProjectsApp : Application() {
 
   companion object {
+    @JvmStatic
     fun get(activity: Activity) = activity.application as CoolestProjectsApp
   }
 

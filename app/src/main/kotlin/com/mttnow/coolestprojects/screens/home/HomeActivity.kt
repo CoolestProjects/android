@@ -53,18 +53,16 @@ class HomeActivity : PresenterActivity() {
     homeView.navView.setNavigationItemSelectedListener {
       when (it.itemId) {
         R.id.nav_home -> {
-          while (fragmentManager.backStackEntryCount > 0)
+          while (fragmentManager.backStackEntryCount > 0) {
             fragmentManager.popBackStackImmediate()
+          }
 
           homeView.icon.visibility = View.VISIBLE
           homeView.title.visibility = View.GONE
         }
-        R.id.nav_speakers ->
-          replace(SpeakersFragment(), getString(R.string.title_speakers))
-        R.id.nav_maps ->
-          replace(MapsFragment(), getString(R.string.title_maps))
-        R.id.nav_stages ->
-          replace(StagesFragment(), getString(R.string.title_stages))
+        R.id.nav_speakers -> replace(SpeakersFragment(), getString(R.string.title_speakers))
+        R.id.nav_maps -> replace(MapsFragment(), getString(R.string.title_maps))
+        R.id.nav_stages -> replace(StagesFragment(), getString(R.string.title_stages))
         else -> null
       }
       homeView.drawerLayout.closeDrawers()
