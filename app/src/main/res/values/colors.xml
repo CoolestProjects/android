@@ -10,4 +10,7 @@
     <color name="header_bg">#F3F3F3</color>
     <color name="sponsor_home_bg">#BBF0F0F0</color>
     <color name="events_time_bg">#F52A00</color>
+    <color name="home_parking_alphed_bg">#BB000000</color>
+    <color name="home_food_layout_bg">#F8E71C</color>
+    <color name="innovator_stage_bg">#4A90E2</color>
 </resources>

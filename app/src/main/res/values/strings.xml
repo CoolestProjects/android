@@ -21,5 +21,10 @@
     <string name="event_times">EVENT TIMES</string>
     <string name="sponsored_label">SPONSORED BY</string>
     <string name="home_parking_desc">You can park in Simmons Court which is located beside the venue. Full details here.</string>
+    <string name="food_label">FOOD</string>
+    <string name="food_desc"><![CDATA[Lunch packs will be provided for all CoderDojo ninjas presenting on the day.\n\n  We ask project participants to email us if you have a specific dietary requirement here: hello@coolestprojects.org\n\n  There will also be food vendors where you can purchase food on the day.]]></string>
+    <string name="copyright_label">COPYTRIGHT 2016</string>
+    <string name="innovator_stage_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac eleifend odio. Curabitur pharetra aliquam tellus et accumsan. Vestibulum vel lorem ac mi porttitor accumsan non in justo.\n\n  Nullam pharetra sapien et arcu ultrices iaculis. Mauris eget cursus orci. Nullam venenatis vestibulum semper.</string>
+    <string name="innovator_stage_label">OPENNET INNOVATOR STAGE</string>
 
 </resources>

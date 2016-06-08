@@ -18,4 +18,15 @@
     <dimen name="home_parking_size">18dp</dimen>
     <dimen name="home_parking_desc_size">14dp</dimen>
     <dimen name="home_parking_desc_margin">18dp</dimen>
+    <dimen name="food_label_size">18dp</dimen>
+    <dimen name="food_desc_size">14dp</dimen>
+    <dimen name="food_desc_padding">20dp</dimen>
+    <dimen name="food_label_margin_top">20dp</dimen>
+    <dimen name="copyright_label_margin_top">12dp</dimen>
+    <dimen name="footer_height">110dp</dimen>
+    <dimen name="copyright_label_size">14dp</dimen>
+    <dimen name="sponsor_home_padding_bottom">20dp</dimen>
+    <dimen name="innovator_stage_margin">30dp</dimen>
+    <dimen name="innovator_stage_desc_margin_bottom">26dp</dimen>
+    <dimen name="innovator_stage_desc_side_margin">24dp</dimen>
 </resources>

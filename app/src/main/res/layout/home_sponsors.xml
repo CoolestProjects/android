@@ -7,7 +7,8 @@
     android:layout_alignParentBottom="true"
     android:background="@color/sponsor_home_bg"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/sponsor_home_padding_bottom">
 
 
     <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
