@@ -20,11 +20,11 @@
     <string name="about_third_descr"><![CDATA[<p>Although the showcase event is held in Ballsbridge, the awards are a Europe-wide event, with participants from the UK, Poland, Spain, Italy, Portugal, Belgium, Holland, Romania and Turkey. CoderDojo currently operates in 16 European countries and by 2017 our target is to have Coolest Projects from every European country with a CoderDojo involved.</p>]]></string>
     <string name="event_times">EVENT TIMES</string>
     <string name="sponsored_label">SPONSORED BY</string>
-    <string name="home_parking_desc">You can park in Simmons Court which is located beside the venue. Full details here.</string>
+    <string name="home_parking_desc">The RDS is well served by public transport.\nBuses directly outside: 4,7,8 and 18. Buses 5 min walk from the RDS: 46a,145\nDART: Sandymount and Lansdowne Stations are 5 minutes away\nSee http://www.irishrail.ie/about-us/dart-commuter and http://www.dublinbus.ie for more information.\n\nParking is available in RDS, Simmonscourt for all visitors at a cost of €6 for the day. For directions checkout http://www.rds.ie \nNOTE: There will be no parking in main RDS so please go straight to Simmonscourt entrance.</string>
     <string name="food_label">FOOD</string>
-    <string name="food_desc"><![CDATA[Lunch packs will be provided for all CoderDojo ninjas presenting on the day.\n\n  We ask project participants to email us if you have a specific dietary requirement here: hello@coolestprojects.org\n\n  There will also be food vendors where you can purchase food on the day.]]></string>
-    <string name="copyright_label">COPYTRIGHT 2016</string>
-    <string name="innovator_stage_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac eleifend odio. Curabitur pharetra aliquam tellus et accumsan. Vestibulum vel lorem ac mi porttitor accumsan non in justo.\n\n  Nullam pharetra sapien et arcu ultrices iaculis. Mauris eget cursus orci. Nullam venenatis vestibulum semper.</string>
-    <string name="innovator_stage_label">OPENNET INNOVATOR STAGE</string>
+    <string name="food_desc"><![CDATA[Lunch packs will be provided for all CoderDojo ninjas presenting on the day.\n\n  There will also be food vendors where you can purchase food on the day.]]></string>
+    <string name="copyright_label">COPYRIGHT 2016</string>
+    <string name="innovator_stage_desc">Throughout the day there will be amazing hands on activies available for you to participate in, these will include; programmable Drones, Science tricks, 3D printers and more to be announced. There will be a pop-up stage in the middle of the main arena where youth will be pitching their projects throughout the day.</string>
+    <string name="innovator_stage_label">OPENNET INNOVATOR STAGE & DISCOVERY AREA</string>
 
 </resources>
