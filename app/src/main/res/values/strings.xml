@@ -8,4 +8,23 @@
     <string name="title_speakers">Speakers</string>
     <string name="title_maps">Maps</string>
     <string name="title_stages">Stages</string>
+    <string name="title_about">About</string>
+
+
+    <string name="rds_map_label">RDS MAP</string>
+    <string name="parking_label">parking</string>
+    <string name="home_parking_label">PARKING</string>
+
+    <string name="about_first_descr"><![CDATA[<p>The awards were created in 2012 to deliver and support the following principles:</p>     <ul> <li>Creativity</li> <li>Innovation</li> <li>Entrepreneurship</li> <li>The introduction and showcasing of different aspects of STEM education through coding.</li> </ul> <p>The Coolest Projects awards are unique in Europe and were established on a voluntary basis by a number of industry professionals as both a competition and exhibition to support and inspire a generation of innovators, creators and entrepreneurs aged from 7 to 17. The awards, which are now in their fourth year, create a unique platform for young people to develop a broad set of digital abilities by offering them the opportunity to showcase the skills they have learned at CoderDojo.</p>]]></string>
+    <string name="about_second_descr"><![CDATA[<p>These digital skills are vital if Ireland, and indeed Europe, is to address the coding skills shortage which has led to in excess of 500,000 open job postings across the continent in 2015.</p> <p>Coolest Projects has seen young people deliver projects across the latest technologies, from Cloud, to Internet of Things (IoT) to Virtual Reality and has the potential to drive vital digital skills across a European platform.</p> <p>This year&#8217;s Coolest Projects awards featured more than 500 entries from young people across Ireland and beyond and attracted more than 5,000 spectators to witness demonstrations of this year&#8217;s submissions. And we estimate that we will have over 800 entries to the 2016 awards and up to 10,000 attendees.</p>]]></string>
+    <string name="about_third_descr"><![CDATA[<p>Although the showcase event is held in Ballsbridge, the awards are a Europe-wide event, with participants from the UK, Poland, Spain, Italy, Portugal, Belgium, Holland, Romania and Turkey. CoderDojo currently operates in 16 European countries and by 2017 our target is to have Coolest Projects from every European country with a CoderDojo involved.</p>]]></string>
+    <string name="event_times">EVENT TIMES</string>
+    <string name="sponsored_label">SPONSORED BY</string>
+    <string name="home_parking_desc">The RDS is well served by public transport.\nBuses directly outside: 4,7,8 and 18. Buses 5 min walk from the RDS: 46a,145\nDART: Sandymount and Lansdowne Stations are 5 minutes away\nSee http://www.irishrail.ie/about-us/dart-commuter and http://www.dublinbus.ie for more information.\n\nParking is available in RDS, Simmonscourt for all visitors at a cost of €6 for the day. For directions checkout http://www.rds.ie \nNOTE: There will be no parking in main RDS so please go straight to Simmonscourt entrance.</string>
+    <string name="food_label">FOOD</string>
+    <string name="food_desc"><![CDATA[Lunch packs will be provided for all CoderDojo ninjas presenting on the day.\n\n  There will also be food vendors where you can purchase food on the day.]]></string>
+    <string name="copyright_label">COPYRIGHT 2016</string>
+    <string name="innovator_stage_desc">Throughout the day there will be amazing hands on activies available for you to participate in, these will include; programmable Drones, Science tricks, 3D printers and more to be announced. There will be a pop-up stage in the middle of the main arena where youth will be pitching their projects throughout the day.</string>
+    <string name="innovator_stage_label">OPENNET INNOVATOR STAGE & DISCOVERY AREA</string>
+
 </resources>

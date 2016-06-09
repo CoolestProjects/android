@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:custom="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/innovator_stage_bg"
+              android:orientation="vertical">
+
+    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/innovator_stage_margin"
+        android:text="@string/innovator_stage_label"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/event_times_size"
+        custom:font="OpenSans-SemiBold.ttf"/>
+
+    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/innovator_stage_desc_margin_bottom"
+        android:layout_marginLeft="@dimen/innovator_stage_desc_side_margin"
+        android:layout_marginRight="@dimen/innovator_stage_desc_side_margin"
+        android:gravity="center_horizontal"
+        android:text="@string/innovator_stage_desc"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/event_hours_size"
+        custom:font="OpenSans-Regular.ttf"/>
+
+</LinearLayout>
