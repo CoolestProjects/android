@@ -7,24 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import com.mttnow.coolestprojects.R
 
-class StagesFragment : Fragment() {
+class HomeFragment : Fragment() {
 
     val TAG = javaClass.canonicalName
 
     companion object {
-        fun newInstance(): StagesFragment {
-            return StagesFragment()
+        fun newInstance(): HomeFragment {
+            return HomeFragment()
         }
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var rootView = inflater?.inflate(R.layout.fragment_stages, container, false)
+        var rootView = inflater?.inflate(R.layout.fragment_home, container, false)
 
         return rootView
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
     }
 }
