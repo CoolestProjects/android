@@ -1,11 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:custom="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home"/>
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/home_bg"/>
+
+
+            <include layout="@layout/home_sponsors"/>
+
+        </RelativeLayout>
+
+        <include layout="@layout/home_times"/>
+
+        <include layout="@layout/home_parking_layout"/>
+
+        <include layout="@layout/home_food_layout"/>
+
+        <include layout="@layout/home_innovator_stage_layout"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/footer_height">
+
+            <ImageView
+                android:id="@+id/footer_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/logo"/>
+
+            <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/footer_logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/copyright_label_margin_top"
+                android:text="@string/copyright_label"
+                android:textSize="@dimen/copyright_label_size"
+                custom:font="OpenSans-Regular.ttf"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>
