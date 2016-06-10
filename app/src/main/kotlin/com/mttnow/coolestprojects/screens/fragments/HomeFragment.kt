@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.mttnow.coolestprojects.R
+import com.mttnow.coolestprojects.network.CoolestProjectsService
+import javax.inject.Inject
 
-class HomeFragment : Fragment() {
-
-    val TAG = javaClass.canonicalName
+class HomeFragment : BaseFragment() {
 
     companion object {
         fun newInstance(): HomeFragment {
@@ -18,8 +18,6 @@ class HomeFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var rootView = inflater?.inflate(R.layout.fragment_home, container, false)
-
-        return rootView
+        return inflater?.inflate(R.layout.fragment_home, container, false)
     }
 }

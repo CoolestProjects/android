@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.mttnow.coolestprojects.R
 
-class SpeakersFragment : Fragment() {
+class SpeakersFragment : BaseFragment() {
 
     val TAG = javaClass.canonicalName
 
