@@ -40,6 +40,7 @@ public class SummitsAdapter extends BaseAdapter {
         public ImageView img;
         public TextView name;
         public TextView desc;
+        public TextView time;
     }
 
     @Override
@@ -52,6 +53,7 @@ public class SummitsAdapter extends BaseAdapter {
             viewHolder.img = (ImageView) rowView.findViewById(R.id.summit_img);
             viewHolder.name = (TextView) rowView.findViewById(R.id.speaker_name);
             viewHolder.desc = (TextView) rowView.findViewById(R.id.speaker_desc);
+            viewHolder.time = (TextView) rowView.findViewById(R.id.speaker_time);
             rowView.setTag(viewHolder);
         }
         ViewHolder holder = (ViewHolder) rowView.getTag();
@@ -61,7 +63,8 @@ public class SummitsAdapter extends BaseAdapter {
             Picasso.with(viewGroup.getContext()).load(summitSpeaker.getPhotoUrl()).into(holder.img);
         }
         holder.name.setText(summitSpeaker.getName());
-        holder.desc.setText(summitSpeaker.getDescription());
+        holder.desc.setText(summitSpeaker.getTalkTitle());
+        holder.time.setText(summitSpeaker.getSummitTimes());
         return rowView;
     }
 }

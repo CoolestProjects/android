@@ -35,4 +35,6 @@
     <dimen name="speaker_desc_margin_bottom">20dp</dimen>
     <dimen name="stage_btn_text_size">11dp</dimen>
     <dimen name="stages_tabs_height">50dp</dimen>
+    <dimen name="summit_speaker_img_side">120dp</dimen>
+    <dimen name="summit_row_padding">16dp</dimen>
 </resources>
