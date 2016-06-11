@@ -25,6 +25,9 @@ class HomePresenter(private val homeView: HomeView,
             R.id.nav_maps -> MapsFragment()
             R.id.nav_stages -> StagesFragment()
             R.id.nav_home -> HomeFragment()
+            R.id.nav_stages -> StagesFragment()
+            R.id.nav_sponsors -> SponsorsFragment()
+            R.id.nav_projects -> ProjectsFragment()
             R.id.nav_about -> AboutFragment()
             else -> null
           }

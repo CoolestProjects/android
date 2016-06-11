@@ -2,6 +2,7 @@ package com.mttnow.coolestprojects.network
 
 import com.mttnow.coolestprojects.models.Speaker
 import com.mttnow.coolestprojects.models.SponsorTier
+import com.mttnow.coolestprojects.models.Summary
 import com.mttnow.coolestprojects.models.Summit
 import retrofit2.http.GET
 import rx.Observable
@@ -19,6 +20,9 @@ interface CoolestProjectsService {
   @GET("summits.json")
   fun summits() : Observable<List<Summit>>
 
-  @GET("sponsors.json?orderBy=\"order\"")
+  @GET("sponsors.json")
   fun sponsors() : Observable<List<SponsorTier>>
+
+  @GET("summary.json")
+  fun summaries() : Observable<List<Summary>>
 }

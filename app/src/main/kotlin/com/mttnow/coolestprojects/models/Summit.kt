@@ -2,7 +2,7 @@ package com.mttnow.coolestprojects.models
 
 
 data class Summit(val summit: String = "",
-                  val speaker: List<SummitSpeaker> = listOf())
+                  val speakers: List<SummitSpeaker> = listOf())
 
 data class SummitSpeaker(val name: String = "",
                          val description: String = "",

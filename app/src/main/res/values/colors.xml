@@ -13,4 +13,9 @@
     <color name="home_parking_alphed_bg">#BB000000</color>
     <color name="home_food_layout_bg">#F8E71C</color>
     <color name="innovator_stage_bg">#4A90E2</color>
+    <color name="img_placeholder_color">#CBCBCB</color>
+    <color name="speaker_name_color">#333333</color>
+    <color name="speaker_desc_color">#9B9B9B</color>
+    <color name="stages_btn_selected">#4A90E2</color>
+    <color name="summit_time_text_color">#F52A00</color>
 </resources>
