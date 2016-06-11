@@ -23,6 +23,7 @@
     </FrameLayout>
 
     <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+        android:id="@+id/parking_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -37,6 +38,7 @@
     <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/parking_label"
         android:layout_centerInParent="true"
         android:layout_margin="@dimen/home_parking_desc_margin"
         android:gravity="center_horizontal"

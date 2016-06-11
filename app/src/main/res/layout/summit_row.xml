@@ -3,30 +3,30 @@
               xmlns:custom="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/innovator_stage_bg"
               android:orientation="vertical">
 
-    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/innovator_stage_margin"
-        android:gravity="center_horizontal"
-        android:text="@string/innovator_stage_label"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/event_times_size"
-        custom:font="OpenSans-SemiBold.ttf"/>
+    <ImageView android:id="@+id/summit_img"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
 
     <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+        android:id="@+id/speaker_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="@dimen/innovator_stage_desc_margin_bottom"
-        android:layout_marginLeft="@dimen/innovator_stage_desc_side_margin"
-        android:layout_marginRight="@dimen/innovator_stage_desc_side_margin"
+        android:layout_marginTop="@dimen/speaker_name_margin_top"
         android:gravity="center_horizontal"
-        android:text="@string/innovator_stage_desc"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/event_hours_size"
+        android:textColor="@color/speaker_name_color"
+        android:textSize="@dimen/text_medium_size"
+        custom:font="OpenSans-Regular.ttf"/>
+
+    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+        android:id="@+id/speaker_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/speaker_desc_margin_bottom"
+        android:gravity="center_horizontal"
+        android:textColor="@color/speaker_desc_color"
+        android:textSize="@dimen/text_medium_size"
         custom:font="OpenSans-Regular.ttf"/>
 
 </LinearLayout>

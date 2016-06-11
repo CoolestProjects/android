@@ -29,4 +29,10 @@
     <dimen name="innovator_stage_margin">30dp</dimen>
     <dimen name="innovator_stage_desc_margin_bottom">26dp</dimen>
     <dimen name="innovator_stage_desc_side_margin">24dp</dimen>
+    <dimen name="speaker_img_margin">14dp</dimen>
+    <dimen name="speaker_name_margin_top">16dp</dimen>
+    <dimen name="text_medium_size">16dp</dimen>
+    <dimen name="speaker_desc_margin_bottom">20dp</dimen>
+    <dimen name="stage_btn_text_size">11dp</dimen>
+    <dimen name="stages_tabs_height">50dp</dimen>
 </resources>

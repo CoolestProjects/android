@@ -15,6 +15,9 @@
         android:id="@+id/nav_stages"
         android:title="@string/title_stages" />
     <item
+        android:id="@+id/nav_sponsors"
+        android:title="@string/title_sponsors" />
+    <item
         android:id="@+id/nav_about"
         android:title="@string/title_about" />
     </group>
