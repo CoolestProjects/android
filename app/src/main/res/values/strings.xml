@@ -28,5 +28,8 @@
     <string name="innovator_stage_desc">Throughout the day there will be amazing hands on activies available for you to participate in, these will include; programmable Drones, Science tricks, 3D printers and more to be announced. There will be a pop-up stage in the middle of the main arena where youth will be pitching their projects throughout the day.</string>
     <string name="innovator_stage_label">OPENNET INNOVATOR STAGE &amp; DISCOVERY AREA</string>
     <string name="title_projects">Projects</string>
+    <string name="home_title"><![CDATA[Coderdojo Coolest\nProject Awards]]></string>
+    <string name="home_sub_title"><![CDATA[2016 DUBLIN & SILICON VALLEY\n18th June 2016, RDS Dublin]]></string>
+    <string name="event_times_values"><![CDATA[09:30 Doors open to the public.\n10:00 Welcome address on the Launchd Stage.\n10:30 Summit stages commence\n13:30 - 14:30 Lunch\nOngoing The Openet Stage\n16:45 Coolest Projects Awards Gala Ceremony\n18:15 Event closes and visitors depart]]></string>
 
 </resources>

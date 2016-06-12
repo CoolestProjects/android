@@ -23,6 +23,6 @@ interface CoolestProjectsService {
   @GET("sponsors.json")
   fun sponsors() : Observable<List<SponsorTier>>
 
-  @GET("summary.json")
+  @GET("summary")
   fun summaries() : Observable<List<Summary>>
 }

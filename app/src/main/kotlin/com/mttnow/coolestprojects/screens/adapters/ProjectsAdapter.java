@@ -7,7 +7,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.mttnow.coolestprojects.R;
-import com.mttnow.coolestprojects.models.Speaker;
 import com.mttnow.coolestprojects.models.Summary;
 
 import java.util.List;
@@ -38,6 +37,9 @@ public class ProjectsAdapter extends BaseAdapter {
     static class ViewHolder {
         public TextView name;
         public TextView desc;
+        public TextView category;
+        public TextView desk;
+        public TextView doyo;
     }
 
     @Override
@@ -49,12 +51,18 @@ public class ProjectsAdapter extends BaseAdapter {
             ViewHolder viewHolder = new ViewHolder();
             viewHolder.name = (TextView) rowView.findViewById(R.id.project_name);
             viewHolder.desc = (TextView) rowView.findViewById(R.id.project_desc);
+            viewHolder.category = (TextView) rowView.findViewById(R.id.project_category);
+            viewHolder.desk = (TextView) rowView.findViewById(R.id.project_desk);
+            viewHolder.doyo = (TextView) rowView.findViewById(R.id.project_doyo);
             rowView.setTag(viewHolder);
         }
         ViewHolder holder = (ViewHolder) rowView.getTag();
-        Speaker speaker = (Speaker) getItem(position);
-        holder.name.setText(speaker.getName());
-        holder.desc.setText(speaker.getDescription());
+        Summary summary = (Summary) getItem(position);
+        holder.name.setText(summary.getName());
+        holder.desc.setText(summary.getDescription());
+        holder.category.setText(summary.getCategory());
+        holder.desk.setText(summary.getDeskNumber());
+        holder.doyo.setText(summary.getCoderdojo());
 
         return rowView;
     }
