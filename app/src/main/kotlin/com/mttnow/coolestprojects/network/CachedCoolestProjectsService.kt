@@ -13,7 +13,7 @@ import java.lang.reflect.Type
 private val KEY_SPEAKERS = "speakers"
 private val KEY_SUMMITS = "summits"
 private val KEY_SPONSORS = "sponsors"
-private val KEY_SUMAARY = "sponsors"
+private val KEY_SUMAARY = "summaries"
 
 class CachedCoolestProjectsService(private val coolestProjectsService: CoolestProjectsService,
                                    private val jsonCache: JsonCache,
