@@ -21,42 +21,43 @@
         custom:font="OpenSans-SemiBold.ttf"/>
 
     <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
         android:paddingBottom="@dimen/home_hours_vertical_padding"
-        android:text="Opening time"
+        android:text="@string/event_times_values"
         android:textColor="@android:color/white"
         android:textSize="@dimen/event_hours_size"
         custom:font="OpenSans-SemiBold.ttf"/>
 
-    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:paddingBottom="@dimen/home_hours_vertical_padding"
-        android:text="Closing time"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/event_hours_size"
-        custom:font="OpenSans-SemiBold.ttf"/>
+    <!--<com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:paddingBottom="@dimen/home_hours_vertical_padding"-->
+    <!--android:text="Closing time"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:textSize="@dimen/event_hours_size"-->
+    <!--custom:font="OpenSans-SemiBold.ttf"/>-->
 
-    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:paddingBottom="@dimen/home_hours_vertical_padding"
-        android:text="Juding time"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/event_hours_size"
-        custom:font="OpenSans-SemiBold.ttf"/>
+    <!--<com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:paddingBottom="@dimen/home_hours_vertical_padding"-->
+    <!--android:text="Juding time"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:textSize="@dimen/event_hours_size"-->
+    <!--custom:font="OpenSans-SemiBold.ttf"/>-->
 
-    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Award time"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/event_hours_size"
-        custom:font="OpenSans-SemiBold.ttf"/>
+    <!--<com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:text="Award time"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:textSize="@dimen/event_hours_size"-->
+    <!--custom:font="OpenSans-SemiBold.ttf"/>-->
 
 </LinearLayout>
