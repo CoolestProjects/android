@@ -5,6 +5,7 @@ import com.mttnow.coolestprojects.models.SponsorTier
 import com.mttnow.coolestprojects.models.Summary
 import com.mttnow.coolestprojects.models.Summit
 import retrofit2.http.GET
+import retrofit2.http.Url
 import rx.Observable
 
 /*
