@@ -4,6 +4,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.mttnow.coolestprojects.models.Speaker
 import com.mttnow.coolestprojects.models.SponsorTier
+import com.mttnow.coolestprojects.models.Summary
 import com.mttnow.coolestprojects.models.Summit
 import rx.Observable
 import java.lang.reflect.Type
@@ -12,10 +13,16 @@ import java.lang.reflect.Type
 private val KEY_SPEAKERS = "speakers"
 private val KEY_SUMMITS = "summits"
 private val KEY_SPONSORS = "sponsors"
+private val KEY_SUMMARIES = "summaries"
 
 class CachedCoolestProjectsService(private val coolestProjectsService: CoolestProjectsService,
                                    private val jsonCache: JsonCache,
                                    private val gson: Gson) : CoolestProjectsService {
+    
+    override fun summaries(): Observable<List<Summary>> {
+        return fromCacheObservable<List<Summary>>(KEY_SUMMARIES, object : TypeToken<List<Summary>>() {}.type)
+                .concatWith(toCacheObservable(KEY_SUMMARIES, coolestProjectsService.summaries()))
+    }
 
     override fun speakers(): Observable<List<Speaker>> {
         return fromCacheObservable<List<Speaker>>(KEY_SPEAKERS, object : TypeToken<List<Speaker>>() {}.type)
