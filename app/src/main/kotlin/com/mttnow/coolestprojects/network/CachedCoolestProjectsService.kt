@@ -13,15 +13,14 @@ import java.lang.reflect.Type
 private val KEY_SPEAKERS = "speakers"
 private val KEY_SUMMITS = "summits"
 private val KEY_SPONSORS = "sponsors"
-private val KEY_SUMMARIES = "summaries"
+private val KEY_SUMAARY = "summaries"
 
 class CachedCoolestProjectsService(private val coolestProjectsService: CoolestProjectsService,
                                    private val jsonCache: JsonCache,
                                    private val gson: Gson) : CoolestProjectsService {
-
-    override fun summaries(): Observable<List<Summary>> {
-        return fromCacheObservable<List<Summary>>(KEY_SUMMARIES, object : TypeToken<List<Summary>>() {}.type)
-                .concatWith(toCacheObservable(KEY_SUMMARIES, coolestProjectsService.summaries()))
+    override fun summaries(url : String): Observable<List<Summary>> {
+        return fromCacheObservable<List<Summary>>(KEY_SUMAARY, object : TypeToken<List<Summary>>() {}.type)
+                .concatWith(toCacheObservable(KEY_SUMAARY, coolestProjectsService.summaries(SUMMARIES_URL)))
     }
 
     override fun speakers(): Observable<List<Speaker>> {
