@@ -27,6 +27,7 @@ import rx.schedulers.Schedulers;
 
 public class ProjectsFragment extends BaseFragment {
 
+    private static final int CATEGORY_ACTIVITY_REQUEST_CODE = 100012;
     private EditText mProjectsEt;
     private ImageView mFilterCategoryBtn;
     private ListView mProjectsLv;
@@ -49,7 +50,7 @@ public class ProjectsFragment extends BaseFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        coolestProjectsService.summaries()
+        coolestProjectsService.summaries("")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<List<Summary>>() {
@@ -86,7 +87,7 @@ public class ProjectsFragment extends BaseFragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), CategoryActivity.class);
-                getActivity().startActivityForResult(intent, 100);
+                getActivity().startActivityForResult(intent, CATEGORY_ACTIVITY_REQUEST_CODE);
             }
         });
     }
@@ -107,6 +108,9 @@ public class ProjectsFragment extends BaseFragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == CATEGORY_ACTIVITY_REQUEST_CODE) {
+
+        }
 
     }
 }

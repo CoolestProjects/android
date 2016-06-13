@@ -18,9 +18,9 @@ private val KEY_SUMAARY = "summaries"
 class CachedCoolestProjectsService(private val coolestProjectsService: CoolestProjectsService,
                                    private val jsonCache: JsonCache,
                                    private val gson: Gson) : CoolestProjectsService {
-    override fun summaries(): Observable<List<Summary>> {
+    override fun summaries(url : String): Observable<List<Summary>> {
         return fromCacheObservable<List<Summary>>(KEY_SUMAARY, object : TypeToken<List<Summary>>() {}.type)
-                .concatWith(toCacheObservable(KEY_SUMAARY, coolestProjectsService.summaries()))
+                .concatWith(toCacheObservable(KEY_SUMAARY, coolestProjectsService.summaries(SUMMARIES_URL)))
 
     }
 
