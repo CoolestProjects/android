@@ -15,7 +15,6 @@ import android.widget.ListView;
 
 import com.mttnow.coolestprojects.R;
 import com.mttnow.coolestprojects.models.Summary;
-import com.mttnow.coolestprojects.screens.CategoryActivity;
 import com.mttnow.coolestprojects.screens.adapters.ProjectsAdapter;
 
 import java.util.ArrayList;
@@ -86,8 +85,6 @@ public class ProjectsFragment extends BaseFragment {
         mFilterCategoryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), CategoryActivity.class);
-                getActivity().startActivityForResult(intent, CATEGORY_ACTIVITY_REQUEST_CODE);
             }
         });
     }
