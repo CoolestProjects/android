@@ -21,9 +21,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".screens.CategoryActivity">
+        <activity android:name=".screens.CategoryActivity"/>
 
-        </activity>
+        <service android:name=".services.PreloadService"/>
     </application>
 
 </manifest>

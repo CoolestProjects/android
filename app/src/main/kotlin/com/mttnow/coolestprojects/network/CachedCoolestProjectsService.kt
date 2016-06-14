@@ -21,13 +21,11 @@ class CachedCoolestProjectsService(private val coolestProjectsService: CoolestPr
     override fun summaries(url : String): Observable<List<Summary>> {
         return fromCacheObservable<List<Summary>>(KEY_SUMAARY, object : TypeToken<List<Summary>>() {}.type)
                 .concatWith(toCacheObservable(KEY_SUMAARY, coolestProjectsService.summaries(SUMMARIES_URL)))
-
     }
 
     override fun speakers(): Observable<List<Speaker>> {
         return fromCacheObservable<List<Speaker>>(KEY_SPEAKERS, object : TypeToken<List<Speaker>>() {}.type)
                 .concatWith(toCacheObservable(KEY_SPEAKERS, coolestProjectsService.speakers()))
-
     }
 
     override fun summits(): Observable<List<Summit>> {

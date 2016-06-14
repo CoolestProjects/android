@@ -1,6 +1,7 @@
 package com.mttnow.coolestprojects.network
 
 import android.support.v4.util.LruCache
+import android.util.Log
 import java.io.File
 
 /**
@@ -19,6 +20,7 @@ class JsonCache(private val fileDir: File) {
         }
     }
 
+    @Synchronized
     fun put(key: String, json: String) {
         memCache.put(key, json)
 
@@ -27,8 +29,11 @@ class JsonCache(private val fileDir: File) {
             file.delete()
         }
         file.writeText(json, CHARSET)
+        Log.i("JsonCache", "Write $key to cache")
     }
 
+
+    @Synchronized
     fun get(key: String): String? {
         if(memCache.get(key) != null) {
             return memCache.get(key)
@@ -38,6 +43,7 @@ class JsonCache(private val fileDir: File) {
         if (!file.exists()) {
             return null
         }
+        Log.i("JsonCache", "Read $key to cache")
         return file.readText(CHARSET)
     }
 
