@@ -43,6 +43,7 @@ public class MapsFragment extends BaseFragment {
             @Override
             public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
                 mRdsMap.setImageBitmap(bitmap);
+                mRdsMap.setZoom(2);
             }
 
             @Override
