@@ -62,7 +62,9 @@ public class SpeakersAdapter extends BaseAdapter {
         params.height = mScreenWidth;
         params.width = mScreenWidth;
         holder.img.setLayoutParams(params);
-        Picasso.with(viewGroup.getContext()).load(speaker.getPhotoUrl()).into(holder.img);
+        if(speaker.getPhotoUrl() != null && !"".equals(speaker.getPhotoUrl())) {
+            Picasso.with(viewGroup.getContext()).load(speaker.getPhotoUrl()).into(holder.img);
+        }
         holder.name.setText(speaker.getName());
         holder.desc.setText(speaker.getDescription());
 
