@@ -2,7 +2,7 @@ package com.mttnow.coolestprojects.screens.fragments;
 
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -11,11 +11,12 @@ import android.view.ViewGroup;
 
 import com.mttnow.coolestprojects.R;
 import com.mttnow.coolestprojects.screens.fragments.ui.ZoomableImageView;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 public class MapsFragment extends BaseFragment {
 
     private ZoomableImageView mRdsMap;
-    private ZoomableImageView mParkingMap;
 
     public static MapsFragment newInstance() {
         return new MapsFragment();
@@ -32,15 +33,28 @@ public class MapsFragment extends BaseFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mRdsMap = (ZoomableImageView) view.findViewById(R.id.rds_map);
-        mParkingMap = (ZoomableImageView) view.findViewById(R.id.parking_map);
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Bitmap rdsMapBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.map);
-        mRdsMap.setImageBitmap(rdsMapBitmap);
-        Bitmap parkingMapBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.parking);
-        mParkingMap.setImageBitmap(parkingMapBitmap);
+
+        Picasso.with(getActivity()).load("https://firebasestorage.googleapis.com/v0/b/coolestprojectsapp.appspot.com/o/Maps%2Fcoolestprojectsmap.png?alt=media&token=8931e993-a46d-41ef-b95f-d219755d2570").into(new Target() {
+            @Override
+            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                mRdsMap.setImageBitmap(bitmap);
+                mRdsMap.setZoom(2);
+            }
+
+            @Override
+            public void onBitmapFailed(Drawable errorDrawable) {
+
+            }
+
+            @Override
+            public void onPrepareLoad(Drawable placeHolderDrawable) {
+
+            }
+        });
     }
 }

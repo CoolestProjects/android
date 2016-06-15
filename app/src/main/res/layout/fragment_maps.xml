@@ -22,14 +22,5 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-            style="@style/headerLabel"
-            android:text="@string/parking_label"
-            custom:font="OpenSans-Regular.ttf"/>
-
-        <com.mttnow.coolestprojects.screens.fragments.ui.ZoomableImageView
-            android:id="@+id/parking_map"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
     </LinearLayout>
 </ScrollView>
