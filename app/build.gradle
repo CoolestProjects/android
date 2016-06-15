@@ -2,10 +2,16 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-
+    signingConfigs {
+        releaseConfig {
+            keyAlias 'coolest projects'
+            keyPassword '=vsB7F8LT?=vgM_G'
+            storeFile file('../keystore.jks')
+            storePassword '=vsB7F8LT?=vgM_G'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
-
     defaultConfig {
         applicationId "com.mttnow.coolestprojects"
         minSdkVersion 15
@@ -13,26 +19,30 @@ android {
         versionCode 1
         versionName "1.0"
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            signingConfig signingConfigs.releaseConfig
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable true
+            signingConfig signingConfigs.releaseConfig
         }
     }
-
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
     }
-
     dexOptions {
         preDexLibraries true
         javaMaxHeapSize "1g"
         incremental true
         dexInProcess = true
     }
-
     //Used to ignore duplicated entries added to meta-inf
     packagingOptions {
         exclude 'LICENSE.txt'
@@ -45,16 +55,13 @@ android {
         exclude 'META-INF/notice'
         exclude 'META-INF/notice.txt'
     }
-
     lintOptions {
         abortOnError false
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
     }
-
     testOptions {
         unitTests.returnDefaultValues = true
     }
@@ -63,39 +70,31 @@ android {
 kapt {
     generateStubs = true
 }
-
 dependencies {
+
     //Dependency Injection
     kapt 'com.google.dagger:dagger-compiler:2.4'
     kapt 'com.jakewharton:butterknife-compiler:8.0.1'
-
     compile 'com.google.dagger:dagger:2.4'
     compile 'org.glassfish:javax.annotation:10.0-b28'
     compile 'com.jakewharton:butterknife:8.0.1'
-
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:design:23.4.0'
-
     compile 'io.reactivex:rxandroid:1.2.0'
     compile 'io.reactivex:rxjava:1.1.5'
     compile 'com.jakewharton.rxbinding:rxbinding-kotlin:0.4.0'
     compile 'com.jakewharton.rxbinding:rxbinding-appcompat-v7-kotlin:0.4.0'
     compile 'com.jakewharton.rxbinding:rxbinding-design-kotlin:0.4.0'
-
     compile 'com.google.code.gson:gson:2.6.1'
     compile 'net.danlew:android.joda:2.9.3'
     compile 'com.squareup.picasso:picasso:2.5.2'
-
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
     compile 'com.squareup.okhttp3:logging-interceptor:3.0.0'
-
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-
     testCompile 'junit:junit:4.12'
-    testCompile "org.mockito:mockito-core:1.10.19"
+    testCompile 'org.mockito:mockito-core:1.10.19'
     testCompile 'com.google.truth:truth:0.28'
-
     compile 'com.github.applidium:HeaderListView:73d48935a2'
 }

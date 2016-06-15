@@ -51,7 +51,7 @@ public class SpeakersFragment extends BaseFragment {
     public void onStart() {
         super.onStart();
         addSubscription(Observable.just(null)
-            .doOnNext(showLoadingRX())
+            .doOnEach(showLoadingRX())
             .observeOn(Schedulers.io())
             .switchMap(new Func1<Object, Observable<List<Speaker>>>() {
                 @Override
@@ -60,7 +60,7 @@ public class SpeakersFragment extends BaseFragment {
                 }
             })
             .observeOn(AndroidSchedulers.mainThread())
-            .doOnNext(hideLoadingRX())
+            .doOnEach(hideLoadingRX())
             .subscribe(new Action1<List<Speaker>>() {
                 @Override
                 public void call(List<Speaker> speakers) {
