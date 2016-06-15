@@ -17,6 +17,21 @@ import com.squareup.picasso.Target;
 public class MapsFragment extends BaseFragment {
 
     private ZoomableImageView mRdsMap;
+    private Target mTargetCallback = new Target() {
+        @Override
+        public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+            mRdsMap.setImageBitmap(bitmap);
+            mRdsMap.setZoom(2);
+        }
+
+        @Override
+        public void onBitmapFailed(Drawable errorDrawable) {
+        }
+
+        @Override
+        public void onPrepareLoad(Drawable placeHolderDrawable) {
+        }
+    };
 
     public static MapsFragment newInstance() {
         return new MapsFragment();
@@ -39,22 +54,6 @@ public class MapsFragment extends BaseFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        Picasso.with(getActivity()).load("https://firebasestorage.googleapis.com/v0/b/coolestprojectsapp.appspot.com/o/Maps%2Fcoolestprojectsmap.png?alt=media&token=8931e993-a46d-41ef-b95f-d219755d2570").into(new Target() {
-            @Override
-            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                mRdsMap.setImageBitmap(bitmap);
-                mRdsMap.setZoom(2);
-            }
-
-            @Override
-            public void onBitmapFailed(Drawable errorDrawable) {
-
-            }
-
-            @Override
-            public void onPrepareLoad(Drawable placeHolderDrawable) {
-
-            }
-        });
+        Picasso.with(getActivity()).load("https://firebasestorage.googleapis.com/v0/b/coolestprojectsapp.appspot.com/o/Maps%2Fcoolestprojectsmap_medium.png?alt=media&token=cdbe7fbf-88b9-4257-bb6e-1b27a5536f9d").into(mTargetCallback);
     }
 }
