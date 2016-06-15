@@ -21,21 +21,25 @@ class CachedCoolestProjectsService(private val coolestProjectsService: CoolestPr
     override fun summaries(url : String): Observable<List<Summary>> {
         return fromCacheObservable<List<Summary>>(KEY_SUMAARY, object : TypeToken<List<Summary>>() {}.type)
                 .concatWith(toCacheObservable(KEY_SUMAARY, coolestProjectsService.summaries(SUMMARIES_URL)))
+                .replay(1).autoConnect()
     }
 
     override fun speakers(): Observable<List<Speaker>> {
         return fromCacheObservable<List<Speaker>>(KEY_SPEAKERS, object : TypeToken<List<Speaker>>() {}.type)
                 .concatWith(toCacheObservable(KEY_SPEAKERS, coolestProjectsService.speakers()))
+                .replay(1).autoConnect()
     }
 
     override fun summits(): Observable<List<Summit>> {
         return fromCacheObservable<List<Summit>>(KEY_SUMMITS, object : TypeToken<List<Speaker>>() {}.type)
                 .concatWith(toCacheObservable(KEY_SPEAKERS, coolestProjectsService.summits()))
+                .replay(1).autoConnect()
     }
 
     override fun sponsors(): Observable<List<SponsorTier>> {
         return fromCacheObservable<List<SponsorTier>>(KEY_SPONSORS, object : TypeToken<List<Speaker>>() {}.type)
                 .concatWith(toCacheObservable(KEY_SPEAKERS, coolestProjectsService.sponsors()))
+                .replay(1).autoConnect()
     }
 
     private fun <T> fromCacheObservable(key: String, type: Type): Observable<T> {

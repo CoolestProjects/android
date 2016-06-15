@@ -9,15 +9,12 @@ import android.widget.TextView;
 import com.mttnow.coolestprojects.R;
 import com.mttnow.coolestprojects.models.Summary;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectsAdapter extends BaseAdapter {
 
-    private List<Summary> mProjects;
-
-    public ProjectsAdapter(List<Summary> projects) {
-        mProjects = projects;
-    }
+    private List<Summary> mProjects = new ArrayList<>(0);
 
     @Override
     public int getCount() {
@@ -65,5 +62,14 @@ public class ProjectsAdapter extends BaseAdapter {
         holder.doyo.setText(summary.getCoderdojo());
 
         return rowView;
+    }
+
+    public void swapData(List<Summary> mProjects) {
+        if(mProjects ==  null) {
+            this.mProjects.clear();
+        } else {
+            this.mProjects = mProjects;
+        }
+        notifyDataSetChanged();
     }
 }

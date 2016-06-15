@@ -8,7 +8,7 @@ import java.io.File
 import javax.inject.Qualifier
 
 @Qualifier
-annotation class CacheDir
+private annotation class CacheDir
 
 @AppScope
 @Module(includes = arrayOf(AppModule::class))

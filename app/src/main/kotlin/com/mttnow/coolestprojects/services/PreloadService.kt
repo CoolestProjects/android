@@ -31,7 +31,7 @@ class PreloadService : IntentService(PreloadService::class.java.simpleName) {
         Log.w("PreloadService", "error", throwable)
     }
 
-    private val EMPTY_FUNCTION = Action1<Any> {}
+    private val EMPTY_FUNCTION = Action1<Any> { Log.w("PreloadService", "success $it") }
 
     override fun onCreate() {
         super.onCreate()
@@ -54,7 +54,7 @@ class PreloadService : IntentService(PreloadService::class.java.simpleName) {
 
         coolestProjectsService.speakers().subscribe(EMPTY_FUNCTION, ERROR_LOG_FUNCTION)
         coolestProjectsService.sponsors().subscribe(EMPTY_FUNCTION, ERROR_LOG_FUNCTION)
-        coolestProjectsService.summaries().subscribe(EMPTY_FUNCTION, ERROR_LOG_FUNCTION)
+        coolestProjectsService.summaries("").subscribe(EMPTY_FUNCTION, ERROR_LOG_FUNCTION)
         coolestProjectsService.summits().subscribe(EMPTY_FUNCTION, ERROR_LOG_FUNCTION)
         Log.i("PreloadService", "Done Syncing")
     }
