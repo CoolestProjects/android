@@ -60,7 +60,7 @@ public class ProjectsFragment extends BaseFragment {
   public void onStart() {
     super.onStart();
     addSubscription(Observable.just(null)
-        .doOnNext(showLoadingRX())
+        .doOnEach(showLoadingRX())
         .observeOn(Schedulers.io())
         .switchMap(new Func1<Object, Observable<List<Summary>>>() {
           @Override
@@ -69,7 +69,7 @@ public class ProjectsFragment extends BaseFragment {
           }
         })
         .observeOn(AndroidSchedulers.mainThread())
-        .doOnNext(hideLoadingRX())
+        .doOnEach(hideLoadingRX())
         .subscribe(new Action1<List<Summary>>() {
           @Override
           public void call(List<Summary> projects) {
