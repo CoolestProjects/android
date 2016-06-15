@@ -1,9 +1,11 @@
 package com.mttnow.coolestprojects.screens.fragments;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 
 import com.mttnow.coolestprojects.R;
 import com.mttnow.coolestprojects.app.CoolestProjectsApp;
@@ -16,7 +18,7 @@ import rx.Subscription;
 import rx.functions.Action1;
 import rx.subscriptions.CompositeSubscription;
 
-public class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment {
 
     @Inject
     CoolestProjectsService coolestProjectsService;
@@ -36,10 +38,26 @@ public class BaseFragment extends Fragment {
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        setUpRx();
+    }
+
+    @Override
     public void onStop() {
         super.onStop();
         compositeSubscription.clear();
     }
+
+    private void setUpRx() {
+        compositeSubscription.clear();
+        Subscription subscription = loadRxStuff();
+        if(subscription != null) {
+            addSubscription(subscription);
+        }
+    }
+
+    public abstract Subscription loadRxStuff();
 
     public void addSubscription(Subscription subscription) {
         compositeSubscription.add(subscription);
@@ -51,6 +69,19 @@ public class BaseFragment extends Fragment {
 
     public void hideLoading() {
         progressDialog.hide();
+    }
+
+    public void showError() {
+        hideLoading();
+        new AlertDialog.Builder(getContext())
+            .setMessage(R.string.error)
+            .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                    setUpRx();
+                }
+            }).show();
     }
 
     public Action1<Object> hideLoadingRX() {
@@ -67,6 +98,16 @@ public class BaseFragment extends Fragment {
             @Override
             public void call(Object o) {
                 showLoading();
+            }
+        };
+    }
+
+    public Action1<Throwable> showErrorRx() {
+        return new Action1<Throwable>() {
+            @Override
+            public void call(Throwable o) {
+                o.printStackTrace();
+                showError();
             }
         };
     }

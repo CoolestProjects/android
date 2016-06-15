@@ -18,6 +18,7 @@ import com.mttnow.coolestprojects.screens.adapters.SummitsAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
@@ -54,11 +55,10 @@ public class StagesFragment extends BaseFragment {
         mStagesBtns.add(mStage4Btn);
     }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
 
-        coolestProjectsService.summits()
+    @Override
+    public Subscription loadRxStuff() {
+        return coolestProjectsService.summits()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(new Action1<List<Summit>>() {
@@ -75,7 +75,6 @@ public class StagesFragment extends BaseFragment {
                     throwable.printStackTrace();
                 }
             });
-
     }
 
     private void showSelectedStages(List<Summit> summits, String summit) {

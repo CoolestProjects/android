@@ -17,6 +17,7 @@ import com.mttnow.coolestprojects.screens.adapters.SpeakersAdapter;
 import java.util.List;
 
 import rx.Observable;
+import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.functions.Func1;
@@ -34,8 +35,7 @@ public class SpeakersFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View contentView = inflater.inflate(R.layout.fragment_speakers, container, false);
-        return contentView;
+        return inflater.inflate(R.layout.fragment_speakers, container, false);
     }
 
     @Override
@@ -46,12 +46,10 @@ public class SpeakersFragment extends BaseFragment {
         mSpeakersLv.setAdapter(speakersAdapter);
     }
 
-
     @Override
-    public void onStart() {
-        super.onStart();
-        addSubscription(Observable.just(null)
-            .doOnEach(showLoadingRX())
+    public Subscription loadRxStuff() {
+        return Observable.just(null)
+            .doOnNext(showLoadingRX())
             .observeOn(Schedulers.io())
             .switchMap(new Func1<Object, Observable<List<Speaker>>>() {
                 @Override
@@ -60,7 +58,8 @@ public class SpeakersFragment extends BaseFragment {
                 }
             })
             .observeOn(AndroidSchedulers.mainThread())
-            .doOnEach(hideLoadingRX())
+            .doOnNext(hideLoadingRX())
+            .doOnError(showErrorRx())
             .subscribe(new Action1<List<Speaker>>() {
                 @Override
                 public void call(List<Speaker> speakers) {
@@ -71,7 +70,7 @@ public class SpeakersFragment extends BaseFragment {
                 public void call(Throwable throwable) {
                     throwable.printStackTrace();
                 }
-            }));
+            });
     }
 
     private int getScreenWidth() {

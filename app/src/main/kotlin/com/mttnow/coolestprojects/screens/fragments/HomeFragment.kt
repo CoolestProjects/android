@@ -7,9 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.mttnow.coolestprojects.R
 import com.mttnow.coolestprojects.network.CoolestProjectsService
+import rx.Subscription
 import javax.inject.Inject
 
 class HomeFragment : BaseFragment() {
+    override fun loadRxStuff(): Subscription? {
+        return null;
+    }
 
     companion object {
         fun newInstance(): HomeFragment {

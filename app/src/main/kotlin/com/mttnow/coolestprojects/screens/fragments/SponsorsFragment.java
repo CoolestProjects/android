@@ -14,6 +14,7 @@ import com.mttnow.coolestprojects.screens.adapters.SponsorsAdapter;
 
 import java.util.List;
 
+import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
@@ -54,5 +55,10 @@ public class SponsorsFragment extends BaseFragment {
                         throwable.printStackTrace();
                     }
                 });
+    }
+
+    @Override
+    public Subscription loadRxStuff() {
+        return null;
     }
 }
