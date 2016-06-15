@@ -14,6 +14,8 @@ import com.mttnow.coolestprojects.screens.fragments.ui.ZoomableImageView;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
+import rx.Subscription;
+
 public class MapsFragment extends BaseFragment {
 
     private ZoomableImageView mRdsMap;
@@ -55,5 +57,10 @@ public class MapsFragment extends BaseFragment {
         super.onActivityCreated(savedInstanceState);
 
         Picasso.with(getActivity()).load("https://firebasestorage.googleapis.com/v0/b/coolestprojectsapp.appspot.com/o/Maps%2Fcoolestprojectsmap_medium.png?alt=media&token=cdbe7fbf-88b9-4257-bb6e-1b27a5536f9d").into(mTargetCallback);
+    }
+
+    @Override
+    public Subscription loadRxStuff() {
+        return null;
     }
 }

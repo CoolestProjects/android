@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import rx.Observable;
+import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.functions.Func1;
@@ -41,8 +42,7 @@ public class ProjectsFragment extends BaseFragment {
   @Nullable
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    View contentView = inflater.inflate(R.layout.fragment_projects, container, false);
-    return contentView;
+    return inflater.inflate(R.layout.fragment_projects, container, false);
   }
 
   @Override
@@ -57,10 +57,9 @@ public class ProjectsFragment extends BaseFragment {
   }
 
   @Override
-  public void onStart() {
-    super.onStart();
-    addSubscription(Observable.just(null)
-        .doOnEach(showLoadingRX())
+  public Subscription loadRxStuff() {
+    return Observable.just(null)
+        .doOnNext(showLoadingRX())
         .observeOn(Schedulers.io())
         .switchMap(new Func1<Object, Observable<List<Summary>>>() {
           @Override
@@ -69,7 +68,8 @@ public class ProjectsFragment extends BaseFragment {
           }
         })
         .observeOn(AndroidSchedulers.mainThread())
-        .doOnEach(hideLoadingRX())
+        .doOnNext(hideLoadingRX())
+        .doOnError(showErrorRx())
         .subscribe(new Action1<List<Summary>>() {
           @Override
           public void call(List<Summary> projects) {
@@ -81,7 +81,7 @@ public class ProjectsFragment extends BaseFragment {
           public void call(Throwable throwable) {
             throwable.printStackTrace();
           }
-        }));
+        });
   }
 
   private void setupListeners(final List<Summary> projects) {

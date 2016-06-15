@@ -10,6 +10,8 @@ import android.webkit.WebView;
 
 import com.mttnow.coolestprojects.R;
 
+import rx.Subscription;
+
 public class AboutFragment extends BaseFragment {
 
     private WebView mFirstDescrHtml;
@@ -44,5 +46,10 @@ public class AboutFragment extends BaseFragment {
         mSecondDescrHtml.loadDataWithBaseURL(null, secondHtml, "text/html", "utf-8", null);
         String thirdHtml = getString(R.string.about_third_descr);
         mThirdDescrHtml.loadDataWithBaseURL(null, thirdHtml, "text/html", "utf-8", null);
+    }
+
+    @Override
+    public Subscription loadRxStuff() {
+        return null;
     }
 }
