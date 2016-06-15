@@ -74,12 +74,18 @@ public abstract class BaseFragment extends Fragment {
     public void showError() {
         hideLoading();
         new AlertDialog.Builder(getContext())
-            .setMessage(R.string.error)
+            .setTitle(R.string.error)
             .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();
                     setUpRx();
+                }
+            })
+            .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
                 }
             }).show();
     }
