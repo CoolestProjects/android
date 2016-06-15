@@ -5,7 +5,7 @@ import java.util.concurrent.Executors
 
 class DefaultRxSchedulers(val threadFactory: AndroidThreadFactory) : RxSchedulers {
 
-  override fun mainThread() = Schedulers.immediate();
+  override fun mainThread() = Schedulers.immediate()
 
   override fun io() = Schedulers.from(Executors.newCachedThreadPool(threadFactory))
 

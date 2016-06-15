@@ -11,15 +11,15 @@ import com.mttnow.coolestprojects.R;
 import com.mttnow.coolestprojects.models.Speaker;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SpeakersAdapter extends BaseAdapter {
 
-    private List<Speaker> mSpeakers;
+    private List<Speaker> mSpeakers = new ArrayList<>(0);
     private final int mScreenWidth;
 
-    public SpeakersAdapter(List<Speaker> speakers, int screenWidth) {
-        mSpeakers = speakers;
+    public SpeakersAdapter(int screenWidth) {
         mScreenWidth = screenWidth;
     }
 
@@ -67,5 +67,13 @@ public class SpeakersAdapter extends BaseAdapter {
         holder.desc.setText(speaker.getDescription());
 
         return rowView;
+    }
+
+    public void swapData(List<Speaker> speakers) {
+        this.mSpeakers.clear();
+        if(speakers != null) {
+            this.mSpeakers.addAll(speakers);
+        }
+        notifyDataSetChanged();
     }
 }

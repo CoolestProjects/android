@@ -3,9 +3,7 @@ package com.mttnow.coolestprojects.app.dagger
 import android.content.Context
 import com.google.gson.Gson
 import com.mttnow.coolestprojects.BuildConfig
-import com.mttnow.coolestprojects.network.CachedCoolestProjectsService
 import com.mttnow.coolestprojects.network.CoolestProjectsService
-import com.mttnow.coolestprojects.network.JsonCache
 import com.mttnow.coolestprojects.rx.RxSchedulers
 import dagger.Module
 import dagger.Provides
@@ -19,12 +17,16 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 import javax.inject.Qualifier
 
-@Qualifier
-private annotation class BaseNetworkService
-
 @AppScope
-@Module(includes = arrayOf(AppModule::class, GsonModule::class, CacheModule::class))
+@Module(includes = arrayOf(AppModule::class, GsonModule::class))
 class NetworkModule {
+
+
+    /** Dangerous interceptor that rewrites the server's cache-control header.  */
+    private val REWRITE_CACHE_CONTROL_INTERCEPTOR = Interceptor { chain ->
+        val originalResponse = chain.proceed(chain.request())
+        originalResponse.newBuilder().header("Cache-Control", "max-age=3600").build()
+    }
 
     @Provides
     @AppScope
@@ -32,6 +34,7 @@ class NetworkModule {
             = OkHttpClient.Builder()
             .cache(cache)
             .addNetworkInterceptor(httpLoggingInterceptor)
+            .addNetworkInterceptor(REWRITE_CACHE_CONTROL_INTERCEPTOR)
             .build()
 
     @Provides
@@ -60,7 +63,6 @@ class NetworkModule {
 
     @Provides
     @AppScope
-    @BaseNetworkService
     fun apiBaseService(retrofit: Retrofit) = retrofit.create(CoolestProjectsService::class.java)
 
     @Provides
@@ -69,7 +71,7 @@ class NetworkModule {
 
     @Provides
     @AppScope
-    fun callAdapter(rxSchedulers: RxSchedulers) = RxJavaCallAdapterFactory.createWithScheduler(rxSchedulers.network())
+    fun callAdapter(rxSchedulers: RxSchedulers) = RxJavaCallAdapterFactory.create()
 
     @Provides
     @AppScope
@@ -82,9 +84,4 @@ class NetworkModule {
                 .build()
     }
 
-    @Provides
-    @AppScope
-    fun apiService(@BaseNetworkService coolestProjectsService: CoolestProjectsService,
-                   jsonCache: JsonCache, gson: Gson): CoolestProjectsService
-            = CachedCoolestProjectsService(coolestProjectsService, jsonCache, gson)
 }

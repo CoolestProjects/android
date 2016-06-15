@@ -7,7 +7,6 @@ import android.content.SharedPreferences
 import android.util.Log
 import com.mttnow.coolestprojects.app.CoolestProjectsApp
 import com.mttnow.coolestprojects.network.CoolestProjectsService
-import org.joda.time.DateTime
 import rx.functions.Action1
 import javax.inject.Inject
 
@@ -41,21 +40,22 @@ class PreloadService : IntentService(PreloadService::class.java.simpleName) {
     }
 
     override fun onHandleIntent(intent: Intent) {
+        return
 
-        sharedPreferences = getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE)
-        val lastSyncMillis = sharedPreferences.getLong(DATE_KEY, 0)
-        val lastSync = DateTime(lastSyncMillis).plusHours(1)
-        if (lastSync.isAfterNow) {
-            Log.i("PreloadService", "Synced an hour ago")
-            return
-        }
-        Log.i("PreloadService", "Syncing")
-        sharedPreferences.edit().putLong(DATE_KEY, DateTime.now().millis).commit()
-
-        coolestProjectsService.speakers().subscribe(EMPTY_FUNCTION, ERROR_LOG_FUNCTION)
-        coolestProjectsService.sponsors().subscribe(EMPTY_FUNCTION, ERROR_LOG_FUNCTION)
-        coolestProjectsService.summaries("").subscribe(EMPTY_FUNCTION, ERROR_LOG_FUNCTION)
-        coolestProjectsService.summits().subscribe(EMPTY_FUNCTION, ERROR_LOG_FUNCTION)
-        Log.i("PreloadService", "Done Syncing")
+//        sharedPreferences = getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE)
+//        val lastSyncMillis = sharedPreferences.getLong(DATE_KEY, 0)
+//        val lastSync = DateTime(lastSyncMillis).plusHours(1)
+//        if (lastSync.isAfterNow) {
+//            Log.i("PreloadService", "Synced an hour ago")
+//            return
+//        }
+//        Log.i("PreloadService", "Syncing")
+//        sharedPreferences.edit().putLong(DATE_KEY, DateTime.now().millis).commit()
+//
+//        coolestProjectsService.speakers().subscribe(EMPTY_FUNCTION, ERROR_LOG_FUNCTION)
+//        coolestProjectsService.sponsors().subscribe(EMPTY_FUNCTION, ERROR_LOG_FUNCTION)
+//        coolestProjectsService.summaries("").subscribe(EMPTY_FUNCTION, ERROR_LOG_FUNCTION)
+//        coolestProjectsService.summits().subscribe(EMPTY_FUNCTION, ERROR_LOG_FUNCTION)
+//        Log.i("PreloadService", "Done Syncing")
     }
 }

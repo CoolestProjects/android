@@ -16,13 +16,16 @@ import com.mttnow.coolestprojects.screens.adapters.SpeakersAdapter;
 
 import java.util.List;
 
+import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
+import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 public class SpeakersFragment extends BaseFragment {
 
     private ListView mSpeakersLv;
+    private SpeakersAdapter speakersAdapter;
 
     public static SpeakersFragment newInstance() {
         return new SpeakersFragment();
@@ -38,30 +41,37 @@ public class SpeakersFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         mSpeakersLv = (ListView) view.findViewById(R.id.speakers_lv);
+        speakersAdapter = new SpeakersAdapter(getScreenWidth());
+        mSpeakersLv.setAdapter(speakersAdapter);
     }
 
+
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-              coolestProjectsService.speakers()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<List<Speaker>>() {
-                    @Override
-                    public void call(List<Speaker> speakers) {
-                        mSpeakersLv.setAdapter(new SpeakersAdapter(speakers, getScreenWidth()));
-
-                    }
-                }, new Action1<Throwable>() {
-                    @Override
-                    public void call(Throwable throwable) {
-                        throwable.printStackTrace();
-                    }
-                });
-
+    public void onStart() {
+        super.onStart();
+        addSubscription(Observable.just(null)
+            .doOnNext(showLoadingRX())
+            .observeOn(Schedulers.io())
+            .switchMap(new Func1<Object, Observable<List<Speaker>>>() {
+                @Override
+                public Observable<List<Speaker>> call(Object o) {
+                    return getCoolestProjectsService().speakers();
+                }
+            })
+            .observeOn(AndroidSchedulers.mainThread())
+            .doOnNext(hideLoadingRX())
+            .subscribe(new Action1<List<Speaker>>() {
+                @Override
+                public void call(List<Speaker> speakers) {
+                    speakersAdapter.swapData(speakers);
+                }
+            }, new Action1<Throwable>() {
+                @Override
+                public void call(Throwable throwable) {
+                    throwable.printStackTrace();
+                }
+            }));
     }
 
     private int getScreenWidth() {
