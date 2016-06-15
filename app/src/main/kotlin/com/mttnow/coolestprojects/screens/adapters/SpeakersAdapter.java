@@ -42,6 +42,7 @@ public class SpeakersAdapter extends BaseAdapter {
         public ImageView img;
         public TextView name;
         public TextView desc;
+        public TextView summit;
     }
 
     @Override
@@ -54,6 +55,7 @@ public class SpeakersAdapter extends BaseAdapter {
             viewHolder.img = (ImageView) rowView.findViewById(R.id.speaker_img);
             viewHolder.name = (TextView) rowView.findViewById(R.id.speaker_name);
             viewHolder.desc = (TextView) rowView.findViewById(R.id.speaker_desc);
+            viewHolder.summit = (TextView) rowView.findViewById(R.id.speaker_summit);
             rowView.setTag(viewHolder);
         }
         ViewHolder holder = (ViewHolder) rowView.getTag();
@@ -66,6 +68,7 @@ public class SpeakersAdapter extends BaseAdapter {
             Picasso.with(viewGroup.getContext()).load(speaker.getPhotoUrl()).into(holder.img);
         }
         holder.name.setText(speaker.getName());
+        holder.summit.setText(speaker.getSummit());
         holder.desc.setText(speaker.getDescription());
 
         return rowView;
