@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "185941226354",
+    "firebase_url": "https://coolestprojectsapp.firebaseio.com",
+    "project_id": "coolestprojectsapp",
+    "storage_bucket": "coolestprojectsapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185941226354:android:a1c0d1e021fcebf3",
+        "android_client_info": {
+          "package_name": "com.mttnow.coolestprojects"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185941226354-obbjdqt0r75jr1n9kloatv9fmr56oiag.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzw3d8sMoyYZbTcX7DNQVA1hO10MGgAUI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
