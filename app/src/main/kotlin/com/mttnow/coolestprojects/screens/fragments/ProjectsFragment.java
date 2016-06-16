@@ -64,7 +64,7 @@ public class ProjectsFragment extends BaseFragment {
         .switchMap(new Func1<Object, Observable<List<Summary>>>() {
           @Override
           public Observable<List<Summary>> call(Object o) {
-            return coolestProjectsService.summaries("");
+            return coolestProjectsService.summaries(getResources().getString(R.string.platform_api_url));
           }
         })
         .observeOn(AndroidSchedulers.mainThread())

@@ -16,9 +16,11 @@
     <color name="img_placeholder_color">#CBCBCB</color>
     <color name="speaker_name_color">#333333</color>
     <color name="speaker_desc_color">#9B9B9B</color>
+    <color name="speaker_title_color">#9B9B9B</color>
     <color name="project_desc_color">#9B9B9B</color>
     <color name="stages_btn_selected">#4A90E2</color>
     <color name="summit_time_text_color">#F52A00</color>
     <color name="project_doyo_text_color">#F52A00</color>
+    <color name="summit_name_color">#333333</color>
     <color name="divder">#CBCBCB</color>
 </resources>
