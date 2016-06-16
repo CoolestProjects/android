@@ -26,16 +26,27 @@
         android:gravity="center_horizontal"
         android:textColor="@color/speaker_name_color"
         android:textSize="@dimen/text_medium_size"
+        android:textAllCaps="true"
         custom:font="OpenSans-Regular.ttf"/>
 
     <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
         android:id="@+id/speaker_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/speaker_desc_margin_bottom"
+
         android:gravity="center_horizontal"
-        android:textColor="@color/speaker_desc_color"
+        android:textColor="@color/speaker_title_color"
+        android:textSize="@dimen/small_text_size"
+        custom:font="OpenSans-Regular.ttf"/>
+
+    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+        android:id="@+id/speaker_summit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/summit_name_color"
+        android:gravity="center_horizontal"
         android:textSize="@dimen/text_medium_size"
+        android:layout_marginBottom="@dimen/speaker_summit_margin_bottom"
         custom:font="OpenSans-Regular.ttf"/>
 
 </LinearLayout>
