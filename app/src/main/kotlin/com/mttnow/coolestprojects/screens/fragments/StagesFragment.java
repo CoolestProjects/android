@@ -118,7 +118,7 @@ public class StagesFragment extends BaseFragment {
         mStage4Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectSummits("MasterCard Code Summit", view, summits);
+                selectSummits("MasterCard Code", view, summits);
             }
         });
     }
