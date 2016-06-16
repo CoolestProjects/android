@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/speaker_name_color"
         android:textSize="@dimen/text_medium_size"
+        android:textAllCaps="true"
         custom:font="OpenSans-Regular.ttf"/>
 
     <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
