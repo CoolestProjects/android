@@ -4,21 +4,16 @@ package com.mttnow.coolestprojects.screens.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.jakewharton.rxbinding.view.RxView;
 import com.jakewharton.rxbinding.widget.RxTextView;
 import com.jakewharton.rxbinding.widget.TextViewTextChangeEvent;
 import com.mttnow.coolestprojects.R;
 import com.mttnow.coolestprojects.models.Summary;
-import com.mttnow.coolestprojects.screens.CategoryActivity;
 import com.mttnow.coolestprojects.screens.adapters.ProjectsAdapter;
 
 import java.util.ArrayList;
@@ -35,7 +30,6 @@ public class ProjectsFragment extends BaseFragment {
 
   private static final int CATEGORY_ACTIVITY_REQUEST_CODE = 100012;
   private EditText mProjectsEt;
-  private ImageView mFilterCategoryBtn;
   private ListView mProjectsLv;
   private ProjectsAdapter projectsAdapter;
 
@@ -49,7 +43,6 @@ public class ProjectsFragment extends BaseFragment {
   public void onViewCreated(View view, Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     mProjectsEt = (EditText) view.findViewById(R.id.projects_search_et);
-    mFilterCategoryBtn = (ImageView) view.findViewById(R.id.filter_category_btn);
     mProjectsLv = (ListView) view.findViewById(R.id.projects_lv);
 
     projectsAdapter = new ProjectsAdapter();
@@ -90,20 +83,13 @@ public class ProjectsFragment extends BaseFragment {
         .subscribe(new Action1<TextViewTextChangeEvent>() {
           @Override
           public void call(TextViewTextChangeEvent textViewTextChangeEvent) {
-            filterProjects(projects, textViewTextChangeEvent.text());
+            filterProjects(projects, textViewTextChangeEvent.text().toString().toUpperCase());
           }
         }));
 
-    addSubscription(RxView.clicks(mFilterCategoryBtn).subscribe(new Action1<Void>() {
-      @Override
-      public void call(Void aVoid) {
-        Intent intent = new Intent(getActivity(), CategoryActivity.class);
-        getActivity().startActivityForResult(intent, CATEGORY_ACTIVITY_REQUEST_CODE);
-      }
-    }));
   }
 
-  private void filterProjects(List<Summary> projects, CharSequence s) {
+  private void filterProjects(List<Summary> projects, String s) {
     List<Summary> filteredSummaries = new ArrayList<>();
     for (int i = 0; i < projects.size(); i++) {
       Summary p = projects.get(i);
