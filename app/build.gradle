@@ -12,7 +12,7 @@ android {
         }
     }
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "com.mttnow.coolestprojects"
         minSdkVersion 15
@@ -38,12 +38,12 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
     }
-    dexOptions {
-        preDexLibraries true
-        javaMaxHeapSize "1g"
-        incremental true
-        dexInProcess = true
-    }
+//    dexOptions {
+//        preDexLibraries true
+//        javaMaxHeapSize "1g"
+//        incremental true
+//        dexInProcess = true
+//    }
     //Used to ignore duplicated entries added to meta-inf
     packagingOptions {
         exclude 'LICENSE.txt'
