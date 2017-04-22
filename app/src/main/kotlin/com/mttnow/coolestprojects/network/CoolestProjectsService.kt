@@ -1,9 +1,6 @@
 package com.mttnow.coolestprojects.network
 
-import com.mttnow.coolestprojects.models.Speaker
-import com.mttnow.coolestprojects.models.SponsorTier
-import com.mttnow.coolestprojects.models.Summary
-import com.mttnow.coolestprojects.models.Summit
+import com.mttnow.coolestprojects.models.*
 import retrofit2.http.GET
 import retrofit2.http.Url
 import rx.Observable
@@ -17,6 +14,9 @@ https://register.coolestprojects.org/api/project/summary*/
 val SUMMARIES_URL = "https://register.coolestprojects.org/api/project/summary"
 
 interface CoolestProjectsService {
+
+  @GET("regions.json")
+  fun regions() : Observable<List<BeaconRegion>>
 
   @GET("speakers.json")
   fun speakers() : Observable<List<Speaker>>

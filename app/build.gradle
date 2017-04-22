@@ -99,4 +99,5 @@ dependencies {
     testCompile 'org.mockito:mockito-core:1.10.19'
     testCompile 'com.google.truth:truth:0.28'
     compile 'com.github.applidium:HeaderListView:73d48935a2'
+    compile 'com.estimote:sdk:0.16.0@aar'
 }
