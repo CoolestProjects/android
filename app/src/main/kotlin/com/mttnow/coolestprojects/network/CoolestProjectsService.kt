@@ -18,6 +18,9 @@ interface CoolestProjectsService {
   @GET("regions.json")
   fun regions() : Observable<List<BeaconRegion>>
 
+  @GET("messages.json")
+  fun messages() : Observable<List<BeaconRegionMessage>>
+
   @GET("speakers.json")
   fun speakers() : Observable<List<Speaker>>
 
