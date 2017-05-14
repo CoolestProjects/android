@@ -20,34 +20,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/home_bg"/>
+                android:src="@drawable/home_header"/>
 
-            <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-                android:id="@+id/home_title"
-                android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/home_logo"
+                android:layout_width="@dimen/home_logo_width"
                 android:layout_height="wrap_content"
-                android:text="@string/home_title"
-                android:textColor="@android:color/white"
                 android:layout_marginTop="@dimen/home_title_top_margin"
                 android:layout_marginLeft="@dimen/home_title_left_margin"
-                android:textSize="@dimen/home_title_size"
-                custom:font="OpenSans-SemiBold.ttf"/>
+                android:adjustViewBounds="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/home_logo"/>
+
 
             <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/home_title"
-                android:text="@string/home_sub_title"
-                android:textColor="@android:color/white"
+                android:layout_below="@id/home_logo"
+                android:text="@string/home_title"
+                android:textColor="@color/colorPrimaryLight"
                 android:layout_marginLeft="@dimen/home_title_left_margin"
-                android:textSize="@dimen/home_sub_title_size"
+                android:layout_marginRight="@dimen/home_title_right_margin"
+                android:layout_marginTop="@dimen/home_title_top_margin"
+                android:textSize="@dimen/home_title_size"
+                android:textAlignment="center"
                 custom:font="OpenSans-Regular.ttf"/>
 
-            <include layout="@layout/home_sponsors"/>
 
         </RelativeLayout>
-
-        <include layout="@layout/home_times"/>
+        <include layout="@layout/home_description"/>
+        <!--<include layout="@layout/home_times"/>-->
 
         <include layout="@layout/home_parking_layout"/>
 

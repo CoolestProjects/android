@@ -4,20 +4,20 @@
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/events_time_bg"
+    android:background="@color/home_desc_bg"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/home_times_vertical_padding"
-    android:paddingTop="@dimen/home_times_vertical_padding">
+    android:paddingBottom="@dimen/home_desc_vertical_padding"
+    android:paddingTop="@dimen/home_desc_vertical_padding">
 
     <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:paddingBottom="@dimen/home_times_vertical_padding"
+        android:paddingBottom="@dimen/home_desc_vertical_padding"
         android:text="@string/event_times"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/event_times_size"
+        android:textSize="@dimen/home_desc_size"
         custom:font="OpenSans-SemiBold.ttf"/>
 
     <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
@@ -26,7 +26,7 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
         android:paddingBottom="@dimen/home_hours_vertical_padding"
-        android:text="@string/event_times_values"
+        android:text="@string/home_desc_date"
         android:textColor="@android:color/white"
         android:textSize="@dimen/event_hours_size"
         custom:font="OpenSans-SemiBold.ttf"/>

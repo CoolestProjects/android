@@ -36,4 +36,11 @@
         <item name="android:textSize">@dimen/stage_btn_text_size</item>
     </style>
 
+    <style name="homeDescStyle">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/home_desc_text_color</item>
+        <item name="android:textSize">@dimen/home_desc_size</item>
+    </style>
+
 </resources>
