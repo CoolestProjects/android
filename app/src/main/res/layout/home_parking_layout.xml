@@ -1,50 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:custom="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/home_content_bg"
+    android:paddingTop="@dimen/home_desc_vertical_padding">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/contentWhiteBoxRoundedCornerStyle"
+        android:orientation="vertical">
+
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="370dp"
+            android:id="@+id/parking_logo"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:src="@drawable/home_parking_bg"/>
+            android:layout_alignParentRight="true"
+            android:src="@drawable/parking_icon"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/home_parking_alphed_bg"/>
-    </FrameLayout>
 
-    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-        android:id="@+id/parking_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/parking_vertical_margin_top"
-        android:gravity="center_horizontal"
-        android:text="@string/home_parking_label"
-        android:textAllCaps="true"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/home_parking_size"
-        custom:font="OpenSans-SemiBold.ttf"/>
 
-    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/parking_label"
-        android:layout_centerInParent="true"
-        android:layout_margin="@dimen/home_parking_desc_margin"
-        android:gravity="center_horizontal"
-        android:text="@string/home_parking_desc"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/home_parking_desc_size"
-        custom:font="OpenSans-SemiBold.ttf"/>
+        <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+            android:id="@+id/parking_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/home_parking_label"
+            android:textStyle="bold"
+            android:textColor="@color/home_content_text_color"
+            android:textSize="@dimen/container_title_size"
+            custom:font="OpenSans-Bold.ttf"/>
 
-</RelativeLayout>
+        <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_value_margin_top"
+            android:text="@string/home_parking_desc"
+            android:textColor="@color/home_content_text_color"
+            android:textSize="@dimen/container_content_size"
+            custom:font="OpenSans-Regular.ttf"/>
+
+
+    </RelativeLayout>
+</LinearLayout>
