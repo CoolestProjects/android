@@ -2,18 +2,18 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="title_size">18dp</dimen>
+    <dimen name="title_size">16dp</dimen>
 
 
     <dimen name="header_text_size">16dp</dimen>
     <dimen name="header_padding">6dp</dimen>
-    <dimen name="event_times_size">18dp</dimen>
+    <dimen name="home_desc_size">22dp</dimen>
     <dimen name="event_hours_size">14dp</dimen>
     <dimen name="logo_sposnor_vertical_margin">16dp</dimen>
-    <dimen name="home_times_vertical_padding">26dp</dimen>
+    <dimen name="home_desc_vertical_padding">16dp</dimen>
     <dimen name="home_hours_vertical_padding">18dp</dimen>
     <dimen name="sponsored_label_size">18dp</dimen>
-    <dimen name="sponsored_label_margin_top">16dp</dimen>
+    <dimen name="sponsored_label_margin_top">18dp</dimen>
     <dimen name="parking_vertical_margin_top">30dp</dimen>
     <dimen name="home_parking_size">18dp</dimen>
     <dimen name="home_parking_desc_size">14dp</dimen>
@@ -38,10 +38,11 @@
     <dimen name="stages_tabs_height">50dp</dimen>
     <dimen name="summit_speaker_img_side">120dp</dimen>
     <dimen name="summit_row_padding">16dp</dimen>
-    <dimen name="home_title_size">30dp</dimen>
-    <dimen name="home_sub_title_size">18dp</dimen>
-    <dimen name="home_title_left_margin">22dp</dimen>
-    <dimen name="home_title_top_margin">28dp</dimen>
+    <dimen name="home_title_size">16dp</dimen>
+    <dimen name="home_title_left_margin">50dp</dimen>
+    <dimen name="home_title_right_margin">50dp</dimen>
+    <dimen name="home_title_top_margin">20dp</dimen>
+    <dimen name="home_logo_width">200dp</dimen>
     <dimen name="project_padding">14dp</dimen>
     <dimen name="small_text_size">14dp</dimen>
     <dimen name="text_xs_size">12dp</dimen>
