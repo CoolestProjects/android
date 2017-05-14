@@ -4,7 +4,7 @@
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/home_desc_bg"
+    android:background="@color/home_content_bg"
     android:orientation="vertical"
     android:paddingBottom="@dimen/home_desc_vertical_padding"
     android:paddingTop="@dimen/home_desc_vertical_padding">
@@ -15,7 +15,7 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/home_desc_date"
         android:textAppearance="@style/homeDescStyle"
-        custom:font="OpenSans-SemiBold.ttf"/>
+        custom:font="OpenSans-Bold.ttf"/>
 
     <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
         android:layout_width="match_parent"
@@ -25,6 +25,6 @@
         android:textAppearance="@style/homeDescStyle"
         android:textStyle="bold"
         android:text="@string/home_desc_location"
-        custom:font="OpenSans-SemiBold.ttf"/>
+        custom:font="OpenSans-Bold.ttf"/>
 
 </LinearLayout>

@@ -4,60 +4,44 @@
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/home_desc_bg"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/home_desc_vertical_padding"
+    android:background="@color/home_content_bg"
     android:paddingTop="@dimen/home_desc_vertical_padding">
 
-    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:paddingBottom="@dimen/home_desc_vertical_padding"
-        android:text="@string/event_times"
-        android:textAllCaps="true"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/home_desc_size"
-        custom:font="OpenSans-SemiBold.ttf"/>
+        style="@style/contentWhiteBoxRoundedCornerStyle"
+        android:orientation="vertical">
 
-    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal"
-        android:paddingBottom="@dimen/home_hours_vertical_padding"
-        android:text="@string/home_desc_date"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/event_hours_size"
-        custom:font="OpenSans-SemiBold.ttf"/>
 
-    <!--<com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_gravity="center_horizontal"-->
-    <!--android:paddingBottom="@dimen/home_hours_vertical_padding"-->
-    <!--android:text="Closing time"-->
-    <!--android:textColor="@android:color/white"-->
-    <!--android:textSize="@dimen/event_hours_size"-->
-    <!--custom:font="OpenSans-SemiBold.ttf"/>-->
+        <ImageView
+            android:id="@+id/home_logo"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/time_icon"/>
 
-    <!--<com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_gravity="center_horizontal"-->
-    <!--android:paddingBottom="@dimen/home_hours_vertical_padding"-->
-    <!--android:text="Juding time"-->
-    <!--android:textColor="@android:color/white"-->
-    <!--android:textSize="@dimen/event_hours_size"-->
-    <!--custom:font="OpenSans-SemiBold.ttf"/>-->
+        <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+            android:id="@+id/event_times_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/event_times"
+            android:textStyle="bold"
+            android:textColor="@color/home_content_text_color"
+            android:textSize="@dimen/container_title_size"
+            custom:font="OpenSans-Bold.ttf"/>
 
-    <!--<com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_gravity="center_horizontal"-->
-    <!--android:text="Award time"-->
-    <!--android:textColor="@android:color/white"-->
-    <!--android:textSize="@dimen/event_hours_size"-->
-    <!--custom:font="OpenSans-SemiBold.ttf"/>-->
+        <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_value_margin_top"
+            android:text="@string/event_times_descr"
+            android:textColor="@color/home_content_text_color"
+            android:textSize="@dimen/container_content_size"
+            custom:font="OpenSans-Regular.ttf"/>
 
+      </RelativeLayout>
 </LinearLayout>

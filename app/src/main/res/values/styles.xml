@@ -39,8 +39,14 @@
     <style name="homeDescStyle">
         <item name="android:textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/home_desc_text_color</item>
+        <item name="android:textColor">@color/home_content_text_color</item>
         <item name="android:textSize">@dimen/home_desc_size</item>
     </style>
 
+    <style name="contentWhiteBoxRoundedCornerStyle">
+        <item name="android:background">@drawable/rounded_corner</item>
+        <item name="android:layout_marginLeft">@dimen/content_container_margin</item>
+        <item name="android:layout_marginRight">@dimen/content_container_margin</item>
+        <item name="android:padding">@dimen/content_inner_container_padding</item>
+    </style>
 </resources>
