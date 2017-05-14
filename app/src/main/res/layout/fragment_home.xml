@@ -34,7 +34,7 @@
 
 
             <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/home_logo_text_width"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/home_logo"
                 android:text="@string/home_title"
@@ -49,7 +49,15 @@
 
         </RelativeLayout>
         <include layout="@layout/home_description"/>
-        <!--<include layout="@layout/home_times"/>-->
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="@dimen/content_divider_margin"
+            android:layout_marginRight="@dimen/content_divider_margin"
+            android:background="@color/content_divider_color"/>
+
+        <include layout="@layout/home_times"/>
 
         <include layout="@layout/home_parking_layout"/>
 
