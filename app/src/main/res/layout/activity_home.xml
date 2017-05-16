@@ -1,60 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- The main content view -->
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.mttnow.coolestprojects.screens.home.HomeActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/home_toolbar"
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/black"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-        <ImageView
-            android:id="@+id/icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/logo"/>
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/home_title_left_margin"
-            android:layout_marginRight="@dimen/home_title_right_margin"
-            android:layout_gravity="center"
-            android:textAllCaps="true"
-            android:textColor="@color/nav_view_item_selected"
-            android:textSize="@dimen/title_size"
-            android:visibility="gone"/>
-    </android.support.v7.widget.Toolbar>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation"/>
 
 
-    <android.support.v4.widget.DrawerLayout
-        android:id="@+id/home_drawer_layout"
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        custom:itemBackground="@color/colorPrimary"
+        custom:itemIconTint="@color/colorPrimaryLight"
+        custom:itemTextColor="@color/colorPrimaryLight"
+        custom:menu="@menu/bottom_nav_menu" />
 
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
 
-
-        <android.support.design.widget.NavigationView
-            android:id="@+id/left_nav_drawer"
-            android:layout_width="240dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:background="#111"
-            app:itemTextColor="@color/nav_view_item"
-            app:menu="@menu/drawer_menu"/>
-
-    </android.support.v4.widget.DrawerLayout>
-</LinearLayout>
+</RelativeLayout>

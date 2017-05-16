@@ -38,4 +38,10 @@
     <string name="estimote_app_id">test-app-alessandro-la5</string>
     <string name="estimote_app_token">15b3bbccf4c9c54dac1dc26e04885fad</string>
 
+    <!-- Navigation Bar -->
+    <string name="nav_home">Home</string>
+    <string name="nav_map">Maps</string>
+    <string name="nav_halls">Halls</string>
+    <string name="nav_about">About</string>
+
 </resources>
