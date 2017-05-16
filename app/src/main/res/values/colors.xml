@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">@color/header_label_color</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorPrimaryLight">#FFFFFF</color>
+    <color name="colorPrimaryLight">#ffffff</color>
     <color name="colorAccent">#F8E71C</color>
     <color name="nav_view_item_selected">#F8E71C</color>
     <color name="content_divider_color">#c8c9cc</color>
@@ -10,7 +10,7 @@
     <color name="header_label_color">#262626</color>
     <color name="header_bg">#F3F3F3</color>
     <color name="sponsor_home_bg">#BBF0F0F0</color>
-    <color name="home_content_bg">#F5F6F9</color>
+    <color name="home_content_bg">#f5f6f9</color>
     <color name="home_content_text_color">#6a7088</color>
     <color name="home_parking_alphed_bg">#BB000000</color>
     <color name="home_food_layout_bg">#F8E71C</color>
