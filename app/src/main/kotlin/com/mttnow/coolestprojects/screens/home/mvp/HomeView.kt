@@ -1,6 +1,7 @@
 package com.mttnow.coolestprojects.screens.home.mvp
 
 import android.support.design.widget.NavigationView
+import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.view.GravityCompat
@@ -46,34 +47,32 @@ class HomeView : FrameLayout {
     init(context, attrs)
   }
 
-  private val drawerLayout: DrawerLayout by lazyView { findViewById(R.id.home_drawer_layout) }
-  private val navView: NavigationView by lazyView { findViewById(R.id.left_nav_drawer) }
-  private val toolbar: Toolbar by lazyView { findViewById(R.id.home_toolbar) }
+//  private val drawerLayout: DrawerLayout by lazyView { findViewById(R.id.home_drawer_layout) }
+//  private val navView: NavigationView by lazyView { findViewById(R.id.left_nav_drawer) }
+ // private val toolbar: Toolbar by lazyView { findViewById(R.id.home_toolbar) }
   private var fragmentManager: FragmentManager? = null
 
   private fun init(activity: AppCompatActivity, attrs: AttributeSet? = null) {
     inflate(context, R.layout.activity_home, this)
     fragmentManager = activity.supportFragmentManager
 
-    val toggle = ActionBarDrawerToggle(activity,
-        drawerLayout,
-        toolbar,
-        R.string.navigation_drawer_open,
-        R.string.navigation_drawer_close)
-    drawerLayout.addDrawerListener(toggle)
-    toggle.syncState()
+//    val toggle = ActionBarDrawerToggle(activity,
+//        drawerLayout,
+//        R.string.navigation_drawer_open,
+//        R.string.navigation_drawer_close)
+//    drawerLayout.addDrawerListener(toggle)
+//    toggle.syncState()
 
     //Attach the home if not fragment is attached
     if (fragmentManager?.findFragmentByTag(FRAGMENT_TAG) == null) {
       swapFragment(HomeFragment())
-      navView.menu.findItem(R.id.nav_home).isChecked = true
     }
   }
 
-  fun getNavMenuClicks() = navView.itemSelections()
-
+//  fun getNavMenuClicks() = navView.itemSelections()
+//
   fun swapFragment(fragment: Fragment?) {
-    drawerLayout.closeDrawers()
+//    drawerLayout.closeDrawers()
     if (fragment == null) {
       return
     } else {
@@ -87,17 +86,17 @@ class HomeView : FrameLayout {
 
   fun onBackPressed(): Boolean {
 
-    if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-      drawerLayout.closeDrawer(GravityCompat.START)
-      return false
-    }
+//    if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+//      drawerLayout.closeDrawer(GravityCompat.START)
+//      return false
+//    }
 
     //Back btn pressed with drawer closed and current fragment is not home, return to home
-    if (fragmentManager?.findFragmentByTag(FRAGMENT_TAG) !is HomeFragment) {
-      navView.menu.findItem(R.id.nav_home).isChecked = true
-      swapFragment(HomeFragment())
-      return false
-    }
+//    if (fragmentManager?.findFragmentByTag(FRAGMENT_TAG) !is HomeFragment) {
+//      navView.menu.findItem(R.id.nav_home).isChecked = true
+//      swapFragment(HomeFragment())
+//      return false
+//    }
     return true
   }
 

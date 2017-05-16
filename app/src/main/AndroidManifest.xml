@@ -23,6 +23,8 @@
 
         <activity android:name=".screens.CategoryActivity"/>
 
+        <activity android:name=".screens.NavActivity"/>
+
         <service android:name=".services.PreloadService"/>
 
         <service

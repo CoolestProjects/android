@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_home"
+        android:enabled="true"
+        android:icon="@drawable/parking_icon"
+        android:title="@string/nav_home"
+        custom:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_maps"
+        android:enabled="true"
+        android:icon="@drawable/food_icon"
+        android:title="@string/nav_map"
+        custom:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_halls"
+        android:enabled="true"
+        android:icon="@drawable/parking_icon"
+        android:title="@string/nav_halls"
+        custom:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_about"
+        android:enabled="true"
+        android:icon="@drawable/parking_icon"
+        android:title="@string/nav_about"
+        custom:showAsAction="ifRoom" />
+
+</menu>
