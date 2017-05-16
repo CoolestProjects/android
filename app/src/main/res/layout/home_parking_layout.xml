@@ -45,11 +45,14 @@
         <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/content_value_margin_top"
+            android:layout_marginTop="9dp"
             android:text="@string/home_parking_desc"
             android:textColor="@color/home_content_text_color"
             android:textSize="@dimen/container_content_size"
-            custom:font="OpenSans-Regular.ttf"/>
+            custom:font="OpenSans-Regular.ttf"
+            android:layout_below="@+id/parking_logo"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
 
     </RelativeLayout>
