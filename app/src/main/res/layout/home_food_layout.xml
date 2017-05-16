@@ -1,32 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:custom="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/home_food_layout_bg"
-              android:orientation="vertical">
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_content_bg"
+    android:orientation="vertical">
 
 
-    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/food_label_margin_top"
-        android:text="@string/food_label"
-        android:textAllCaps="true"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/food_label_size"
-        custom:font="OpenSans-SemiBold.ttf"/>
-
-    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+    <RelativeLayout
+        style="@style/contentWhiteBoxRoundedCornerStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal"
-        android:padding="@dimen/food_desc_padding"
-        android:text="@string/food_desc"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/food_desc_size"
-        custom:font="OpenSans-Regular.ttf"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+
+        <ImageView
+            android:id="@+id/food_logo"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:adjustViewBounds="true"
+            android:src="@drawable/food_icon" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/home_parking_alphed_bg" />
+
+
+        <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+            android:id="@+id/food_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/food_label"
+            android:textColor="@color/home_content_text_color"
+            android:textSize="@dimen/container_title_size"
+            android:textStyle="bold"
+            custom:font="OpenSans-Bold.ttf" />
+
+        <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/food_desc"
+            android:textColor="@color/home_content_text_color"
+            android:textSize="@dimen/container_content_size"
+            custom:font="OpenSans-Regular.ttf"
+            android:layout_below="@+id/food_logo"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+    </RelativeLayout>
 </LinearLayout>
