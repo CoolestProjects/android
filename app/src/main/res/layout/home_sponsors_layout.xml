@@ -107,7 +107,7 @@
                         android:id="@+id/symantec_logo"
                         style="@style/sponsorLogoStyle"
                         android:src="@drawable/symantec_logo" />
-
+<!-- TODO: Add Riot Logo -->
                     <ImageView
                         android:id="@+id/riot_logo"
                         style="@style/sponsorLogoStyle"
