@@ -10,12 +10,18 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.util.AttributeSet
+import android.view.MenuItem;
 import android.widget.FrameLayout
 import com.jakewharton.rxbinding.support.design.widget.itemSelections
+import com.jakewharton.rxbinding.view.selected
 import com.mttnow.coolestprojects.R
 import com.mttnow.coolestprojects.func.lazyView
 import com.mttnow.coolestprojects.screens.fragments.HomeFragment
+import com.mttnow.coolestprojects.screens.fragments.AboutFragment
 import com.mttnow.coolestprojects.screens.home.HomeActivity
+import android.support.annotation.NonNull
+
+
 
 /**
  * Compound view for the homescreen
@@ -50,6 +56,7 @@ class HomeView : FrameLayout {
 //  private val drawerLayout: DrawerLayout by lazyView { findViewById(R.id.home_drawer_layout) }
 //  private val navView: NavigationView by lazyView { findViewById(R.id.left_nav_drawer) }
  // private val toolbar: Toolbar by lazyView { findViewById(R.id.home_toolbar) }
+  private val bottomNav: BottomNavigationView by lazyView {findViewById(R.id.bottom_navigation)}
   private var fragmentManager: FragmentManager? = null
 
   private fun init(activity: AppCompatActivity, attrs: AttributeSet? = null) {
@@ -63,13 +70,34 @@ class HomeView : FrameLayout {
 //    drawerLayout.addDrawerListener(toggle)
 //    toggle.syncState()
 
+
+
+//    bottomNav.setOnNavigationItemSelectedListener(
+//            object : BottomNavigationView.OnNavigationItemSelectedListener {
+//              override fun onNavigationItemSelected(item: MenuItem): Boolean {
+//                when (item.getItemId()) {
+//                      R.id.nav_speakers -> SpeakersFragment()
+//                      R.id.nav_maps -> MapsFragment()
+//                      R.id.nav_stages -> StagesFragment()
+//                      R.id.nav_home -> HomeFragment()
+//                      R.id.nav_stages -> StagesFragment()
+//                      R.id.nav_sponsors -> SponsorsFragment()
+//                      R.id.nav_projects -> ProjectsFragment()
+//                      R.id.nav_about -> AboutFragment()
+//                      else -> null
+//                    }
+//                  .subscribe({ swapFragment(item) })
+//                }
+//                return true
+//              }
+//            })
     //Attach the home if not fragment is attached
     if (fragmentManager?.findFragmentByTag(FRAGMENT_TAG) == null) {
-      swapFragment(HomeFragment())
+      swapFragment(AboutFragment())
     }
   }
 
-//  fun getNavMenuClicks() = navView.itemSelections()
+  fun getBottomNavMenuSelection() = bottomNav.selectedItemId
 //
   fun swapFragment(fragment: Fragment?) {
 //    drawerLayout.closeDrawers()
@@ -92,11 +120,11 @@ class HomeView : FrameLayout {
 //    }
 
     //Back btn pressed with drawer closed and current fragment is not home, return to home
-//    if (fragmentManager?.findFragmentByTag(FRAGMENT_TAG) !is HomeFragment) {
-//      navView.menu.findItem(R.id.nav_home).isChecked = true
-//      swapFragment(HomeFragment())
-//      return false
-//    }
+    if (fragmentManager?.findFragmentByTag(FRAGMENT_TAG) !is HomeFragment) {
+      bottomNav.menu.findItem(R.id.action_home).isChecked = true
+      swapFragment(HomeFragment())
+      return false
+    }
     return true
   }
 

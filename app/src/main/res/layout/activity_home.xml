@@ -1,32 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- The main content view -->
-<RelativeLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_home"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.mttnow.coolestprojects.screens.home.HomeActivity">
+    android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
+    <RelativeLayout
+        android:id="@+id/activity_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_navigation"/>
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_navigation"/>
 
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        custom:itemBackground="@color/colorPrimary"
-        custom:itemIconTint="@color/colorPrimaryLight"
-        custom:itemTextColor="@color/colorPrimaryLight"
-        custom:menu="@menu/bottom_nav_menu" />
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            custom:itemBackground="@color/colorPrimary"
+            custom:itemIconTint="@color/colorPrimaryLight"
+            custom:itemTextColor="@color/colorPrimaryLight"
+            custom:menu="@menu/bottom_nav_menu" />
 
 
-</RelativeLayout>
+        </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>

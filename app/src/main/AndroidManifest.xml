@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity android:name=".screens.home.NavActivity">
+
+        </activity>
+
         <activity android:name=".screens.home.HomeActivity">
 
             <intent-filter>
@@ -23,7 +27,7 @@
 
         <activity android:name=".screens.CategoryActivity"/>
 
-        <activity android:name=".screens.NavActivity"/>
+
 
         <service android:name=".services.PreloadService"/>
 
