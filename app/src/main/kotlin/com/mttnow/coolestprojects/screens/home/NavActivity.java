@@ -1,4 +1,4 @@
-package com.mttnow.coolestprojects.screens;
+package com.mttnow.coolestprojects.screens.home;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -72,15 +72,17 @@ public class NavActivity extends AppCompatActivity {
                                 textAbout.setVisibility(View.GONE);
                                 break;
                             case R.id.action_about:
-                                textHome.setVisibility(View.GONE);
-                                textMaps.setVisibility(View.GONE);
-                                textHalls.setVisibility(View.GONE);
-                                textAbout.setVisibility(View.VISIBLE);
+                              //  textHome.setVisibility(View.GONE);
+                               // textMaps.setVisibility(View.GONE);
+                                //textHalls.setVisibility(View.GONE);
+                               // textAbout.setVisibility(View.VISIBLE);
                                 fragment = new AboutFragment();
                                 break;
                         }
                         final FragmentTransaction transaction = fragmentManager.beginTransaction();
-                        transaction.replace(R.id.fragment_container, fragment).commit();
+                        transaction.replace(R.id.fragment_container, fragment);
+                        transaction.addToBackStack(null);
+                        transaction.commit();
                         return true;
                     }
                 });
