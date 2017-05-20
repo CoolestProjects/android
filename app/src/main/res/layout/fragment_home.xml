@@ -63,7 +63,9 @@
 
         <include layout="@layout/home_food_layout"/>
 
-        <include layout="@layout/home_innovator_stage_layout"/>
+        <include layout="@layout/home_sponsors_layout"/>
+
+        <!--<include layout="@layout/home_innovator_stage_layout"/>-->
 
         <RelativeLayout
             android:layout_width="match_parent"
