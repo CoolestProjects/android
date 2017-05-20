@@ -76,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:src="@drawable/logo"/>
+                android:src="@drawable/coolest_projects_logo_small"/>
 
             <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
                 android:layout_width="wrap_content"
