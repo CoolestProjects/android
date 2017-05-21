@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="base_api_url">https://coolestprojectsapp.firebaseio.com/</string>
-    <string name="platform_api_url">https://register.coolestprojects.org/api/project/summary</string>
+    <string name="platform_api_url">https://dublin.coolestprojects.org/api/project/summary/2</string>
 </resources>
