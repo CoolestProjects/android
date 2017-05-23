@@ -25,6 +25,8 @@
 
         <service android:name=".services.PreloadService"/>
 
+        <service android:name=".services.BeaconManagerService" />
+
         <service
             android:name=".services.FirebaseTokenService">
             <intent-filter>
