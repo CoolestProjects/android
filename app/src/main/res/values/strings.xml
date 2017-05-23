@@ -37,4 +37,7 @@
     <string name="loading">Loading</string>
     <string name="error">Error loading data</string>
 
+    <string name="location_permission_request_title">Location Permissions</string>
+    <string name="location_permission_request_message">Coolest Projects needs to access your location so that we can tell you about the cool things nearby.</string>
+
 </resources>
