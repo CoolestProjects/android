@@ -38,6 +38,6 @@
     <string name="error">Error loading data</string>
 
     <string name="location_permission_request_title">Location Permissions</string>
-    <string name="location_permission_request_message">Coolest Projects needs to access your location so that we can tell you about the cool things nearby.</string>
+    <string name="location_permission_request_message">We use low-energy Bluetooth and iBeacon devices installed at the RDS Arena to find you inside the hall, and provide relevant information.</string>
 
 </resources>
