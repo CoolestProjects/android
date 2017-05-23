@@ -15,6 +15,7 @@ import com.mttnow.coolestprojects.screens.home.mvp.HomeView
 import javax.inject.Inject
 import android.content.DialogInterface
 import android.app.AlertDialog
+import com.mttnow.coolestprojects.R
 import com.mttnow.coolestprojects.services.BeaconManagerService
 
 
@@ -32,8 +33,8 @@ class HomeActivity : PresenterActivity() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)) {
                 AlertDialog.Builder(this)
-                        .setTitle("Location Permission")
-                        .setMessage("Location")
+                        .setTitle(R.string.location_permission_request_title)
+                        .setMessage(R.string.location_permission_request_message)
                         .setPositiveButton(android.R.string.ok, DialogInterface.OnClickListener { dialogInterface, i ->
                             //Prompt the user once explanation has been shown
                             ActivityCompat.requestPermissions(this@HomeActivity, arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), LOCATION_PERMISSION_REQUEST_ID)
