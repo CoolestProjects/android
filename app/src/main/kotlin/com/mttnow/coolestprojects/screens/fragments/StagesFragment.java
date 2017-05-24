@@ -36,7 +36,7 @@ public class StagesFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View contentView = inflater.inflate(R.layout.fragment_stages, container, false);
+        View contentView = inflater.inflate(R.layout.fragment_stage_selection, container, false);
         return contentView;
     }
 
