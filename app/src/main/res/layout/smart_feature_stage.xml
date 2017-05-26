@@ -7,7 +7,8 @@
     android:orientation="vertical"
     android:background="@color/home_content_bg"
     android:paddingTop="@dimen/home_desc_vertical_padding"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:clickable="true">
 
     <RelativeLayout
         style="@style/contentWhiteBoxRoundedCornerStyle"
