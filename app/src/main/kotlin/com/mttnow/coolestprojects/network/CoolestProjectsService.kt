@@ -19,6 +19,9 @@ interface CoolestProjectsService {
   @GET("summits.json")
   fun summits() : Observable<List<Summit>>
 
+  @GET("halls.json")
+  fun halls() : Observable<List<Hall>>
+
   @GET("sponsors.json")
   fun sponsors() : Observable<List<SponsorTier>>
 

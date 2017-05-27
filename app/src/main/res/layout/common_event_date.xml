@@ -26,5 +26,11 @@
         android:textStyle="bold"
         android:text="@string/home_desc_location"
         custom:font="OpenSans-Bold.ttf"/>
-
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/content_container_margin"
+        android:layout_marginStart="@dimen/content_container_margin"
+        android:layout_marginEnd="@dimen/content_container_margin"
+        android:background="@color/content_divider_color"/>
 </LinearLayout>

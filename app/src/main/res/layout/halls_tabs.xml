@@ -7,13 +7,18 @@
 
 
     <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-        android:id="@+id/stage_1"
-        style="@style/stgeBtnStyle"
+        android:id="@+id/hall_iot"
+        style="@style/hallsBtnStyle"
         custom:font="OpenSans-Regular.ttf"/>
 
     <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-        android:id="@+id/stage_2"
-        style="@style/stgeBtnStyle"
+        android:id="@+id/hall_steam"
+        style="@style/hallsBtnStyle"
+        custom:font="OpenSans-Regular.ttf"/>
+
+    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+        android:id="@+id/hall_chill"
+        style="@style/hallsBtnStyle"
         custom:font="OpenSans-Regular.ttf"/>
 
 
