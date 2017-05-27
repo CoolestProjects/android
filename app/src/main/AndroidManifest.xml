@@ -27,6 +27,8 @@
 
         <activity android:name=".screens.CategoryActivity"/>
 
+
+
         <service android:name=".services.PreloadService"/>
 
         <service android:name=".services.BeaconManagerService" />

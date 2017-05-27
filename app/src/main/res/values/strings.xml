@@ -40,4 +40,10 @@
     <string name="location_permission_request_title">Location Permissions</string>
     <string name="location_permission_request_message">We use low-energy Bluetooth and iBeacon devices installed at the RDS Arena to find you inside the hall, and provide relevant information.</string>
 
+    <!-- Navigation Bar -->
+    <string name="nav_home">Home</string>
+    <string name="nav_map">Maps</string>
+    <string name="nav_halls">Halls</string>
+    <string name="nav_about">About</string>
+
 </resources>
