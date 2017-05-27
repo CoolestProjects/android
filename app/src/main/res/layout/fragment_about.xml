@@ -1,45 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/white"
-            android:fillViewport="true">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/about_first_pic"/>
+        <include layout="@layout/common_header_layout"/>
+        <include layout="@layout/common_event_date"/>
 
-        <WebView
-            android:id="@+id/first_desc_html"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        <include layout="@layout/about_section"/>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/about_second_pic"/>
 
-        <WebView
-            android:id="@+id/second_desc_html"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        <!--<include layout="@layout/home_innovator_stage_layout"/>-->
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/about_third_pic"/>
-
-        <WebView
-            android:id="@+id/third_desc_html"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
+        <include layout="@layout/common_footer_layout"/>
     </LinearLayout>
+
 </ScrollView>
+
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/about_first_pic"/>-->
+
+        <!--<WebView-->
+            <!--android:id="@+id/first_desc_html"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"/>-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/about_second_pic"/>-->
+
+        <!--<WebView-->
+            <!--android:id="@+id/second_desc_html"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"/>-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/about_third_pic"/>-->
+
+        <!--<WebView-->
+            <!--android:id="@+id/third_desc_html"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"/>-->
+
+
 
