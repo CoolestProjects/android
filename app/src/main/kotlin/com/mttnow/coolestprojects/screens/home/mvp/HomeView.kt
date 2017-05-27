@@ -60,7 +60,7 @@ class HomeView : FrameLayout {
     }
   }
 
-  fun getSelectedItem() = bottom_navigation.selectedItemId
+  fun getBottomNav() = bottom_navigation
 
   fun swapFragment(fragment: Fragment?) {
 
