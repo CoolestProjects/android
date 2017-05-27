@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.mttnow.coolestprojects.R;
+import com.mttnow.coolestprojects.models.Hall;
 import com.mttnow.coolestprojects.models.Halls;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class StagesFragment extends BaseFragment {
     private TextView mStage1Btn;
     private TextView mStage2Btn;
     private List<TextView> mStagesBtns = new ArrayList<>();
-    private List<Halls> halls;
+    private List<Hall> halls;
 
     private ListView mStagesLv;
 
@@ -42,8 +43,8 @@ public class StagesFragment extends BaseFragment {
         mStage2Btn = (TextView) view.findViewById(R.id.stage_2);
         mStagesLv = (ListView) view.findViewById(R.id.stages_lv);
         mStagesBtns.add(mStage1Btn);
-        mStage1Btn.setText("Stem");
-        mStage2Btn.setText("Smart Feature");
+        mStage1Btn.setText("STEAM");
+        mStage2Btn.setText("Smart Futures");
 
 
     }
@@ -54,10 +55,10 @@ public class StagesFragment extends BaseFragment {
         return coolestProjectsService.halls()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(new Action1<List<Halls>>() {
+            .subscribe(new Action1<List<Hall>>() {
 
                 @Override
-                public void call(List<Halls> mhalls) {
+                public void call(List<Hall> mhalls) {
                     halls = mhalls;
                 }
             }, new Action1<Throwable>() {
@@ -67,7 +68,7 @@ public class StagesFragment extends BaseFragment {
                 }
             });
     }
-    private void setupListeners(final List<Halls> halls) {
+    private void setupListeners(final List<Hall> halls) {
 
         mStage1Btn.setOnClickListener(new View.OnClickListener() {
             @Override
