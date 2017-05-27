@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/home_content_bg"
+    android:paddingTop="@dimen/home_desc_vertical_padding">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/contentWhiteBoxRoundedCornerStyle"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/sponsors_logo"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/sponsors_icon"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/home_alphed_bg"/>
+
+
+        <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+            android:id="@+id/sponsor_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/home_sponsors_label"
+            android:textStyle="bold"
+            android:textColor="@color/home_content_text_color"
+            android:textSize="@dimen/container_title_size"
+            custom:font="OpenSans-Bold.ttf"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/content_container_margin">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TableRow
+                    android:id="@+id/diamondRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:padding="@dimen/content_inner_container_padding">
+
+                    <ImageView
+                        android:id="@+id/intel_logo"
+                        style="@style/sponsorLogoStyle"
+                        android:src="@drawable/intel_logo" />
+
+                    <ImageView
+                        android:id="@+id/microsoft_logo"
+                        style="@style/sponsorLogoStyle"
+                        android:src="@drawable/microsoft_logo" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/platinumRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" >
+
+                    <ImageView
+                        android:id="@+id/openet_logo"
+                        style="@style/sponsorLogoStyle"
+                        android:src="@drawable/openet_logo" />
+
+                    <ImageView
+                        android:id="@+id/rte_logo"
+                        style="@style/sponsorLogoStyle"
+                        android:src="@drawable/rte_logo" />
+
+                    <ImageView
+                        android:id="@+id/mastercard_logo"
+                        style="@style/sponsorLogoStyle"
+                        android:src="@drawable/mastercard_logo" />
+
+                    <ImageView
+                        android:id="@+id/boi_logo"
+                        style="@style/sponsorLogoStyle"
+                        android:src="@drawable/boi_logo" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/platinumRow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" >
+
+                    <ImageView
+                        android:id="@+id/symantec_logo"
+                        style="@style/sponsorLogoStyle"
+                        android:src="@drawable/symantec_logo" />
+
+                    <ImageView
+                        android:id="@+id/riot_logo"
+                        style="@style/sponsorLogoStyle"
+                        android:src="@drawable/riot_games_logo" />
+
+                    <ImageView
+                        android:id="@+id/tdl_logo"
+                        style="@style/sponsorLogoStyle"
+                        android:src="@drawable/travelport_digital" />
+
+                    <ImageView
+                        android:id="@+id/folens_logo"
+                        style="@style/sponsorLogoStyle"
+                        android:src="@drawable/folens_logo" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/goldRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" >
+
+                    <ImageView
+                        android:id="@+id/virgin_media_logo"
+                        style="@style/sponsorLogoStyle"
+                        android:src="@drawable/virgin_media_logo" />
+
+                    <ImageView
+                        android:id="@+id/accenture_logo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/accenture_logo" />
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/liberty_logo"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:src="@drawable/liberty_logo" />-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/workday_logo"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:src="@drawable/workday_logo" />-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/zalando_logo"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:src="@drawable/zalando_logo" />-->
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
