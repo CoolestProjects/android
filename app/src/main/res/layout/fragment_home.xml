@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:custom="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
@@ -11,51 +10,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <include layout="@layout/common_header_layout"/>
+        <include layout="@layout/common_event_date"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/home_header"/>
-
-            <ImageView
-                android:id="@+id/home_logo"
-                android:layout_width="@dimen/home_logo_width"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/home_title_top_margin"
-                android:layout_marginLeft="@dimen/home_title_left_margin"
-                android:adjustViewBounds="true"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/home_logo"/>
-
-
-            <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-                android:layout_width="@dimen/home_logo_text_width"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/home_logo"
-                android:text="@string/home_title"
-                android:textColor="@color/colorPrimaryLight"
-                android:layout_marginLeft="@dimen/home_title_left_margin"
-                android:layout_marginRight="@dimen/home_title_right_margin"
-                android:layout_marginTop="@dimen/home_title_top_margin"
-                android:textSize="@dimen/home_title_size"
-                android:textAlignment="center"
-                custom:font="OpenSans-Regular.ttf"/>
-
-
-        </RelativeLayout>
-        <include layout="@layout/home_description"/>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="2dp"
-            android:layout_marginLeft="@dimen/content_divider_margin"
-            android:layout_marginRight="@dimen/content_divider_margin"
-            android:background="@color/content_divider_color"/>
+        <!--<View-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="2dp"-->
+            <!--android:layout_marginLeft="@dimen/content_divider_margin"-->
+            <!--android:layout_marginRight="@dimen/content_divider_margin"-->
+            <!--android:background="@color/content_divider_color"/>-->
 
         <include layout="@layout/home_times"/>
 
@@ -67,28 +30,7 @@
 
         <!--<include layout="@layout/home_innovator_stage_layout"/>-->
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/footer_height">
-
-            <ImageView
-                android:id="@+id/footer_logo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:src="@drawable/coolest_projects_logo_small"/>
-
-            <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/footer_logo"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/copyright_label_margin_top"
-                android:text="@string/copyright_label"
-                android:textSize="@dimen/copyright_label_size"
-                custom:font="OpenSans-Regular.ttf"/>
-
-        </RelativeLayout>
+        <include layout="@layout/common_footer_layout"/>
     </LinearLayout>
 
 </ScrollView>
