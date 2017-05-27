@@ -15,19 +15,25 @@ import com.mttnow.coolestprojects.screens.home.mvp.HomeView
 import javax.inject.Inject
 import android.content.DialogInterface
 import android.app.AlertDialog
+
 import com.mttnow.coolestprojects.R
+import com.mttnow.coolestprojects.screens.fragments.*
 import com.mttnow.coolestprojects.services.BeaconManagerService
+import kotlinx.android.synthetic.main.activity_home.*
+
 
 
 class HomeActivity : PresenterActivity() {
 
     val LOCATION_PERMISSION_REQUEST_ID: Int = 99
 
+
     @Inject
     lateinit var homeView: HomeView
 
     @Inject
     lateinit var hompresenter: HomePresenter
+
 
     fun checkLocationPermission(): Boolean {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -59,8 +65,24 @@ class HomeActivity : PresenterActivity() {
                 .build().intject(this)
 
         setContentView(homeView)
+
+        bottom_navigation.setOnNavigationItemSelectedListener {
+            when (homeView.getSelectedItem()) {
+                R.id.action_home -> homeView.swapFragment(HomeFragment())
+                R.id.action_halls ->  homeView.swapFragment(StagesFragment())
+                R.id.action_maps ->  homeView.swapFragment(MapsFragment())
+                R.id.action_about ->  homeView.swapFragment(AboutFragment())
+                else -> null
+            }
+
+            true
+        }
+
         return hompresenter
     }
+
+
+
 
     override fun onBackPressed() {
         if (homeView.onBackPressed()) {

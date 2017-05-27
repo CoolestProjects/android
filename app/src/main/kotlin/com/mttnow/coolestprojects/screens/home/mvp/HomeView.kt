@@ -1,7 +1,6 @@
 package com.mttnow.coolestprojects.screens.home.mvp
 
 import android.support.design.widget.NavigationView
-import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.view.GravityCompat
@@ -10,18 +9,13 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.util.AttributeSet
-import android.view.MenuItem;
 import android.widget.FrameLayout
 import com.jakewharton.rxbinding.support.design.widget.itemSelections
-import com.jakewharton.rxbinding.view.selected
 import com.mttnow.coolestprojects.R
 import com.mttnow.coolestprojects.func.lazyView
 import com.mttnow.coolestprojects.screens.fragments.HomeFragment
-import com.mttnow.coolestprojects.screens.fragments.AboutFragment
 import com.mttnow.coolestprojects.screens.home.HomeActivity
-import android.support.annotation.NonNull
-
-
+import kotlinx.android.synthetic.main.activity_home.view.*
 
 /**
  * Compound view for the homescreen
@@ -53,54 +47,23 @@ class HomeView : FrameLayout {
     init(context, attrs)
   }
 
-//  private val drawerLayout: DrawerLayout by lazyView { findViewById(R.id.home_drawer_layout) }
-//  private val navView: NavigationView by lazyView { findViewById(R.id.left_nav_drawer) }
- // private val toolbar: Toolbar by lazyView { findViewById(R.id.home_toolbar) }
-  private val bottomNav: BottomNavigationView by lazyView {findViewById(R.id.bottom_navigation)}
   private var fragmentManager: FragmentManager? = null
 
   private fun init(activity: AppCompatActivity, attrs: AttributeSet? = null) {
     inflate(context, R.layout.activity_home, this)
     fragmentManager = activity.supportFragmentManager
 
-//    val toggle = ActionBarDrawerToggle(activity,
-//        drawerLayout,
-//        R.string.navigation_drawer_open,
-//        R.string.navigation_drawer_close)
-//    drawerLayout.addDrawerListener(toggle)
-//    toggle.syncState()
-
-
-
-//    bottomNav.setOnNavigationItemSelectedListener(
-//            object : BottomNavigationView.OnNavigationItemSelectedListener {
-//              override fun onNavigationItemSelected(item: MenuItem): Boolean {
-//                when (item.getItemId()) {
-//                      R.id.nav_speakers -> SpeakersFragment()
-//                      R.id.nav_maps -> MapsFragment()
-//                      R.id.nav_stages -> StagesFragment()
-//                      R.id.nav_home -> HomeFragment()
-//                      R.id.nav_stages -> StagesFragment()
-//                      R.id.nav_sponsors -> SponsorsFragment()
-//                      R.id.nav_projects -> ProjectsFragment()
-//                      R.id.nav_about -> AboutFragment()
-//                      else -> null
-//                    }
-//                  .subscribe({ swapFragment(item) })
-//                }
-//                return true
-//              }
-//            })
     //Attach the home if not fragment is attached
     if (fragmentManager?.findFragmentByTag(FRAGMENT_TAG) == null) {
-      swapFragment(AboutFragment())
+      swapFragment(HomeFragment())
+
     }
   }
 
-  fun getBottomNavMenuSelection() = bottomNav.selectedItemId
-//
+  fun getSelectedItem() = bottom_navigation.selectedItemId
+
   fun swapFragment(fragment: Fragment?) {
-//    drawerLayout.closeDrawers()
+
     if (fragment == null) {
       return
     } else {
@@ -114,14 +77,10 @@ class HomeView : FrameLayout {
 
   fun onBackPressed(): Boolean {
 
-//    if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-//      drawerLayout.closeDrawer(GravityCompat.START)
-//      return false
-//    }
 
     //Back btn pressed with drawer closed and current fragment is not home, return to home
     if (fragmentManager?.findFragmentByTag(FRAGMENT_TAG) !is HomeFragment) {
-      bottomNav.menu.findItem(R.id.action_home).isChecked = true
+
       swapFragment(HomeFragment())
       return false
     }
