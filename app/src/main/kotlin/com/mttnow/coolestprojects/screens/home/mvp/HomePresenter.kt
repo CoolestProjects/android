@@ -21,7 +21,6 @@ class HomePresenter(private val homeView: HomeView,
         .map { it.itemId }
         .map {
           when (it) {
-            R.id.nav_speakers -> SpeakersFragment()
             R.id.nav_maps -> MapsFragment()
             R.id.nav_stages -> StagesFragment()
             R.id.nav_home -> HomeFragment()
