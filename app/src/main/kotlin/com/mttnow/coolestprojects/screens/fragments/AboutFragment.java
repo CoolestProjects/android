@@ -14,9 +14,9 @@ import rx.Subscription;
 
 public class AboutFragment extends BaseFragment {
 
-    private WebView mFirstDescrHtml;
-    private WebView mSecondDescrHtml;
-    private WebView mThirdDescrHtml;
+//    private WebView mFirstDescrHtml;
+//    private WebView mSecondDescrHtml;
+//    private WebView mThirdDescrHtml;
 
     public static AboutFragment newInstance() {
         return new AboutFragment();
@@ -32,20 +32,20 @@ public class AboutFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mFirstDescrHtml = (WebView) view.findViewById(R.id.first_desc_html);
-        mSecondDescrHtml = (WebView) view.findViewById(R.id.second_desc_html);
-        mThirdDescrHtml = (WebView) view.findViewById(R.id.third_desc_html);
+//        mFirstDescrHtml = (WebView) view.findViewById(R.id.first_desc_html);
+//        mSecondDescrHtml = (WebView) view.findViewById(R.id.second_desc_html);
+//        mThirdDescrHtml = (WebView) view.findViewById(R.id.third_desc_html);
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         String firstHtml = getString(R.string.about_first_descr);
-        mFirstDescrHtml.loadDataWithBaseURL(null, firstHtml, "text/html", "utf-8", null);
-        String secondHtml = getString(R.string.about_second_descr);
-        mSecondDescrHtml.loadDataWithBaseURL(null, secondHtml, "text/html", "utf-8", null);
-        String thirdHtml = getString(R.string.about_third_descr);
-        mThirdDescrHtml.loadDataWithBaseURL(null, thirdHtml, "text/html", "utf-8", null);
+//        mFirstDescrHtml.loadDataWithBaseURL(null, firstHtml, "text/html", "utf-8", null);
+//        String secondHtml = getString(R.string.about_second_descr);
+//        mSecondDescrHtml.loadDataWithBaseURL(null, secondHtml, "text/html", "utf-8", null);
+//        String thirdHtml = getString(R.string.about_third_descr);
+//        mThirdDescrHtml.loadDataWithBaseURL(null, thirdHtml, "text/html", "utf-8", null);
     }
 
     @Override

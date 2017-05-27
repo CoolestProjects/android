@@ -53,5 +53,11 @@
     <string name="nav_halls">Halls</string>
     <string name="nav_about">About</string>
 
+    <!-- About -->
+    <string name="about_label">ABOUT</string>
+    <string name="about_desc">CoderDojo Coolest Projects is a world leading showcase that inspires the next generation of digital creators, innovators, changemakers and entrepreneurs. ​The CoderDojo ​Coolest Projects Showcase offers young people from the international CoderDojo Community the opportunity to present the projects they have created at their local CoderDojo. It is both a competition and exhibition to showcase, inspire and enable innovation, creativity, entrepreneurship and technology skills in youth innovators aged 7 – 17.</string>
+    <string name="about_desc2">2017 sees CoderDojo Coolest Projects grow to a global initiative with CoderDojo Ninjas from all over the world descending upon the RDS, Dublin on Saturday 17th June 2017 to present their apps, websites, games and hardware projects. We will have over 1,000+ Ninjas from Ireland, Europe, USA, Japan and Australia showcase their projects at the CoderDojo Coolest Projects Showcase 2017!</string>
+    <string name="about_desc3">CoderDojo Coolest Projects has seen young people deliver projects across the latest technologies, from Cloud, to Internet of Things (IoT) to Virtual Reality and has the potential to drive vital digital skills across a European platform.</string>
+
     <string name="action_all_sponsors">All 2017 Sponsors</string>
 </resources>
