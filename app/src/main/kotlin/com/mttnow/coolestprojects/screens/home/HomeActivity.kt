@@ -21,7 +21,15 @@ import com.mttnow.coolestprojects.screens.fragments.*
 import com.mttnow.coolestprojects.services.BeaconManagerService
 import kotlinx.android.synthetic.main.activity_home.*
 import android.support.design.widget.BottomNavigationView
+import android.text.method.LinkMovementMethod
 import android.view.MenuItem
+import android.view.View
+import android.widget.Button
+import kotlinx.android.synthetic.main.home_parking_layout.*
+import kotlinx.android.synthetic.main.home_sponsors_layout.*
+import android.widget.TextView
+
+
 
 
 class HomeActivity : PresenterActivity() {
@@ -81,10 +89,9 @@ class HomeActivity : PresenterActivity() {
                 }
             })
 
+
         return hompresenter
     }
-
-
 
 
     override fun onBackPressed() {
@@ -109,5 +116,14 @@ class HomeActivity : PresenterActivity() {
                 }
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        load_sponsors_btn?.setOnClickListener {
+            homeView.swapFragment(SponsorsFragment())
+        }
+
+        parking_desc?.movementMethod = LinkMovementMethod.getInstance()
     }
 }

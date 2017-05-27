@@ -4,7 +4,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+       >
 
 <ScrollView
     android:layout_width="match_parent"
@@ -90,9 +91,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/footer_logo"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/copyright_label_margin_top"
                 android:text="@string/copyright_label"
                 android:textSize="@dimen/copyright_label_size"
+
                 custom:font="OpenSans-Regular.ttf"/>
 
 
