@@ -11,4 +11,5 @@ data class BeaconDevice(val name: String,
 data class BeaconRegionMessage(val regionId: String,
                                val version: String,
                                val title: String,
-                               val message: String)
+                               val message: String,
+                               val url: String)

@@ -15,6 +15,7 @@ import com.mttnow.coolestprojects.R
 import com.mttnow.coolestprojects.func.lazyView
 import com.mttnow.coolestprojects.screens.fragments.HomeFragment
 import com.mttnow.coolestprojects.screens.home.HomeActivity
+import kotlinx.android.synthetic.main.activity_home.view.*
 
 /**
  * Compound view for the homescreen
@@ -46,34 +47,23 @@ class HomeView : FrameLayout {
     init(context, attrs)
   }
 
-  private val drawerLayout: DrawerLayout by lazyView { findViewById(R.id.home_drawer_layout) }
-  private val navView: NavigationView by lazyView { findViewById(R.id.left_nav_drawer) }
-  private val toolbar: Toolbar by lazyView { findViewById(R.id.home_toolbar) }
   private var fragmentManager: FragmentManager? = null
 
   private fun init(activity: AppCompatActivity, attrs: AttributeSet? = null) {
     inflate(context, R.layout.activity_home, this)
     fragmentManager = activity.supportFragmentManager
 
-    val toggle = ActionBarDrawerToggle(activity,
-        drawerLayout,
-        toolbar,
-        R.string.navigation_drawer_open,
-        R.string.navigation_drawer_close)
-    drawerLayout.addDrawerListener(toggle)
-    toggle.syncState()
-
     //Attach the home if not fragment is attached
     if (fragmentManager?.findFragmentByTag(FRAGMENT_TAG) == null) {
       swapFragment(HomeFragment())
-      navView.menu.findItem(R.id.nav_home).isChecked = true
+
     }
   }
 
-  fun getNavMenuClicks() = navView.itemSelections()
+  fun getBottomNav() = bottom_navigation
 
   fun swapFragment(fragment: Fragment?) {
-    drawerLayout.closeDrawers()
+
     if (fragment == null) {
       return
     } else {
@@ -87,14 +77,10 @@ class HomeView : FrameLayout {
 
   fun onBackPressed(): Boolean {
 
-    if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-      drawerLayout.closeDrawer(GravityCompat.START)
-      return false
-    }
 
     //Back btn pressed with drawer closed and current fragment is not home, return to home
     if (fragmentManager?.findFragmentByTag(FRAGMENT_TAG) !is HomeFragment) {
-      navView.menu.findItem(R.id.nav_home).isChecked = true
+
       swapFragment(HomeFragment())
       return false
     }

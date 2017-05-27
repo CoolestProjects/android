@@ -58,7 +58,7 @@ public class ProjectsAdapter extends BaseAdapter {
         holder.name.setText(summary.getName());
         holder.desc.setText(summary.getDescription());
         holder.category.setText(summary.getCategory());
-        holder.desk.setText(summary.getDeskNumber());
+        holder.desk.setText(summary.getDeskNumber() != null? summary.getDeskNumber(): "TBC");
         holder.doyo.setText(summary.getCoderdojo());
 
         return rowView;

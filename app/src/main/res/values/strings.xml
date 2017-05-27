@@ -13,8 +13,8 @@
 
 
     <string name="rds_map_label">RDS MAP</string>
-    <string name="parking_label">parking</string>
-    <string name="home_parking_label">PARKING</string>
+    <string name="parking_label">travel</string>
+    <string name="home_parking_label">TRAVEL</string>
 
     <string name="home_sponsors_label">SPONSORS</string>
 
@@ -22,9 +22,9 @@
     <string name="about_second_descr"><![CDATA[<p>These digital skills are vital if Ireland, and indeed Europe, is to address the coding skills shortage which has led to in excess of 500,000 open job postings across the continent in 2015.</p> <p>Coolest Projects has seen young people deliver projects across the latest technologies, from Cloud, to Internet of Things (IoT) to Virtual Reality and has the potential to drive vital digital skills across a European platform.</p> <p>Last year&#8217;s Coolest Projects awards featured more than 500 entries from young people across Ireland and beyond and attracted more than 10,000 spectators to witness demonstrations of this year&#8217;s submissions. And we estimate that we will have over 800 entries to the 2017 awards and up to 15,000 attendees.</p>]]></string>
     <string name="about_third_descr"><![CDATA[<p>Although the showcase event is held in Ballsbridge, the awards are a Europe-wide event, with participants from the UK, Poland, Spain, Italy, Portugal, Belgium, Holland, Romania and Turkey. CoderDojo currently operates in 16 European countries and by 2017 our target is to have Coolest Projects from every European country with a CoderDojo involved.</p>]]></string>
     <string name="event_times">Event Times</string>
-    <string name="event_times_descr"><![CDATA[09:30 Doors open to the public.\n10:00 Welcome address on the Main Stage.\n11:00 ]]></string>
+    <string name="event_times_descr"><![CDATA[09:00 Doors open to the public.\n09:30 Opening Ceremony\n10:00 Judging Commences\n13:30 Lunch\n16:30 Awards Ceremony\n17:30 Event Closes :( ]]></string>
     <string name="sponsored_label">SPONSORED BY</string>
-    <string name="home_parking_desc">The RDS is well served by public transport.\nBuses directly outside: 4,7,8 and 18. Buses 5 min walk from the RDS: 46a,145\nDART: Sandymount and Lansdowne Stations are 5 minutes away\nSee http://www.irishrail.ie/about-us/dart-commuter and http://www.dublinbus.ie for more information.\n\nParking is available in RDS, Simmonscourt for all visitors at a cost of €6 for the day. For directions checkout http://www.rds.ie \nNOTE: There will be no parking in main RDS so please go straight to Simmonscourt entrance.</string>
+    <string name="home_parking_desc">The RDS is well served by public transport.\nBuses directly outside: 4,7,8 and 18. Buses 5 min walk from the RDS: 46a,145\nDART: Sandymount and Lansdowne Stations are 5 minutes away\n\n\nParking is available in RDS, Simmonscourt for all visitors. <a href="http://coolestprojects.org/travel-to-the-event/">See our Website for all Travel information</a></string>
     <string name="food_label">FOOD</string>
     <string name="food_desc"><![CDATA[Feel free to bring a packed lunch if desired. Do bring a bottle of water.\n\nGeneral Public: There will also be food trucks and stalls at the event where you can purchase food and drinks. See the Map for more details on location of food at the event]]></string>
     <string name="copyright_label">COPYRIGHT 2017</string>
@@ -39,8 +39,17 @@
 
     <string name="estimote_app_id">test-app-alessandro-la5</string>
     <string name="estimote_app_token">15b3bbccf4c9c54dac1dc26e04885fad</string>
+    <string name="location_permission_request_title">Location Permissions</string>
+    <string name="location_permission_request_message">We use low-energy Bluetooth and iBeacon devices installed at the RDS Arena to find you inside the hall, and provide relevant information.</string>
 
     <!-- Halls -->
     <string name="halls_label">Halls</string>
 
+    <!-- Navigation Bar -->
+    <string name="nav_home">Home</string>
+    <string name="nav_map">Maps</string>
+    <string name="nav_halls">Halls</string>
+    <string name="nav_about">About</string>
+
+    <string name="action_all_sponsors">All 2017 Sponsors</string>
 </resources>
