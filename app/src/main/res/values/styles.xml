@@ -70,6 +70,11 @@
         <item name="android:listPreferredItemHeightSmall">40dp</item><!-- menu item height-->
     </style>
 
+    <style name="PrimaryButton" parent="Theme.AppCompat">
+        <item name="colorButtonNormal">@color/content_divider_color</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorPrimaryLight</item>
+    </style>
     <!-- Menu Navigation -->
 
 </resources>

@@ -41,7 +41,7 @@
     <dimen name="food_desc_padding">20dp</dimen>
     <dimen name="food_label_margin_top">20dp</dimen>
     <dimen name="copyright_label_margin_top">12dp</dimen>
-    <dimen name="footer_height">110dp</dimen>
+    <dimen name="footer_height">130dp</dimen>
     <dimen name="copyright_label_size">14dp</dimen>
     <dimen name="sponsor_home_padding_bottom">20dp</dimen>
     <dimen name="innovator_stage_margin">30dp</dimen>
@@ -50,6 +50,7 @@
     <dimen name="speaker_img_margin">14dp</dimen>
     <dimen name="speaker_name_margin_top">16dp</dimen>
     <dimen name="sponsor_logo_padding">5dip</dimen>
+    <dimen name="home_margin_bottom">60dp</dimen>
 
     <!-- Halls -->
     <dimen name="speaker_summit_margin_bottom">20dp</dimen>

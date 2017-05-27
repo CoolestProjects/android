@@ -163,8 +163,23 @@
                         <!--android:layout_weight="1"-->
                         <!--android:src="@drawable/zalando_logo" />-->
                 </TableRow>
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/load_sponsors_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/action_all_sponsors"
+                        android:theme="@style/PrimaryButton"
+                        android:clickable="true" />
+                </TableRow>
 
             </TableLayout>
+
         </LinearLayout>
+
     </RelativeLayout>
+
 </LinearLayout>
