@@ -13,13 +13,6 @@
         <include layout="@layout/common_header_layout"/>
         <include layout="@layout/common_event_date"/>
 
-        <!--<View-->
-            <!--android:layout_width="fill_parent"-->
-            <!--android:layout_height="2dp"-->
-            <!--android:layout_marginLeft="@dimen/content_divider_margin"-->
-            <!--android:layout_marginRight="@dimen/content_divider_margin"-->
-            <!--android:background="@color/content_divider_color"/>-->
-
         <include layout="@layout/home_times"/>
 
         <include layout="@layout/home_parking_layout"/>
