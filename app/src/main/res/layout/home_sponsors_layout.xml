@@ -107,11 +107,11 @@
                         android:id="@+id/symantec_logo"
                         style="@style/sponsorLogoStyle"
                         android:src="@drawable/symantec_logo" />
-<!-- TODO: Add Riot Logo -->
+
                     <ImageView
                         android:id="@+id/riot_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/symantec_logo" />
+                        android:src="@drawable/riot_games_logo" />
 
                     <ImageView
                         android:id="@+id/tdl_logo"
@@ -135,12 +135,12 @@
                         style="@style/sponsorLogoStyle"
                         android:src="@drawable/virgin_media_logo" />
 
-                    <!--<ImageView-->
-                        <!--android:id="@+id/accenture_logo"-->
-                        <!--android:layout_width="0dp"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_weight="1"-->
-                        <!--android:src="@drawable/accenture_logo" />-->
+                    <ImageView
+                        android:id="@+id/accenture_logo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/accenture_logo" />
 
                     <!--<ImageView-->
                         <!--android:id="@+id/liberty_logo"-->
@@ -163,8 +163,23 @@
                         <!--android:layout_weight="1"-->
                         <!--android:src="@drawable/zalando_logo" />-->
                 </TableRow>
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/load_sponsors_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/action_all_sponsors"
+                        android:theme="@style/PrimaryButton"
+                        android:clickable="true" />
+                </TableRow>
 
             </TableLayout>
+
         </LinearLayout>
+
     </RelativeLayout>
+
 </LinearLayout>

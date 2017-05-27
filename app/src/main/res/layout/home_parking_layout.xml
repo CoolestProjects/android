@@ -43,15 +43,16 @@
             custom:font="OpenSans-Bold.ttf"/>
 
         <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+            android:id="@+id/parking_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="@string/home_parking_desc"
             android:textColor="@color/home_content_text_color"
             android:textSize="@dimen/container_content_size"
+
             custom:font="OpenSans-Regular.ttf"
             android:layout_below="@+id/parking_logo"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
 

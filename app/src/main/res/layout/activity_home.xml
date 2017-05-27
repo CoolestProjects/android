@@ -1,60 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- The main content view -->
-<LinearLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/home_toolbar"
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/black"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/home_margin_bottom"
+        custom:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior" />
 
-        <ImageView
-            android:id="@+id/icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/logo"/>
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/home_title_left_margin"
-            android:layout_marginRight="@dimen/home_title_right_margin"
-            android:layout_gravity="center"
-            android:textAllCaps="true"
-            android:textColor="@color/nav_view_item_selected"
-            android:textSize="@dimen/title_size"
-            android:visibility="gone"/>
-    </android.support.v7.widget.Toolbar>
-
-
-    <android.support.v4.widget.DrawerLayout
-        android:id="@+id/home_drawer_layout"
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#ffffff"
 
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+        custom:menu="@menu/bottom_nav_menu"/>
 
 
-        <android.support.design.widget.NavigationView
-            android:id="@+id/left_nav_drawer"
-            android:layout_width="240dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:background="#111"
-            app:itemTextColor="@color/nav_view_item"
-            app:menu="@menu/drawer_menu"/>
-
-    </android.support.v4.widget.DrawerLayout>
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

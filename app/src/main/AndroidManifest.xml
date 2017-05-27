@@ -2,8 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.mttnow.coolestprojects">
 
-
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
+
     <application
         android:name=".app.CoolestProjectsApp"
         android:allowBackup="true"
@@ -23,7 +27,11 @@
 
         <activity android:name=".screens.CategoryActivity"/>
 
+
+
         <service android:name=".services.PreloadService"/>
+
+        <service android:name=".services.BeaconManagerService" />
 
         <service
             android:name=".services.FirebaseTokenService">
