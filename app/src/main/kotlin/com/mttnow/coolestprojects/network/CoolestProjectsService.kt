@@ -5,14 +5,6 @@ import retrofit2.http.GET
 import retrofit2.http.Url
 import rx.Observable
 
-/*
-* https://coolestprojectsapp.firebaseio.com/speakers.json
-https://coolestprojectsapp.firebaseio.com/sponsors.json?orderBy="order"
-https://coolestprojectsapp.firebaseio.com/summits.json
-https://register.coolestprojects.org/api/project/summary*/
-
-val SUMMARIES_URL = "https://register.coolestprojects.org/api/project/summary"
-
 interface CoolestProjectsService {
 
   @GET("regions.json")

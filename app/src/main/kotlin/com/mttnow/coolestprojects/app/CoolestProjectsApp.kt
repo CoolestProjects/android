@@ -3,8 +3,6 @@ package com.mttnow.coolestprojects.app
 import android.app.Activity
 import android.app.Application
 import android.app.Service
-import com.estimote.sdk.EstimoteSDK
-import com.mttnow.coolestprojects.R
 import com.mttnow.coolestprojects.app.dagger.AppComponent
 import com.mttnow.coolestprojects.app.dagger.AppModule
 import com.mttnow.coolestprojects.app.dagger.DaggerAppComponent
@@ -25,9 +23,6 @@ class CoolestProjectsApp : Application() {
 
   override fun onCreate() {
     super.onCreate()
-
-    EstimoteSDK.initialize(this, getString(R.string.estimote_app_id), getString(R.string.estimote_app_token))
-    EstimoteSDK.enableDebugLogging(true);
 
     JodaTimeAndroid.init(this)
 

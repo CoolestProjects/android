@@ -5,5 +5,4 @@ data class Summary(val name: String = "",
                    val description: String = "",
                    val coderdojo: String = "",
                    val category: String = "",
-                   val deskNumber: String = "",
-                   val summit: String = "")
+                   val deskNumber: String = "")

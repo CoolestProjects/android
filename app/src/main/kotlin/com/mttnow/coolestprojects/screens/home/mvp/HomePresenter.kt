@@ -16,8 +16,8 @@ class HomePresenter(private val homeView: HomeView,
   override fun onCreate() {
 
     //do view and rx stuff
-   // observeMenuClicks()
-   // observeBottomNavSelection()
+    observeMenuClicks()
+  }
 
     setContentView(R.layout.activity_home)
 
