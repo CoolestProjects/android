@@ -20,7 +20,8 @@ import com.mttnow.coolestprojects.R
 import com.mttnow.coolestprojects.screens.fragments.*
 import com.mttnow.coolestprojects.services.BeaconManagerService
 import kotlinx.android.synthetic.main.activity_home.*
-
+import android.support.design.widget.BottomNavigationView
+import android.view.MenuItem
 
 
 class HomeActivity : PresenterActivity() {
@@ -66,17 +67,19 @@ class HomeActivity : PresenterActivity() {
 
         setContentView(homeView)
 
-        bottom_navigation.setOnNavigationItemSelectedListener {
-            when (homeView.getSelectedItem()) {
-                R.id.action_home -> homeView.swapFragment(HomeFragment())
-                R.id.action_halls ->  homeView.swapFragment(StagesFragment())
-                R.id.action_maps ->  homeView.swapFragment(MapsFragment())
-                R.id.action_about ->  homeView.swapFragment(AboutFragment())
-                else -> null
-            }
-
-            true
-        }
+        bottom_navigation.setOnNavigationItemSelectedListener(
+            object : BottomNavigationView.OnNavigationItemSelectedListener {
+                override fun onNavigationItemSelected(item: MenuItem): Boolean {
+                    when (item.getItemId()) {
+                        R.id.action_home -> homeView.swapFragment(HomeFragment())
+                        R.id.action_halls ->  homeView.swapFragment(StagesFragment())
+                        R.id.action_maps ->  homeView.swapFragment(MapsFragment())
+                        R.id.action_about ->  homeView.swapFragment(AboutFragment())
+                        else -> null
+                    }
+                    return true
+                }
+            })
 
         return hompresenter
     }
