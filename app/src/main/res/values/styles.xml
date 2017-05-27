@@ -36,6 +36,16 @@
         <item name="android:textSize">@dimen/stage_btn_text_size</item>
     </style>
 
+    <style name="hallsBtnStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">5</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/hall_btn_text_size</item>
+    </style>
+
     <style name="homeDescStyle">
         <item name="android:textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
