@@ -49,7 +49,7 @@
     <dimen name="innovator_stage_desc_side_margin">24dp</dimen>
     <dimen name="speaker_img_margin">14dp</dimen>
     <dimen name="speaker_name_margin_top">16dp</dimen>
-    <dimen name="sponsor_logo_padding">5dip</dimen>
+    <dimen name="sponsor_logo_padding">10dip</dimen>
     <dimen name="home_margin_bottom">60dp</dimen>
 
     <!-- Halls -->
