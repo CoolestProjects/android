@@ -4,14 +4,6 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    signingConfigs {
-        releaseConfig {
-            keyAlias 'coolest projects'
-            keyPassword '=vsB7F8LT?=vgM_G'
-            storeFile file('../keystore.jks')
-            storePassword '=vsB7F8LT?=vgM_G'
-        }
-    }
     compileSdkVersion 25
     buildToolsVersion '25.0.2'
     defaultConfig {
