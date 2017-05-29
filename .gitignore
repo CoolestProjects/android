@@ -75,3 +75,8 @@ proguard/
 
 # Android Studio captures folder
 captures/
+
+keystore.jks
+
+keystore.*
+*.keystore

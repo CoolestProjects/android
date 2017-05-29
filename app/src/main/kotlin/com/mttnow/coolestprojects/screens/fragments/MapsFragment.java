@@ -55,8 +55,8 @@ public class MapsFragment extends BaseFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-        Picasso.with(getActivity()).load("https://firebasestorage.googleapis.com/v0/b/coolestprojectsapp.appspot.com/o/Maps%2Fcoolestprojectsmap_medium.png?alt=media&token=cdbe7fbf-88b9-4257-bb6e-1b27a5536f9d").into(mTargetCallback);
+        //TODO Add back when new map is available
+      //  Picasso.with(getActivity()).load("https://firebasestorage.googleapis.com/v0/b/coolestprojectsapp.appspot.com/o/Maps%2Fcoolestprojectsmap_medium.png?alt=media&token=cdbe7fbf-88b9-4257-bb6e-1b27a5536f9d").into(mTargetCallback);
     }
 
     @Override

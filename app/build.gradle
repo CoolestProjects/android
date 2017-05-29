@@ -4,13 +4,20 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
 
 android {
+    signingConfigs {
+        releaseConfig {
+
+
+
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion '25.0.2'
     defaultConfig {
         applicationId "com.mttnow.coolestprojects"
         minSdkVersion 19
         targetSdkVersion 23
-        versionCode 3
+        versionCode 4
         versionName "2.0"
         vectorDrawables.useSupportLibrary = true
     }

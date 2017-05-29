@@ -31,13 +31,13 @@
         android:textSize="@dimen/small_text_size"
         custom:font="OpenSans-Regular.ttf"/>
 
-    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-        android:id="@+id/project_desk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/small_text_size"
-        custom:font="OpenSans-Regular.ttf"/>
+    <!--<com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView-->
+        <!--android:id="@+id/project_desk"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="@dimen/small_text_size"-->
+        <!--custom:font="OpenSans-Regular.ttf"/>-->
 
     <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
         android:id="@+id/project_doyo"
