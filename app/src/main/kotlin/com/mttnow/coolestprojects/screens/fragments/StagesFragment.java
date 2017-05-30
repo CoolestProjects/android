@@ -8,12 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.mttnow.coolestprojects.R;
 import com.mttnow.coolestprojects.models.Hall;
-import com.mttnow.coolestprojects.models.Halls;
+
+import org.honorato.multistatetogglebutton.MultiStateToggleButton;
+import org.honorato.multistatetogglebutton.ToggleButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,10 +24,15 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
+import static android.view.View.VISIBLE;
+
 public class StagesFragment extends BaseFragment {
     private ViewFlipper viewFlipper;
     private TextView mStage1Btn;
     private TextView mStage2Btn;
+    private TextView panelsContent;
+    private TextView workshopContent;
+    MultiStateToggleButton toggleButton;
     private List<TextView> mStagesBtns = new ArrayList<>();
     private List<Hall> halls;
 
@@ -45,8 +51,10 @@ public class StagesFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         mStage1Btn = (TextView) view.findViewById(R.id.stage_1);
         mStage2Btn = (TextView) view.findViewById(R.id.stage_2);
-        mStagesLv = (ListView) view.findViewById(R.id.stages_lv);
+        panelsContent = (TextView) view.findViewById(R.id.panels_content);
+        workshopContent = (TextView) view.findViewById(R.id.workshop_content);
         viewFlipper = (ViewFlipper) view.findViewById(R.id.viewflipper);
+        toggleButton = (MultiStateToggleButton) view.findViewById(R.id.mstb_multi_id);
         mStagesBtns.add(mStage1Btn);
         mStage1Btn.setText("Explore The \n STEAM Hall");
         mStage2Btn.setText("Explore The \n Smart Futures Hall");
@@ -87,6 +95,28 @@ public class StagesFragment extends BaseFragment {
             @Override
             public void onClick(View view) {
                 viewFlipper.showNext();
+            }
+        });
+
+
+        toggleButton.setOnValueChangedListener(new ToggleButton.OnValueChangedListener() {
+            @Override
+            public void onValueChanged(int position) {
+                switch(position) {
+                    case 0:
+                        panelsContent.setVisibility(VISIBLE);
+                        workshopContent.setVisibility(View.GONE);
+                        break;
+                    case 1:
+                        panelsContent.setVisibility(View.GONE);
+                        workshopContent.setVisibility(VISIBLE);
+                        break;
+                    default:
+                        panelsContent.setVisibility(VISIBLE);
+                        workshopContent.setVisibility(View.GONE);
+
+                }
+
             }
         });
 

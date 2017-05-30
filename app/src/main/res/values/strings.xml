@@ -61,4 +61,9 @@
     <string name="about_desc3">CoderDojo Coolest Projects has seen young people deliver projects across the latest technologies, from Cloud, to Internet of Things (IoT) to Virtual Reality and has the potential to drive vital digital skills across a European platform.</string>
 
     <string name="action_all_sponsors">All 2017 Sponsors</string>
+    <string-array name="stage_schedule_array">
+        <item>Panels</item>
+        <item>Workshop 1</item>
+        <item>Workshop 2</item>
+    </string-array>
 </resources>

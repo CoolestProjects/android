@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mstb="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
-    <Button
+    <org.honorato.multistatetogglebutton.MultiStateToggleButton
+        android:id="@+id/mstb_multi_id"
         android:layout_width="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/panel_label" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/workshop2_label" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/workshop2_label" />
+        android:layout_marginTop="10dip"
+        mstb:values="@array/stage_schedule_array"
+        mstb:mstbPrimaryColor="@android:color/background_dark"
+        mstb:mstbSecondaryColor="@android:color/darker_gray"/>
 </LinearLayout>
