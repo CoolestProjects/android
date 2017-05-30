@@ -44,6 +44,9 @@
 
     <!-- Halls -->
     <string name="halls_label">Halls</string>
+    <string name="panel_label">Panels</string>
+    <string name="workshop1_label">Workshop 1</string>
+    <string name="workshop2_label">Workshop 2</string>
 
     <!-- Navigation Bar -->
     <string name="nav_home">Home</string>

@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import com.mttnow.coolestprojects.R;
 import com.mttnow.coolestprojects.models.Hall;
@@ -22,10 +24,12 @@ import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 public class StagesFragment extends BaseFragment {
+    private ViewFlipper viewFlipper;
     private TextView mStage1Btn;
     private TextView mStage2Btn;
     private List<TextView> mStagesBtns = new ArrayList<>();
     private List<Hall> halls;
+
 
     private ListView mStagesLv;
 
@@ -42,9 +46,11 @@ public class StagesFragment extends BaseFragment {
         mStage1Btn = (TextView) view.findViewById(R.id.stage_1);
         mStage2Btn = (TextView) view.findViewById(R.id.stage_2);
         mStagesLv = (ListView) view.findViewById(R.id.stages_lv);
+        viewFlipper = (ViewFlipper) view.findViewById(R.id.viewflipper);
         mStagesBtns.add(mStage1Btn);
-        mStage1Btn.setText("STEAM");
-        mStage2Btn.setText("Smart Futures");
+        mStage1Btn.setText("Explore The \n STEAM Hall");
+        mStage2Btn.setText("Explore The \n Smart Futures Hall");
+        setupListeners();
 
 
     }
@@ -68,19 +74,19 @@ public class StagesFragment extends BaseFragment {
                 }
             });
     }
-    private void setupListeners(final List<Hall> halls) {
+    private void setupListeners() {
 
         mStage1Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                viewFlipper.showNext();
             }
         });
 
         mStage2Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                viewFlipper.showNext();
             }
         });
 
