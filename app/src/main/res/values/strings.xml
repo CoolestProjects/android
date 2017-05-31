@@ -37,6 +37,11 @@
     <string name="loading">Loading</string>
     <string name="error">Error loading data</string>
 
+    <!-- Home -->
+    <string name="diamond_desc">DIAMOND</string>
+    <string name="platinum_desc">PLATINUM</string>
+    <string name="gold_desc">GOLD</string>
+
     <string name="estimote_app_id">test-app-alessandro-la5</string>
     <string name="estimote_app_token">15b3bbccf4c9c54dac1dc26e04885fad</string>
     <string name="location_permission_request_title">Location Permissions</string>
