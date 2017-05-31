@@ -5,11 +5,15 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.mttnow.coolestprojects.R;
 import com.mttnow.coolestprojects.models.Hall;
+import com.mttnow.coolestprojects.models.HallPanel;
+import com.mttnow.coolestprojects.models.HallPanels;
+import com.mttnow.coolestprojects.screens.adapters.HallsAdapter;
 
 import java.util.List;
 
@@ -25,6 +29,9 @@ import rx.schedulers.Schedulers;
 public class StageScheduleFragment extends BaseFragment {
     List<Hall> halls;
     private RadioGroup radioGroup;
+    private ListView mStagesLv;
+    private Hall selectedHall;
+    private String hallInput;
 
 
     @Nullable
@@ -32,7 +39,7 @@ public class StageScheduleFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View contentView = inflater.inflate(R.layout.stage_shedule, container, false);
         Bundle bundle = getArguments();
-        String hall = bundle.getString("hall");
+        hallInput = bundle.getString("hall");
         return contentView;
     }
 
@@ -40,6 +47,7 @@ public class StageScheduleFragment extends BaseFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         radioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
+        mStagesLv = (ListView) view.findViewById(R.id.stages_lv);
         setUpListeners();
 
     }
@@ -54,7 +62,7 @@ public class StageScheduleFragment extends BaseFragment {
 
                     @Override
                     public void call(List<Hall> mhalls) {
-                        halls = mhalls;
+                        filterHalls(mhalls);
                     }
                 }, new Action1<Throwable>() {
                     @Override
@@ -70,8 +78,7 @@ public class StageScheduleFragment extends BaseFragment {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // find which radio button is selected
                 if (checkedId == R.id.panels) {
-                    Toast.makeText(getActivity(), "Panels!",
-                            Toast.LENGTH_LONG).show();
+                   showpanels(selectedHall.getHallPanels());
 
                 } else if (checkedId == R.id.workshop1) {
                     Toast.makeText(getActivity(), "Workshop 1",
@@ -86,5 +93,20 @@ public class StageScheduleFragment extends BaseFragment {
             }
 
         });
+    }
+
+    private void showpanels(List<HallPanel> hallPanels) {
+        mStagesLv.setAdapter(new HallsAdapter(hallPanels));
+
+    }
+
+
+
+    public void filterHalls(List<Hall> mhalls) {
+        for (Hall hall : mhalls) {
+            if (hallInput.equals(hall.getHall())) {
+                selectedHall = hall;
+            }
+        }
     }
 }

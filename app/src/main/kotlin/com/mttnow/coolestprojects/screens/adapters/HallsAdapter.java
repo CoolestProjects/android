@@ -17,23 +17,21 @@ import java.util.List;
 
 public class HallsAdapter extends BaseAdapter {
 
-    private List<HallWorkshop> mHallWorkshops;
-    private List<HallPanel> mHallPanels;
+    private List<?> listToBeDisplayed;
 
-    public HallsAdapter(List<HallWorkshop> hallWorkshops,
-                        List<HallPanel> hallPanels) {
-        mHallWorkshops = hallWorkshops;
-        mHallPanels = hallPanels;
+
+    public HallsAdapter(List<?> listToBeDisplayed) {
+        this.listToBeDisplayed = listToBeDisplayed;
     }
 
     @Override
     public int getCount() {
-        return mHallWorkshops.size();
+        return listToBeDisplayed.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return mHallWorkshops.get(i);
+        return listToBeDisplayed.get(i);
     }
 
     @Override

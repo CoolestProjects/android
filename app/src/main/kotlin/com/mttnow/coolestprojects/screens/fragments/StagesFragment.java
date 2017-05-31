@@ -64,7 +64,7 @@ public class StagesFragment extends BaseFragment {
             @Override
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
-                bundle.putString("hall","Steam");
+                bundle.putString("hall","STEAM");
                 swapFrag(bundle);
 
             }
@@ -75,7 +75,7 @@ public class StagesFragment extends BaseFragment {
             @Override
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
-                bundle.putString("hall","Samrt Future");
+                bundle.putString("hall","SMART FUTURES");
                 swapFrag(bundle);
 
             }
