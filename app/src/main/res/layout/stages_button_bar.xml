@@ -6,13 +6,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <org.honorato.multistatetogglebutton.MultiStateToggleButton
-        android:id="@+id/mstb_multi_id"
+    <RadioGroup
         android:layout_width="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dip"
-        mstb:values="@array/stage_schedule_array"
-        mstb:mstbPrimaryColor="@android:color/background_dark"
-        mstb:mstbSecondaryColor="@android:color/darker_gray"/>
+        android:layout_below="@+id/text"
+        android:id="@+id/radioGroup"
+        android:orientation="horizontal"
+        android:checkedButton="@+id/panels" >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/panels"
+            android:text="Panels" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/workshop1"
+            android:text="Workshop 1" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/workshop2"
+            android:text="Workshop 2" />
+
+    </RadioGroup>
+
 </LinearLayout>
