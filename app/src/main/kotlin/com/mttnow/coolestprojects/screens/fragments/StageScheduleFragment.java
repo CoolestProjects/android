@@ -15,6 +15,9 @@ import com.mttnow.coolestprojects.models.HallPanel;
 import com.mttnow.coolestprojects.models.HallPanels;
 import com.mttnow.coolestprojects.screens.adapters.HallsAdapter;
 
+import org.honorato.multistatetogglebutton.MultiStateToggleButton;
+import org.honorato.multistatetogglebutton.ToggleButton;
+
 import java.util.List;
 
 import rx.Subscription;
@@ -28,7 +31,7 @@ import rx.schedulers.Schedulers;
 
 public class StageScheduleFragment extends BaseFragment {
     List<Hall> halls;
-    private RadioGroup radioGroup;
+    MultiStateToggleButton toggleButton;
     private ListView mStagesLv;
     private Hall selectedHall;
     private String hallInput;
@@ -46,7 +49,8 @@ public class StageScheduleFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        radioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
+        toggleButton =   (MultiStateToggleButton) view.findViewById(R.id.mstb_multi_id);
+        toggleButton.setElements(R.array.stage_schedule_array, 0);
         mStagesLv = (ListView) view.findViewById(R.id.stages_lv);
         setUpListeners();
 
@@ -73,29 +77,29 @@ public class StageScheduleFragment extends BaseFragment {
     }
 
     public void setUpListeners() {
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        toggleButton.setOnValueChangedListener(new ToggleButton.OnValueChangedListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                // find which radio button is selected
-                if (checkedId == R.id.panels) {
-                   showpanels(selectedHall.getHallPanels());
-
-                } else if (checkedId == R.id.workshop1) {
-                    Toast.makeText(getActivity(), "Workshop 1",
-                            Toast.LENGTH_LONG).show();
-
-                } else if (checkedId == R.id.workshop2) {
-                    Toast.makeText(getActivity(), "Workshop 2!",
-                            Toast.LENGTH_LONG).show();
-                } else {
+            public void onValueChanged(int position) {
+                switch(position){
+                    case 0:
+                        showPanels(selectedHall.getHallPanels());
+                        break;
+                    case 1:
+                        Toast.makeText(getActivity(), "workShop 1",
+                                Toast.LENGTH_LONG).show();
+                        break;
+                    case 2:
+                        Toast.makeText(getActivity(), "workshop 2",
+                                Toast.LENGTH_LONG).show();
+                        break;
+                    default:
 
                 }
             }
-
         });
     }
 
-    private void showpanels(List<HallPanel> hallPanels) {
+    private void showPanels(List<HallPanel> hallPanels) {
         mStagesLv.setAdapter(new HallsAdapter(hallPanels));
 
     }

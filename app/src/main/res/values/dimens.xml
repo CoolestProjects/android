@@ -63,4 +63,5 @@
     <!-- Projects -->
     <dimen name="project_padding">14dp</dimen>
     <dimen name="projects_filter_field_height">44dp</dimen>
+    <dimen name="center_tab">50dp</dimen>
 </resources>
