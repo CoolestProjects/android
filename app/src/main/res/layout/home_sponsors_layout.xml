@@ -5,15 +5,15 @@
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:background="@color/home_content_bg"
+    android:orientation="vertical"
     android:paddingTop="@dimen/home_desc_vertical_padding">
 
 
     <RelativeLayout
+        style="@style/contentWhiteBoxRoundedCornerStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/contentWhiteBoxRoundedCornerStyle"
         android:orientation="vertical">
 
 
@@ -21,8 +21,8 @@
             android:id="@+id/sponsors_logo"
             android:layout_width="@dimen/icon_width"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
             android:layout_alignParentRight="true"
+            android:adjustViewBounds="true"
             android:src="@drawable/sponsors_icon"/>
 
         <View
@@ -37,9 +37,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/home_sponsors_label"
-            android:textStyle="bold"
             android:textColor="@color/home_content_text_color"
             android:textSize="@dimen/container_title_size"
+            android:textStyle="bold"
             custom:font="OpenSans-Bold.ttf"/>
 
         <LinearLayout
@@ -51,18 +51,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
                 <TableRow  android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="@dimen/content_inner_container_padding"/>
-                <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-                    android:id="@+id/diamond_desc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/diamond_desc"
-                    android:textColor="@color/home_content_text_color"
-                    custom:font="OpenSans-Regular.ttf"/>
-
+                    android:padding="@dimen/content_inner_container_padding">
+                <!--<com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView-->
+                    <!--android:id="@+id/diamond_desc"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="12dp"-->
+                    <!--android:text="@string/diamond_desc"-->
+                    <!--android:textColor="@color/home_content_text_color"-->
+                    <!--custom:font="OpenSans-Regular.ttf"/>-->
+                </TableRow>
                 <TableRow
                     android:id="@+id/sponsor_row1"
                     android:layout_width="match_parent"
@@ -85,16 +85,16 @@
                 <TableRow  android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:padding="@dimen/content_inner_container_padding"/>
-                <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-                    android:id="@+id/platinum_desc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/platinum_desc"
-                    android:textColor="@color/home_content_text_color"
-                    custom:font="OpenSans-Regular.ttf"/>
-
+                    android:padding="@dimen/content_inner_container_padding">
+                <!--<com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView-->
+                    <!--android:id="@+id/platinum_desc"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="12dp"-->
+                    <!--android:text="@string/platinum_desc"-->
+                    <!--android:textColor="@color/home_content_text_color"-->
+                    <!--custom:font="OpenSans-Regular.ttf"/>-->
+                </TableRow>
                 <TableRow
                     android:id="@+id/sponsor_row2"
                     android:layout_width="match_parent"
@@ -155,15 +155,16 @@
                 <TableRow  android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:padding="@dimen/content_inner_container_padding"/>
-                <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-                    android:id="@+id/gold_desc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/gold_desc"
-                    android:textColor="@color/home_content_text_color"
-                    custom:font="OpenSans-Regular.ttf"/>
+                    android:padding="@dimen/content_inner_container_padding">
+                <!--<com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView-->
+                    <!--android:id="@+id/gold_desc"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="12dp"-->
+                    <!--android:text="@string/gold_desc"-->
+                    <!--android:textColor="@color/home_content_text_color"-->
+                    <!--custom:font="OpenSans-Regular.ttf"/>-->
+                </TableRow>
                 <TableRow
                     android:id="@+id/sponsor_row4"
                     android:layout_width="match_parent"
@@ -179,24 +180,20 @@
                     <ImageView
                         android:id="@+id/dublin_city_council_logo"
                         style="@style/sponsorLogoStyle"
+                        android:src="@drawable/dublin_city_council_sponsor"
                         />
-                    <!--android:src="@drawable/dublin_city_council_logo"-->
-                    <ImageView
-                        android:id="@+id/faile_logo"
-                        style="@style/sponsorLogoStyle"
-                        android:src="@drawable/failte_ireland_sponsor" />
 
 
                     <ImageView
                         android:id="@+id/accenture_logo"
                         style="@style/sponsorLogoStyle"
                         android:src="@drawable/accenture_logo" />
-
+                    <ImageView/>
                 </TableRow>
                 <TableRow
                     android:id="@+id/sponsor_row5"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:paddingTop="20dp"
                    >
@@ -220,31 +217,47 @@
                         style="@style/sponsorLogoStyle"
                         android:src="@drawable/computer_futures_logo" />
                 </TableRow>
+            <TableRow  android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="@dimen/content_inner_container_padding">
+                <!--<com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView-->
+                    <!--android:id="@+id/edu_supporters_desc"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="12dp"-->
+                    <!--android:text="@string/edu_supporters_desc"-->
+                    <!--android:textColor="@color/home_content_text_color"-->
+                    <!--custom:font="OpenSans-Regular.ttf"/>-->
+            </TableRow>
                 <TableRow
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:paddingTop="20dp">
+                    <ImageView
+                        android:id="@+id/faile_logo"
+                        style="@style/sponsorLogoStyle"
+                        android:src="@drawable/failte_ireland_sponsor" />
 
                     <ImageView
                         android:id="@+id/coderdojo_foundation_logo2"
                         style="@style/sponsorLogoStyle"
                         android:src="@drawable/coder_dojo_foundation_logo" />
-                    <ImageView/>
+
                     <Button
                         android:id="@+id/load_sponsors_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:clickable="true"
                         android:text="@string/action_all_sponsors"
-                        android:theme="@style/PrimaryButton"
-                        android:clickable="true"/>
+                        android:theme="@style/PrimaryButton"/>
 
                 </TableRow>
 
-            </TableLayout>
 
+        </TableLayout>
         </LinearLayout>
-
     </RelativeLayout>
 
 </LinearLayout>

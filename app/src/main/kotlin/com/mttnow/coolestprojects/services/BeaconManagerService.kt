@@ -26,7 +26,6 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.TaskStackBuilder
 import com.mttnow.coolestprojects.models.BeaconRegionMessage
-import kotlin.collections.ArrayList
 
 
 class BeaconManagerService : IntentService(BeaconManagerService::class.java.simpleName) {
@@ -70,7 +69,7 @@ class BeaconManagerService : IntentService(BeaconManagerService::class.java.simp
                             if (beaconMessage != null) {
 
                                 val mBuilder = NotificationCompat.Builder(this@BeaconManagerService)
-                                        .setSmallIcon(R.drawable.beacon_logo)
+                                        .setSmallIcon(R.drawable.beacon_icon)
                                         .setContentTitle(beaconMessage.title)
                                         .setContentText(beaconMessage.message)
 

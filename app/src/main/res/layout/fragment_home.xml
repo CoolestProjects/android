@@ -15,11 +15,15 @@
 
         <include layout="@layout/home_times"/>
 
+        <include layout="@layout/home_beacon_layout"/>
+
         <include layout="@layout/home_parking_layout"/>
 
         <include layout="@layout/home_food_layout"/>
 
-        <include layout="@layout/home_sponsors_layout"/>
+
+
+        <!--<include layout="@layout/home_sponsors_layout"/>-->
 
         <!--<include layout="@layout/home_innovator_stage_layout"/>-->
 
