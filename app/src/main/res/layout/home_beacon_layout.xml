@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:layout_alignParentRight="true"
-            android:src="@drawable/beacon_animation"/>
+            android:src="@drawable/beacon_icon_2"/>
 
         <View
             android:layout_width="match_parent"
@@ -47,10 +47,9 @@
 
         <ImageView
             android:id="@+id/gems_hunt_image"
-            android:layout_width="@dimen/icon_width"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:layout_alignParentRight="true"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/gems_desc"
             android:src="@drawable/gem_hunt_image"/>
     </RelativeLayout>
 </LinearLayout>
