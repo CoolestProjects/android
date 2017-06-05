@@ -20,6 +20,12 @@
         android:title="@string/nav_halls"
         custom:showAsAction="ifRoom" />
 
+    <item android:id="@+id/action_info"
+        android:enabled="true"
+        android:icon="@drawable/info_icon"
+        android:title="@string/nav_info"
+        custom:showAsAction="ifRoom" />
+
     <item android:id="@+id/action_about"
         android:enabled="true"
         android:icon="@drawable/about_icon"

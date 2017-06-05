@@ -49,7 +49,7 @@ public class ProjectsAdapter extends BaseAdapter {
             viewHolder.name = (TextView) rowView.findViewById(R.id.project_name);
             viewHolder.desc = (TextView) rowView.findViewById(R.id.project_desc);
             viewHolder.category = (TextView) rowView.findViewById(R.id.project_category);
-            viewHolder.desk = (TextView) rowView.findViewById(R.id.project_desk);
+           // viewHolder.desk = (TextView) rowView.findViewById(R.id.project_desk);
             viewHolder.doyo = (TextView) rowView.findViewById(R.id.project_doyo);
             rowView.setTag(viewHolder);
         }
@@ -58,7 +58,7 @@ public class ProjectsAdapter extends BaseAdapter {
         holder.name.setText(summary.getName());
         holder.desc.setText(summary.getDescription());
         holder.category.setText(summary.getCategory());
-        holder.desk.setText(summary.getDeskNumber() != null? summary.getDeskNumber(): "TBC");
+       // holder.desk.setText(summary.getDeskNumber() != null? summary.getDeskNumber(): "TBC");
         holder.doyo.setText(summary.getCoderdojo());
 
         return rowView;

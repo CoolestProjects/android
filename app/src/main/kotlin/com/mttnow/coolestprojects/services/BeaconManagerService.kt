@@ -4,6 +4,7 @@ import android.app.IntentService
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.support.v7.app.NotificationCompat
 import android.util.Log
 import com.estimote.sdk.Beacon
 import com.estimote.sdk.BeaconManager
@@ -12,12 +13,21 @@ import com.mttnow.coolestprojects.app.CoolestProjectsApp
 import com.mttnow.coolestprojects.models.BeaconDevice
 import com.mttnow.coolestprojects.models.BeaconRegion
 import com.mttnow.coolestprojects.network.CoolestProjectsService
+import com.mttnow.coolestprojects.screens.home.HomeActivity
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 import java.util.*
 import javax.inject.Inject
 import kotlin.collections.HashMap
 import kotlin.collections.HashSet
+
+import com.mttnow.coolestprojects.R
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.app.TaskStackBuilder
+import com.mttnow.coolestprojects.models.BeaconRegionMessage
+import kotlin.collections.ArrayList
+
 
 class BeaconManagerService : IntentService(BeaconManagerService::class.java.simpleName) {
 
@@ -34,6 +44,7 @@ class BeaconManagerService : IntentService(BeaconManagerService::class.java.simp
     lateinit var coolestProjectsService: CoolestProjectsService
     lateinit var beaconManager: BeaconManager
     val beaconRegions: MutableMap<String, MutableSet<BeaconDevice>> = HashMap()
+    val beaconMessages: MutableMap<String, BeaconRegionMessage> = HashMap()
 
     override fun onCreate() {
         super.onCreate()
@@ -54,6 +65,34 @@ class BeaconManagerService : IntentService(BeaconManagerService::class.java.simp
                         override fun onEnteredRegion(region: Region, list: List<Beacon>) {
                             Log.d(TAG, "Entered region $region")
 
+                            val beaconMessage = beaconMessages[region.identifier]
+
+                            if (beaconMessage != null) {
+
+                                val mBuilder = NotificationCompat.Builder(this@BeaconManagerService)
+                                        .setSmallIcon(R.drawable.beacon_logo)
+                                        .setContentTitle(beaconMessage.title)
+                                        .setContentText(beaconMessage.message)
+
+                                val resultIntent = Intent(this@BeaconManagerService, HomeActivity::class.java) // TODO URL link?
+
+                                val stackBuilder = TaskStackBuilder.create(this@BeaconManagerService)
+
+                                stackBuilder.addParentStack(HomeActivity::class.java) // TODO URL link?
+
+                                stackBuilder.addNextIntent(resultIntent)
+                                val resultPendingIntent = stackBuilder.getPendingIntent(
+                                        0,
+                                        PendingIntent.FLAG_UPDATE_CURRENT
+                                )
+                                mBuilder.setContentIntent(resultPendingIntent)
+                                val mNotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+                                mNotificationManager.notify(1999, mBuilder.build()) // TODO Set ID
+
+                            } else {
+                                Log.d(TAG, "No message for region $region")
+                            }
                         }
 
                         override fun onExitedRegion(region: Region) {
@@ -66,6 +105,7 @@ class BeaconManagerService : IntentService(BeaconManagerService::class.java.simp
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe {
                         Log.d(TAG, "Messages download - $it")
+                        it.forEach { cacheMessage(it) }
                     }
 
             coolestProjectsService.regions()
@@ -92,6 +132,10 @@ class BeaconManagerService : IntentService(BeaconManagerService::class.java.simp
         }
     }
 
+    private fun cacheMessage(beaconMessage: BeaconRegionMessage) {
+        beaconMessages[beaconMessage.regionId] = beaconMessage
+    }
+
     private fun startMonitoringRegions(regions: List<BeaconRegion>) {
         Log.d(TAG, "Start monitoring regions")
         regions.forEach { startMonitoringRegion(it) }
@@ -107,7 +151,7 @@ class BeaconManagerService : IntentService(BeaconManagerService::class.java.simp
         beaconManager.startMonitoring(asEstimoteRegion(regionId, beacon))
         var beacons = beaconRegions[regionId]
         if (beacons == null) {
-            beacons = HashSet<BeaconDevice>()
+            beacons = HashSet()
             beaconRegions[regionId] = beacons
         }
         beacons.add(beacon)
