@@ -2,8 +2,8 @@ package com.mttnow.coolestprojects.models
 
 
 data class Hall(val hall: String = "",
-                val hallWorkshop1: List<HallWorkshop>? = null,
-                val hallWorkshop2: List<HallWorkshop>? = null,
+                val hallWorkshops1: List<HallWorkshop>? = null,
+                val hallWorkshops2: List<HallWorkshop>? = null,
                 val hallPanels: List<HallPanel>? = null)
 
 data class HallWorkshop(val name: String = "",

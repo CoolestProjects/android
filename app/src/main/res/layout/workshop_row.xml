@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/summit_row_padding">
+
+
+    <LinearLayout android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+            android:id="@+id/hallName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/speaker_name_color"
+            android:textSize="@dimen/text_medium_size"
+            android:textAllCaps="true"
+            custom:font="OpenSans-Regular.ttf"/>
+
+        <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+            android:id="@+id/hallDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/speaker_desc_color"
+            android:textSize="@dimen/text_large_size"
+            custom:font="OpenSans-Regular.ttf"/>
+
+        <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+            android:id="@+id/hallTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/summit_time_text_color"
+            android:textSize="@dimen/text_medium_size"
+            custom:font="OpenSans-Regular.ttf"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -4,11 +4,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mttnow.coolestprojects.R;
-import com.mttnow.coolestprojects.models.HallPanel;
 import com.mttnow.coolestprojects.models.HallWorkshop;
 
 import java.util.List;
@@ -48,7 +46,7 @@ public class HallWorkshopAdapter extends BaseAdapter {
         View rowView = convertView;
         if (rowView == null) {
             LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-            rowView = inflater.inflate(R.layout.summit_row, null);
+            rowView = inflater.inflate(R.layout.workshop_row, null);
             ViewHolder viewHolder = new ViewHolder();
             // viewHolder.img = (ImageView) rowView.findViewById(R.id.summit_img);
             viewHolder.name = (TextView) rowView.findViewById(R.id.hallName);

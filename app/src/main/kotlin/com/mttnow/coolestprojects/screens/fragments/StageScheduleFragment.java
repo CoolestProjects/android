@@ -6,14 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import com.mttnow.coolestprojects.R;
 import com.mttnow.coolestprojects.models.Hall;
-import com.mttnow.coolestprojects.models.HallPanel;
-import com.mttnow.coolestprojects.models.HallPanels;
-import com.mttnow.coolestprojects.models.HallWorkshop;
 import com.mttnow.coolestprojects.screens.adapters.HallWorkshopAdapter;
 import com.mttnow.coolestprojects.screens.adapters.HallsAdapter;
 
@@ -74,8 +69,8 @@ public class StageScheduleFragment extends BaseFragment {
                     public void call(List<Hall> mhalls) {
                         filterHalls(mhalls);
                         mStagesLv.setAdapter(new HallsAdapter(selectedHall.getHallPanels()));
-                        workshop1Lv.setAdapter(new HallWorkshopAdapter(selectedHall.getHallWorkshop1()));
-                        workshop2Lv.setAdapter(new HallWorkshopAdapter(selectedHall.getHallWorkshop2()));
+                        workshop1Lv.setAdapter(new HallWorkshopAdapter(selectedHall.getHallWorkshops1()));
+                        workshop2Lv.setAdapter(new HallWorkshopAdapter(selectedHall.getHallWorkshops2()));
                     }
                 }, new Action1<Throwable>() {
                     @Override
