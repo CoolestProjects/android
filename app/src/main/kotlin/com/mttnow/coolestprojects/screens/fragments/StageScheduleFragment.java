@@ -31,7 +31,6 @@ import rx.schedulers.Schedulers;
 
 public class StageScheduleFragment extends BaseFragment {
     List<Hall> halls;
-    MultiStateToggleButton toggleButton;
     private ListView mStagesLv;
     private Hall selectedHall;
     private String hallInput;
@@ -49,10 +48,8 @@ public class StageScheduleFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        toggleButton =   (MultiStateToggleButton) view.findViewById(R.id.mstb_multi_id);
-        toggleButton.setElements(R.array.stage_schedule_array, 0);
-        mStagesLv = (ListView) view.findViewById(R.id.stages_lv);
-        setUpListeners();
+        mStagesLv = (ListView) view.findViewById(R.id.listView);
+
 
     }
 
@@ -67,6 +64,7 @@ public class StageScheduleFragment extends BaseFragment {
                     @Override
                     public void call(List<Hall> mhalls) {
                         filterHalls(mhalls);
+                        showPanels(selectedHall.getHallPanels());
                     }
                 }, new Action1<Throwable>() {
                     @Override
@@ -76,35 +74,13 @@ public class StageScheduleFragment extends BaseFragment {
                 });
     }
 
-    public void setUpListeners() {
-        toggleButton.setOnValueChangedListener(new ToggleButton.OnValueChangedListener() {
-            @Override
-            public void onValueChanged(int position) {
-                switch(position){
-                    case 0:
-                        showPanels(selectedHall.getHallPanels());
-                        break;
-                    case 1:
-                        Toast.makeText(getActivity(), "workShop 1",
-                                Toast.LENGTH_LONG).show();
-                        break;
-                    case 2:
-                        Toast.makeText(getActivity(), "workshop 2",
-                                Toast.LENGTH_LONG).show();
-                        break;
-                    default:
 
-                }
-            }
-        });
-    }
+
 
     private void showPanels(List<HallPanel> hallPanels) {
         mStagesLv.setAdapter(new HallsAdapter(hallPanels));
 
     }
-
-
 
     public void filterHalls(List<Hall> mhalls) {
         for (Hall hall : mhalls) {

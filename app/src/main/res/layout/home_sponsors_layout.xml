@@ -218,7 +218,7 @@
                     <ImageView
                         android:id="@+id/computer_futures_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/computer_futures_logo" />
+                        android:src="@drawable/coder_dojo_foundation_logo" />
                 </TableRow>
                 <TableRow
                     android:layout_width="wrap_content"

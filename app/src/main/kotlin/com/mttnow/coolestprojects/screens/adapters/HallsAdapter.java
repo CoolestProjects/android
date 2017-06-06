@@ -9,43 +9,36 @@ import android.widget.TextView;
 
 import com.mttnow.coolestprojects.R;
 import com.mttnow.coolestprojects.models.HallPanel;
-import com.mttnow.coolestprojects.models.HallWorkshop;
-import com.mttnow.coolestprojects.models.SummitSpeaker;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class HallsAdapter extends BaseAdapter {
 
-    private List<?> listToBeDisplayed;
+    private List<HallPanel> hallPanels;
 
 
-    public HallsAdapter(List<?> listToBeDisplayed) {
-        this.listToBeDisplayed = listToBeDisplayed;
+    public HallsAdapter(List<HallPanel> hallPanels) {
+        this.hallPanels = hallPanels;
     }
 
     @Override
     public int getCount() {
-        return listToBeDisplayed.size();
+        return hallPanels.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return listToBeDisplayed.get(i);
+        return hallPanels.get(i);
     }
-
     @Override
     public long getItemId(int i) {
         return 0;
     }
 
     static class ViewHolder {
-     //   public ImageView img;
         public TextView name;
-        public TextView desc;
-        public TextView startTime;
-        public TextView endTime;
     }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
@@ -54,23 +47,15 @@ public class HallsAdapter extends BaseAdapter {
             LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
             rowView = inflater.inflate(R.layout.summit_row, null);
             ViewHolder viewHolder = new ViewHolder();
-           // viewHolder.img = (ImageView) rowView.findViewById(R.id.summit_img);
-            viewHolder.name = (TextView) rowView.findViewById(R.id.workshop_end_time);
-            viewHolder.desc = (TextView) rowView.findViewById(R.id.workshop_desc);
-            viewHolder.startTime = (TextView) rowView.findViewById(R.id.workshop_start_time);
-            viewHolder.endTime = (TextView) rowView.findViewById(R.id.workshop_end_time);
+            // viewHolder.img = (ImageView) rowView.findViewById(R.id.summit_img);
+            viewHolder.name = (TextView) rowView.findViewById(R.id.hallName);
             rowView.setTag(viewHolder);
         }
         ViewHolder holder = (ViewHolder) rowView.getTag();
-        HallWorkshop hallWorkshop = (HallWorkshop) getItem(position);
+        HallPanel hallWorkshop = (HallPanel) getItem(position);
 
-//        if(summitSpeaker.getPhotoUrl() != null && !"".equals(summitSpeaker.getPhotoUrl())) {
-//            Picasso.with(viewGroup.getContext()).load(summitSpeaker.getPhotoUrl()).into(holder.img);
-//        }
         holder.name.setText(hallWorkshop.getName());
-        holder.desc.setText(hallWorkshop.getDescription());
-        holder.startTime.setText(hallWorkshop.getStartTime());
-        holder.endTime.setText(hallWorkshop.getEndTime());
         return rowView;
+
     }
 }
