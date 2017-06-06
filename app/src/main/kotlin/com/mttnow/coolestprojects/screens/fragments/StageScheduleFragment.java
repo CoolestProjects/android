@@ -13,6 +13,8 @@ import com.mttnow.coolestprojects.R;
 import com.mttnow.coolestprojects.models.Hall;
 import com.mttnow.coolestprojects.models.HallPanel;
 import com.mttnow.coolestprojects.models.HallPanels;
+import com.mttnow.coolestprojects.models.HallWorkshop;
+import com.mttnow.coolestprojects.screens.adapters.HallWorkshopAdapter;
 import com.mttnow.coolestprojects.screens.adapters.HallsAdapter;
 
 import org.honorato.multistatetogglebutton.MultiStateToggleButton;
@@ -32,8 +34,11 @@ import rx.schedulers.Schedulers;
 public class StageScheduleFragment extends BaseFragment {
     List<Hall> halls;
     private ListView mStagesLv;
+    private ListView workshop1Lv;
+    private ListView workshop2Lv;
     private Hall selectedHall;
     private String hallInput;
+    private MultiStateToggleButton toggleButton;
 
 
     @Nullable
@@ -49,8 +54,12 @@ public class StageScheduleFragment extends BaseFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mStagesLv = (ListView) view.findViewById(R.id.listView);
-
-
+        workshop1Lv = (ListView) view.findViewById(R.id.listViewWorkshop);
+        workshop2Lv = (ListView) view.findViewById(R.id.listViewWorkshop2);
+        toggleButton = (MultiStateToggleButton) view.findViewById(R.id.mstb_multi_id);
+        toggleButton.setElements(R.array.stage_schedule_array, 0);
+        setUpListViews();
+        setUpListeners();
     }
 
 
@@ -64,7 +73,9 @@ public class StageScheduleFragment extends BaseFragment {
                     @Override
                     public void call(List<Hall> mhalls) {
                         filterHalls(mhalls);
-                        showPanels(selectedHall.getHallPanels());
+                        mStagesLv.setAdapter(new HallsAdapter(selectedHall.getHallPanels()));
+                        workshop1Lv.setAdapter(new HallWorkshopAdapter(selectedHall.getHallWorkshop1()));
+                        workshop2Lv.setAdapter(new HallWorkshopAdapter(selectedHall.getHallWorkshop2()));
                     }
                 }, new Action1<Throwable>() {
                     @Override
@@ -74,13 +85,39 @@ public class StageScheduleFragment extends BaseFragment {
                 });
     }
 
+    public void setUpListeners() {
+        toggleButton.setOnValueChangedListener(new ToggleButton.OnValueChangedListener() {
+            @Override
+            public void onValueChanged(int position) {
+                switch (position) {
+                    case 0:
+                        mStagesLv.setVisibility(View.VISIBLE);
+                        workshop1Lv.setVisibility(View.GONE);
+                        workshop2Lv.setVisibility(View.GONE);
+                        break;
+                    case 1:
+                        mStagesLv.setVisibility(View.GONE);
+                        workshop1Lv.setVisibility(View.VISIBLE);
+                        workshop2Lv.setVisibility(View.GONE);
+                        break;
+                    case 2:
+                        mStagesLv.setVisibility(View.GONE);
+                        workshop1Lv.setVisibility(View.GONE);
+                        workshop2Lv.setVisibility(View.VISIBLE);
+                        break;
+                    default:
 
-
-
-    private void showPanels(List<HallPanel> hallPanels) {
-        mStagesLv.setAdapter(new HallsAdapter(hallPanels));
-
+                }
+            }
+        });
     }
+    public void setUpListViews(){
+        mStagesLv.setVisibility(View.VISIBLE);
+        workshop1Lv.setVisibility(View.GONE);
+        workshop2Lv.setVisibility(View.GONE);
+    }
+
+
 
     public void filterHalls(List<Hall> mhalls) {
         for (Hall hall : mhalls) {

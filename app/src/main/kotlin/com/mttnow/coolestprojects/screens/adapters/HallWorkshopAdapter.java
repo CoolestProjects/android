@@ -9,26 +9,27 @@ import android.widget.TextView;
 
 import com.mttnow.coolestprojects.R;
 import com.mttnow.coolestprojects.models.HallPanel;
+import com.mttnow.coolestprojects.models.HallWorkshop;
 
 import java.util.List;
 
-public class HallsAdapter extends BaseAdapter {
+public class HallWorkshopAdapter extends BaseAdapter {
 
-    private List<HallPanel> hallPanels;
+    private List<HallWorkshop> hallWorkshop;
 
 
-    public HallsAdapter(List<HallPanel> hallPanels) {
-        this.hallPanels = hallPanels;
+    public HallWorkshopAdapter(List<HallWorkshop> hallWorkshop) {
+        this.hallWorkshop = hallWorkshop;
     }
 
     @Override
     public int getCount() {
-        return hallPanels.size();
+        return hallWorkshop.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return hallPanels.get(i);
+        return hallWorkshop.get(i);
     }
     @Override
     public long getItemId(int i) {
@@ -56,7 +57,7 @@ public class HallsAdapter extends BaseAdapter {
             rowView.setTag(viewHolder);
         }
         ViewHolder holder = (ViewHolder) rowView.getTag();
-        HallPanel hallWorkshop = (HallPanel) getItem(position);
+        HallWorkshop hallWorkshop = (HallWorkshop) getItem(position);
 
         holder.name.setText(hallWorkshop.getName());
         holder.desc.setText(hallWorkshop.getDescription());
