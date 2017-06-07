@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:id="@+id/container"
               android:layout_height="match_parent"
-              android:orientation="vertical">
+              android:orientation="vertical"
+    style="@style/contentWhiteBoxRoundedCornerStyle">
 
+    <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+        android:id="@+id/projects_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/projects_label"
+        android:textStyle="bold"
+        android:textColor="@color/home_content_text_color"
+        android:textSize="@dimen/container_title_size"
+        android:layout_margin="@dimen/content_container_margin"
+        custom:font="OpenSans-Bold.ttf"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,8 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/projects_filter_field_height"
             android:background="@null"
-            android:hint="Search"
-            android:paddingLeft="10dp" />
+            android:hint="@string/projects_search_hint"/>
 
     </LinearLayout>
 

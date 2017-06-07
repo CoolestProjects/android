@@ -20,7 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="#ffffff"
-
+        custom:itemTextColor="@color/nav_view_item"
+        custom:itemIconTint="@color/nav_view_item"
         custom:menu="@menu/bottom_nav_menu"/>
 
 

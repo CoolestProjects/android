@@ -16,17 +16,17 @@
     <string name="parking_label">travel</string>
     <string name="home_parking_label">TRAVEL</string>
 
-    <string name="home_sponsors_label">SPONSORS</string>
+    <string name="home_sponsors_label">SPONSORED BY</string>
 
     <string name="about_first_descr"><![CDATA[<p>The awards were created in 2012 to deliver and support the following principles:</p>     <ul> <li>Creativity</li> <li>Innovation</li> <li>Entrepreneurship</li> <li>The introduction and showcasing of different aspects of STEM education through coding.</li> </ul> <p>The Coolest Projects awards are unique in Europe and were established on a voluntary basis by a number of industry professionals as both a competition and exhibition to support and inspire a generation of innovators, creators and entrepreneurs aged from 7 to 17. The awards, which are now in their sixth year, create a unique platform for young people to develop a broad set of digital abilities by offering them the opportunity to showcase the skills they have learned at CoderDojo.</p>]]></string>
     <string name="about_second_descr"><![CDATA[<p>These digital skills are vital if Ireland, and indeed Europe, is to address the coding skills shortage which has led to in excess of 500,000 open job postings across the continent in 2015.</p> <p>Coolest Projects has seen young people deliver projects across the latest technologies, from Cloud, to Internet of Things (IoT) to Virtual Reality and has the potential to drive vital digital skills across a European platform.</p> <p>Last year&#8217;s Coolest Projects awards featured more than 500 entries from young people across Ireland and beyond and attracted more than 10,000 spectators to witness demonstrations of this year&#8217;s submissions. And we estimate that we will have over 800 entries to the 2017 awards and up to 15,000 attendees.</p>]]></string>
     <string name="about_third_descr"><![CDATA[<p>Although the showcase event is held in Ballsbridge, the awards are a Europe-wide event, with participants from the UK, Poland, Spain, Italy, Portugal, Belgium, Holland, Romania and Turkey. CoderDojo currently operates in 16 European countries and by 2017 our target is to have Coolest Projects from every European country with a CoderDojo involved.</p>]]></string>
-    <string name="event_times">Event Times</string>
-    <string name="event_times_descr"><![CDATA[09:00 Doors open to the public.\n09:30 Opening Ceremony\n10:00 Judging Commences\n13:30 Lunch\n16:30 Awards Ceremony\n17:30 Event Closes :( ]]></string>
+    <string name="event_times">EVENT TIMES</string>
+    <string name="event_times_descr"><![CDATA[8am – 9am – Project Registration\n9am – Main Doors open for the General Public\n9:30am – Opening Ceremony\n​10:00am​ - The Openet Innovators stage presentations commence\n10:15am – Activities start in all halls\n​13:30pm - Lunch\n16:30pm – Awards Ceremony\n18:00pm – Event Closes]]></string>
     <string name="sponsored_label">SPONSORED BY</string>
-    <string name="home_parking_desc">The RDS is well served by public transport.\nBuses directly outside: 4,7,8 and 18. Buses 5 min walk from the RDS: 46a,145\nDART: Sandymount and Lansdowne Stations are 5 minutes away\n\n\nParking is available in RDS, Simmonscourt for all visitors. <a href="http://coolestprojects.org/travel-to-the-event/">See our Website for all Travel information</a></string>
+    <string name="home_parking_desc">The RDS is well served by public transport.\nThe direct Dublin Bus routes to RDS Ballsbridge from Nassau Street outside Trinity College: 4,7a and 18. \nDART: Sandymount and Lansdowne Stations are 5 minutes away\n\n\nParking is available in RDS, Simmonscourt for all visitors. <a href="http://coolestprojects.org/travel-to-the-event/">See our Website for all Travel information</a></string>
     <string name="food_label">FOOD</string>
-    <string name="food_desc"><![CDATA[Feel free to bring a packed lunch if desired. Do bring a bottle of water.\n\nGeneral Public: There will also be food trucks and stalls at the event where you can purchase food and drinks. See the Map for more details on location of food at the event]]></string>
+    <string name="food_desc"><![CDATA[There will  be food trucks and stalls at the event where you can purchase food and drinks. \nWe would suggest you bring a bottle of water and a packed lunch on the day.]]></string>
     <string name="copyright_label">COPYRIGHT 2017</string>
     <string name="innovator_stage_desc">Throughout the day there will be amazing hands on activities available for you to participate in, these will include; programmable Drones, Science tricks and more to be announced. See http://coolestprojects.org/discovery-zone/ for more details.\n\nThe Openet innovator stage is an opportunity for young people participating in the CoderDojo Coolest Projects Awards to get on stage in the Main Hall, pitching their idea and having an interview. The youth’s innovation does not have to be a proper business plan! The idea behind the Openet innovator stage is to give young innovators the opportunity to further enhance their presentation skills, vital for the future innovators of the world. Spaces are limited and must be booked online in advance! </string>
     <string name="innovator_stage_label">OPENET INNOVATOR STAGE &amp; DISCOVERY AREA</string>
@@ -41,6 +41,7 @@
     <string name="diamond_desc">DIAMOND</string>
     <string name="platinum_desc">PLATINUM</string>
     <string name="gold_desc">GOLD</string>
+    <string name="edu_supporters_desc">EDUCATION &amp; SUPPORTERS</string>
 
     <string name="estimote_app_id">test-app-alessandro-la5</string>
     <string name="estimote_app_token">15b3bbccf4c9c54dac1dc26e04885fad</string>
@@ -71,4 +72,12 @@
 
     <!-- Info -->
     <string name="info_projects">Search 2017 Projects</string>
+
+    <!-- Gems -->
+    <string name="gems_label">MY GEMS</string>
+    <string name="gems_desc">Let\'s play find the Gems! Use your Mobile Phone as a Gem Detector. You will receive a notification every time you find a Gem.\nMake sure you go alongside your parents on your Gem hunt. \nYou must enable Bluetooth on your mobile to find Gems.\n\nThe Coolest Projects Gem Hunt starts on June 17th in the RDS!  </string>
+
+    <!-- Projects -->
+    <string name="projects_label">Search projects exhibiting at Coolest Projects 2017</string>
+    <string name="projects_search_hint">Enter project name or dojo</string>
 </resources>

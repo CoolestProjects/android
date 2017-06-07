@@ -14,11 +14,11 @@
         android:title="@string/nav_map"
         custom:showAsAction="ifRoom" />
 
-    <item android:id="@+id/action_halls"
-        android:enabled="true"
-        android:icon="@drawable/halls_icon"
-        android:title="@string/nav_halls"
-        custom:showAsAction="ifRoom" />
+    <!--<item android:id="@+id/action_halls"-->
+        <!--android:enabled="true"-->
+        <!--android:icon="@drawable/halls_icon"-->
+        <!--android:title="@string/nav_halls"-->
+        <!--custom:showAsAction="ifRoom" />-->
 
     <item android:id="@+id/action_info"
         android:enabled="true"

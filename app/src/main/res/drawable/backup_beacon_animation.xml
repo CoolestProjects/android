@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false"
+    android:id="@+id/gems_logo"
+    android:layout_width="@dimen/icon_width"
+    android:layout_height="wrap_content"
+    android:adjustViewBounds="true"
+    android:layout_alignParentEnd="true">
+
+    <item
+        android:duration="500"
+        android:drawable="@drawable/beacon_icon_2"/>
+    <item
+        android:duration="500"
+        android:drawable="@drawable/beacon_icon_3"/>
+    <item
+        android:duration="500"
+        android:drawable="@drawable/beacon_icon_4"/>
+    <item
+        android:duration="500"
+        android:drawable="@drawable/beacon_icon_1"/>
+</animation-list>

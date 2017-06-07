@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/home_content_bg"
+    android:paddingTop="@dimen/home_desc_vertical_padding">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/contentWhiteBoxRoundedCornerStyle"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/gems_logo"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/beacon_icon_2"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/home_alphed_bg"/>
+
+
+        <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+            android:id="@+id/gems_label"
+            style="@style/whiteCustomTextViewLabel"
+            custom:font="OpenSans-Bold.ttf"
+            android:text="@string/gems_label" />
+
+        <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+            android:id="@+id/gems_desc"
+            style="@style/whiteCustomTextViewDesc"
+            android:text="@string/gems_desc"
+            custom:font="OpenSans-Regular.ttf"
+            android:layout_below="@+id/gems_logo" />
+
+
+        <ImageView
+            android:id="@+id/gems_hunt_image"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/gems_desc"
+            android:src="@drawable/gem_hunt_image"/>
+    </RelativeLayout>
+</LinearLayout>
