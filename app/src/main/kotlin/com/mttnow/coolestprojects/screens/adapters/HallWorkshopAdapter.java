@@ -4,31 +4,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mttnow.coolestprojects.R;
-import com.mttnow.coolestprojects.models.HallPanel;
+import com.mttnow.coolestprojects.models.HallWorkshop;
 
 import java.util.List;
 
-public class HallsAdapter extends BaseAdapter {
+public class HallWorkshopAdapter extends BaseAdapter {
 
-    private List<HallPanel> hallPanels;
+    private List<HallWorkshop> hallWorkshop;
 
 
-    public HallsAdapter(List<HallPanel> hallPanels) {
-        this.hallPanels = hallPanels;
+    public HallWorkshopAdapter(List<HallWorkshop> hallWorkshop) {
+        this.hallWorkshop = hallWorkshop;
     }
 
     @Override
     public int getCount() {
-        return hallPanels.size();
+        return hallWorkshop.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return hallPanels.get(i);
+        return hallWorkshop.get(i);
     }
     @Override
     public long getItemId(int i) {
@@ -47,7 +46,7 @@ public class HallsAdapter extends BaseAdapter {
         View rowView = convertView;
         if (rowView == null) {
             LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-            rowView = inflater.inflate(R.layout.summit_row, null);
+            rowView = inflater.inflate(R.layout.workshop_row, null);
             ViewHolder viewHolder = new ViewHolder();
             // viewHolder.img = (ImageView) rowView.findViewById(R.id.summit_img);
             viewHolder.name = (TextView) rowView.findViewById(R.id.hallName);
@@ -56,7 +55,7 @@ public class HallsAdapter extends BaseAdapter {
             rowView.setTag(viewHolder);
         }
         ViewHolder holder = (ViewHolder) rowView.getTag();
-        HallPanel hallWorkshop = (HallPanel) getItem(position);
+        HallWorkshop hallWorkshop = (HallWorkshop) getItem(position);
 
         holder.name.setText(hallWorkshop.getName());
         holder.desc.setText(hallWorkshop.getDescription());

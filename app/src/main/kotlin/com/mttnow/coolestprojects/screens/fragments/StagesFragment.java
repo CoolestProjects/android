@@ -3,31 +3,27 @@ package com.mttnow.coolestprojects.screens.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.mttnow.coolestprojects.R;
-import com.mttnow.coolestprojects.models.Hall;
-import com.mttnow.coolestprojects.models.Halls;
+import com.mttnow.coolestprojects.screens.home.mvp.HomeView;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.inject.Inject;
 
 import rx.Subscription;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
 
 public class StagesFragment extends BaseFragment {
+    @Inject
+    HomeView homeview;
+
     private TextView mStage1Btn;
     private TextView mStage2Btn;
-    private List<TextView> mStagesBtns = new ArrayList<>();
-    private List<Hall> halls;
 
-    private ListView mStagesLv;
 
     @Nullable
     @Override
@@ -41,48 +37,50 @@ public class StagesFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         mStage1Btn = (TextView) view.findViewById(R.id.stage_1);
         mStage2Btn = (TextView) view.findViewById(R.id.stage_2);
-        mStagesLv = (ListView) view.findViewById(R.id.stages_lv);
-        mStagesBtns.add(mStage1Btn);
-        mStage1Btn.setText("STEAM");
-        mStage2Btn.setText("Smart Futures");
+        mStage1Btn.setText("Explore The \n STEAM Hall");
+        mStage2Btn.setText("Explore The \n Smart Futures Hall");
+        setupListeners();
 
 
+    }
+    public void swapFrag(Bundle bundle){
+        Fragment newFragment = new StageScheduleFragment();
+        newFragment.setArguments(bundle);
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.fragment_container, newFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
 
     @Override
     public Subscription loadRxStuff() {
-        return coolestProjectsService.halls()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(new Action1<List<Hall>>() {
-
-                @Override
-                public void call(List<Hall> mhalls) {
-                    halls = mhalls;
-                }
-            }, new Action1<Throwable>() {
-                @Override
-                public void call(Throwable throwable) {
-                    throwable.printStackTrace();
-                }
-            });
+        return null;
     }
-    private void setupListeners(final List<Hall> halls) {
+    private void setupListeners() {
 
         mStage1Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("hall","STEAM");
+                swapFrag(bundle);
 
             }
+
         });
 
         mStage2Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("hall","SMART FUTURES");
+                swapFrag(bundle);
 
             }
         });
+
 
     }
 

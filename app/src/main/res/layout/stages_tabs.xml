@@ -2,19 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:custom="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
-              android:layout_height="@dimen/stages_tabs_height"
-              android:background="@color/header_bg">
+              android:layout_height="250dp"
+              >
 
 
     <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+        android:drawableTop="@drawable/about_photo1"
         android:id="@+id/stage_1"
         style="@style/stgeBtnStyle"
-        custom:font="OpenSans-Regular.ttf"/>
+        custom:font="OpenSans-Regular.ttf"
+        android:layout_width="fill_parent"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:background="@color/header_bg"/>
 
     <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
+        android:drawableTop="@drawable/about_photo1"
         android:id="@+id/stage_2"
         style="@style/stgeBtnStyle"
-        custom:font="OpenSans-Regular.ttf"/>
+        custom:font="OpenSans-Regular.ttf"
+        android:layout_width="fill_parent"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:background="@color/header_bg"/>
+
+
+
 
 
 </LinearLayout>

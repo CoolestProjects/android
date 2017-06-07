@@ -80,11 +80,9 @@ class HomeActivity : PresenterActivity() {
                 override fun onNavigationItemSelected(item: MenuItem): Boolean {
                     when (item.getItemId()) {
                         R.id.action_home -> homeView.swapFragment(HomeFragment())
-                        //TODO: Hide for first release
-                     //   R.id.action_halls ->  homeView.swapFragment(StagesFragment())
+                        R.id.action_halls ->  homeView.swapFragment(StagesFragment())
                         R.id.action_maps ->  homeView.swapFragment(MapsFragment())
                         R.id.action_about ->  homeView.swapFragment(AboutFragment())
-                        R.id.action_info -> homeView.swapFragment(ProjectsFragment())
                         else -> null
                     }
                     return true

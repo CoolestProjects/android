@@ -85,15 +85,16 @@
                 <TableRow  android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:padding="@dimen/home_sponsor_tier_margin">
+                    android:padding="@dimen/content_inner_container_padding"/>
                 <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
                     android:id="@+id/platinum_desc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
                     android:text="@string/platinum_desc"
-                    android:textColor="@color/colorAccent"
-                    custom:font="OpenSans-Bold.ttf"/>
-                </TableRow>
+                    android:textColor="@color/home_content_text_color"
+                    custom:font="OpenSans-Regular.ttf"/>
+
                 <TableRow
                     android:id="@+id/sponsor_row2"
                     android:layout_width="0dp"
