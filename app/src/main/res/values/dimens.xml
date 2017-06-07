@@ -49,8 +49,12 @@
     <dimen name="innovator_stage_desc_side_margin">24dp</dimen>
     <dimen name="speaker_img_margin">14dp</dimen>
     <dimen name="speaker_name_margin_top">16dp</dimen>
-    <dimen name="sponsor_logo_padding">10dip</dimen>
     <dimen name="home_margin_bottom">60dp</dimen>
+
+    <!-- Home Sponsors -->
+    <dimen name="sponsor_logo_padding">10dip</dimen>
+    <dimen name="home_sponsor_tier_margin">10dp</dimen>
+    <dimen name="home_sponsor_row_height">0dp</dimen>
 
     <!-- Halls -->
     <dimen name="speaker_summit_margin_bottom">20dp</dimen>

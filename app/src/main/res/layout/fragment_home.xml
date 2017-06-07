@@ -23,7 +23,7 @@
 
 
 
-        <!--<include layout="@layout/home_sponsors_layout"/>-->
+        <include layout="@layout/home_sponsors_layout"/>
 
         <!--<include layout="@layout/home_innovator_stage_layout"/>-->
 
