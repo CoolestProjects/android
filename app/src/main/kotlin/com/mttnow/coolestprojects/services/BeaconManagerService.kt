@@ -111,13 +111,7 @@ class BeaconManagerService : IntentService(BeaconManagerService::class.java.simp
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe {
-                        beaconManager.connect(
-                                object : BeaconManager.ServiceReadyCallback {
-                                    override fun onServiceReady() {
-                                        startMonitoringRegions(it)
-                                    }
-                                }
-                        )
+                        beaconManager.connect { startMonitoringRegions(it) }
                     }
         } else {
             Log.d(TAG, "Bluetooth Low Engery is not available")
