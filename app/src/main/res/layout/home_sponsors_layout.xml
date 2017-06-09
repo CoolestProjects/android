@@ -73,12 +73,12 @@
                     <ImageView
                         android:id="@+id/intel_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/intel_logo" />
+                        android:src="@drawable/sponsors_intel_logo" />
 
                     <ImageView
                         android:id="@+id/microsoft_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/microsoft_logo" />
+                        android:src="@drawable/sponsors_microsoft_logo" />
 
                 </TableRow>
 
@@ -103,22 +103,22 @@
                     <ImageView
                         android:id="@+id/openet_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/openet_logo" />
+                        android:src="@drawable/sponsors_openet_logo" />
 
                     <ImageView
                         android:id="@+id/rte_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/rte_logo" />
+                        android:src="@drawable/sponsors_rte_logo" />
 
                     <ImageView
                         android:id="@+id/mastercard_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/mastercard_logo" />
+                        android:src="@drawable/sponsors_mastercard_logo" />
 
                     <ImageView
                         android:id="@+id/boi_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/boi_logo" />
+                        android:src="@drawable/sponsors_boi_logo" />
 
                 </TableRow>
 
@@ -131,7 +131,7 @@
                     <ImageView
                         android:id="@+id/symantec_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/symantec_logo" />
+                        android:src="@drawable/sponsors_symantec_logo" />
 
                     <ImageView
                         android:id="@+id/riot_logo"
@@ -141,12 +141,12 @@
                     <ImageView
                         android:id="@+id/tdl_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/travelport_digital" />
+                        android:src="@drawable/sponsors_travelport_digital" />
 
                     <ImageView
                         android:id="@+id/folens_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/folens_logo" />
+                        android:src="@drawable/sponsors_folens_logo" />
 
 
                 </TableRow>
@@ -171,7 +171,7 @@
                     <ImageView
                         android:id="@+id/virgin_media_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/virgin_media_logo" />
+                        android:src="@drawable/sponsors_virgin_media_logo" />
 
                     <ImageView
                         android:id="@+id/dublin_city_council_logo"
@@ -182,11 +182,11 @@
                     <ImageView
                         android:id="@+id/accenture_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/accenture_logo" />
+                        android:src="@drawable/sponsors_accenture_logo" />
                     <ImageView
                         android:id="@+id/liberty_it_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/liberty_it_logo" />
+                        android:src="@drawable/sponsors_liberty_it_logo" />
 
                 </TableRow>
                 <TableRow
@@ -198,18 +198,20 @@
                     <ImageView
                         android:id="@+id/workday_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/workday_logo" />
+                        android:src="@drawable/sponsors_workday_logo" />
 
                     <ImageView
                         android:id="@+id/zalando_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/zalando_logo" />
+                        android:src="@drawable/sponsors_zalando_logo" />
 
                     <ImageView
                         android:id="@+id/computer_futures_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/computer_futures_logo" />
-                    <ImageView style="@style/sponsorLogoStyle" />
+                        android:src="@drawable/sponsors_computer_futures_logo" />
+                    <ImageView  android:id="@+id/hmh_logo"
+                        style="@style/sponsorLogoStyle"
+                        android:src="@drawable/sponsors_hmh_logo" />
                 </TableRow>
             <TableRow  android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -230,12 +232,12 @@
                     <ImageView
                         android:id="@+id/faile_logo"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/failte_ireland_sponsor" />
+                        android:src="@drawable/sponsors_failte_ireland_logo" />
 
                     <ImageView
                         android:id="@+id/coderdojo_foundation_logo2"
                         style="@style/sponsorLogoStyle"
-                        android:src="@drawable/coder_dojo_foundation_logo" />
+                        android:src="@drawable/sponsors_coder_dojo_foundation_logo" />
 
                     <Button
                         android:id="@+id/load_sponsors_btn"
