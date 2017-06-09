@@ -82,6 +82,7 @@ class HomeActivity : PresenterActivity() {
                         R.id.action_home -> homeView.swapFragment(HomeFragment())
                         R.id.action_halls ->  homeView.swapFragment(StagesFragment())
                         R.id.action_maps ->  homeView.swapFragment(MapsFragment())
+                        R.id.action_info -> homeView.swapFragment(ProjectsFragment())
                         R.id.action_about ->  homeView.swapFragment(AboutFragment())
                         else -> null
                     }
