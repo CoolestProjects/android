@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/home_title_left_margin"
             android:layout_marginRight="@dimen/home_title_right_margin"
-            android:layout_marginTop="@dimen/home_title_top_margin"
+            android:layout_marginTop="@dimen/home_title_desc_top_margin"
             android:gravity="center_horizontal|center_vertical"
             android:text="@string/home_title"
             android:textColor="@color/colorPrimaryLight"

@@ -179,13 +179,14 @@
                             custom:font="OpenSans-Bold.ttf" />
 
                         <TableLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="fill_parent"
                             android:stretchColumns="*">
 
-                            <TableRow android:layout_gravity="center_horizontal">
+                            <TableRow android:layout_weight="1"
+                                android:layout_gravity="center_horizontal">
 
-                                <ImageView custom:layout_widthPercent="10%"
+                                <ImageView custom:layout_widthPercent="25%"
                                     android:src="@drawable/sponsors_blank_logo"
                                     style="@style/sponsorLogoStyle"
                                     />
@@ -201,7 +202,7 @@
                                     custom:layout_widthPercent="25%"
                                     android:src="@drawable/sponsors_coder_dojo_foundation_logo" />
 
-                                <ImageView custom:layout_widthPercent="10%"
+                                <ImageView custom:layout_widthPercent="25%"
                                     android:src="@drawable/sponsors_blank_logo"
                                     style="@style/sponsorLogoStyle"
                                     />
