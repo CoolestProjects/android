@@ -26,7 +26,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.home_parking_layout.*
-import kotlinx.android.synthetic.main.home_sponsors_layout.*
+import kotlinx.android.synthetic.main.home_sponsors_edu_supp_layout.*
 import android.widget.TextView
 
 

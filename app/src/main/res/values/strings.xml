@@ -42,6 +42,10 @@
     <string name="platinum_desc">PLATINUM</string>
     <string name="gold_desc">GOLD</string>
     <string name="edu_supporters_desc">EDUCATION &amp; SUPPORTERS</string>
+    <string name="silver_desc">SILVER</string>
+    <string name="bronze_desc">BRONZE</string>
+    <string name="education_desc">EDUCATION</string>
+    <string name="supporters_desc">SUPPORTERS</string>
 
     <string name="estimote_app_id">test-app-alessandro-la5</string>
     <string name="estimote_app_token">15b3bbccf4c9c54dac1dc26e04885fad</string>

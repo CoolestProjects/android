@@ -43,7 +43,7 @@
     <dimen name="copyright_label_margin_top">12dp</dimen>
     <dimen name="footer_height">130dp</dimen>
     <dimen name="copyright_label_size">14dp</dimen>
-    <dimen name="sponsor_home_padding_bottom">20dp</dimen>
+    <dimen name="sponsor_home_padding">20dp</dimen>
     <dimen name="innovator_stage_margin">30dp</dimen>
     <dimen name="innovator_stage_desc_margin_bottom">26dp</dimen>
     <dimen name="innovator_stage_desc_side_margin">24dp</dimen>
