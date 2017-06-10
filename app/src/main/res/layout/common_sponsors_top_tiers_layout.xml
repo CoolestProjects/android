@@ -10,18 +10,14 @@
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_gravity="center_horizontal"
-        >
-        <!--tools:showIn="@layout/home_sponsors_layout"-->
+        android:layout_gravity="center_horizontal" >
+
         <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
             android:id="@+id/diamond_desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="@string/diamond_desc"
-            android:textColor="@color/colorAccent"
             android:layout_marginTop="@dimen/sponsor_logo_padding"
             custom:font="OpenSans-Bold.ttf"
-            android:gravity="center_horizontal|center_vertical" />
+            style="@style/sponsorTierTitleStyle" />
 
         <TableLayout
             android:layout_width="match_parent"
@@ -54,13 +50,10 @@
 
         <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
             android:id="@+id/platinum_desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/sponsor_logo_padding"
             android:text="@string/platinum_desc"
-            android:textColor="@color/colorAccent"
-            custom:font="OpenSans-Bold.ttf"
-            android:gravity="center_horizontal|center_vertical"/>
+            style="@style/sponsorTierTitleStyle"
+            custom:font="OpenSans-Bold.ttf" />
 
 
         <TableLayout
@@ -132,11 +125,8 @@
         android:layout_gravity="center_horizontal">
         <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
             android:id="@+id/gold_desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="@string/gold_desc"
-            android:gravity="center_horizontal|center_vertical"
-            android:textColor="@color/colorAccent"
+            style="@style/sponsorTierTitleStyle"
             custom:font="OpenSans-Bold.ttf" />
         <TableLayout
             android:layout_width="wrap_content"
