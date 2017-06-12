@@ -6,6 +6,7 @@ apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 25
     buildToolsVersion '25.0.2'
+
     defaultConfig {
         applicationId "com.mttnow.coolestprojects"
         minSdkVersion 19
@@ -32,6 +33,7 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
     }
+
 //    dexOptions {
 //        preDexLibraries true
 //        javaMaxHeapSize "1g"
@@ -75,6 +77,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.0.1'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:percent:25.3.1'
     compile 'io.reactivex:rxandroid:1.2.0'
     compile 'io.reactivex:rxjava:1.1.5'
     compile 'com.jakewharton.rxbinding:rxbinding-kotlin:0.4.0'
