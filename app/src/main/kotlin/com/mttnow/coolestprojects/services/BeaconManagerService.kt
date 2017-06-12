@@ -26,6 +26,9 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.TaskStackBuilder
 import com.mttnow.coolestprojects.models.BeaconRegionMessage
+import android.R.id.edit
+import android.content.SharedPreferences
+import android.net.Uri
 
 
 class BeaconManagerService : IntentService(BeaconManagerService::class.java.simpleName) {
@@ -37,6 +40,8 @@ class BeaconManagerService : IntentService(BeaconManagerService::class.java.simp
         }
     }
 
+    val DUMMY_MESSAGE = BeaconRegionMessage("", "", "", "", "")
+    val MESSAGE_NOTIFICATION_ID = 1999
     val TAG: String = "BeaconManagerService"
 
     @Inject
@@ -66,7 +71,7 @@ class BeaconManagerService : IntentService(BeaconManagerService::class.java.simp
 
                             val beaconMessage = beaconMessages[region.identifier]
 
-                            if (beaconMessage != null) {
+                            if (beaconMessage != null && !alreadySeen(beaconMessage.regionId)) {
 
                                 val mBuilder = NotificationCompat.Builder(this@BeaconManagerService)
                                         .setSmallIcon(R.drawable.beacon_icon)
@@ -87,7 +92,9 @@ class BeaconManagerService : IntentService(BeaconManagerService::class.java.simp
                                 mBuilder.setContentIntent(resultPendingIntent)
                                 val mNotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-                                mNotificationManager.notify(1999, mBuilder.build()) // TODO Set ID
+                                mNotificationManager.notify(MESSAGE_NOTIFICATION_ID, mBuilder.build())
+
+                                rememberMessageId(beaconMessage.regionId)
 
                             } else {
                                 Log.d(TAG, "No message for region $region")
@@ -99,13 +106,7 @@ class BeaconManagerService : IntentService(BeaconManagerService::class.java.simp
                         }
                     })
 
-            coolestProjectsService.messages()
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe {
-                        Log.d(TAG, "Messages download - $it")
-                        it.forEach { cacheMessage(it) }
-                    }
+            downloadMessages()
 
             coolestProjectsService.regions()
                     .subscribeOn(Schedulers.io())
@@ -120,7 +121,7 @@ class BeaconManagerService : IntentService(BeaconManagerService::class.java.simp
                         )
                     }
         } else {
-            Log.d(TAG, "Bluetooth Low Engery is not available")
+            Log.d(TAG, "Bluetooth Low Energy is not available")
         }
     }
 
@@ -131,8 +132,50 @@ class BeaconManagerService : IntentService(BeaconManagerService::class.java.simp
         }
     }
 
+    fun downloadMessages() {
+        coolestProjectsService.messages()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe {
+                    Log.d(TAG, "Messages download - $it")
+                    it.forEach { cacheMessage(it) }
+                }
+    }
+
+    fun getMessages(): List<BeaconRegionMessage> = getRememberedMessageIds().map { beaconMessages[it] ?: DUMMY_MESSAGE }.toList()
+
     private fun cacheMessage(beaconMessage: BeaconRegionMessage) {
-        beaconMessages[beaconMessage.regionId] = beaconMessage
+        val oldMessage = beaconMessages[beaconMessage.regionId]
+        if (oldMessage == null || oldMessage.version != beaconMessage.version) {
+            beaconMessages[beaconMessage.regionId] = beaconMessage
+            forgetMessageId(beaconMessage.regionId)
+        }
+    }
+
+    private fun alreadySeen(messageId: String) = getRememberedMessageIds().contains(messageId)
+
+    private fun getRememberedMessageIds(): Set<String> {
+        val sharedPref = getSharedPreferences("CoolestProjectsBeacons", Context.MODE_PRIVATE)
+        return sharedPref.getStringSet("remembered_messages", HashSet());
+    }
+
+    private fun forgetMessageId(messageId: String) {
+        Log.d(TAG, "Forget that ${messageId} has been seen")
+        updateRememberedMessageIds({ messageIds -> messageIds.remove(messageId) })
+    }
+
+    private fun rememberMessageId(messageId: String) {
+        Log.d(TAG, "Remember that ${messageId} has been seen")
+        updateRememberedMessageIds({ messageIds -> messageIds.add(messageId) })
+    }
+
+    fun updateRememberedMessageIds(modifier: (messageIds: MutableSet<String>) -> Unit) {
+        val sharedPref = getSharedPreferences("CoolestProjectsBeacons", Context.MODE_PRIVATE)
+        val rememberedMessages:MutableSet<String> = sharedPref.getStringSet("remembered_messages", HashSet());
+        modifier(rememberedMessages)
+        val editor = sharedPref.edit()
+        editor.putStringSet("remembered_messages", rememberedMessages)
+        editor.apply()
     }
 
     private fun startMonitoringRegions(regions: List<BeaconRegion>) {
