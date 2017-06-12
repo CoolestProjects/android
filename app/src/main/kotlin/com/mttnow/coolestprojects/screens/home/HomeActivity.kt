@@ -121,10 +121,6 @@ class HomeActivity : PresenterActivity() {
 
     override fun onStart() {
         super.onStart()
-        load_sponsors_btn?.setOnClickListener {
-            homeView.swapFragment(SponsorsFragment())
-        }
 
-        parking_desc?.movementMethod = LinkMovementMethod.getInstance()
     }
 }
