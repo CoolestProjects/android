@@ -94,6 +94,7 @@
     <!-- Gems -->
     <string name="gems_label">MY GEMS</string>
     <string name="gems_desc">Let\'s play find the Gems! Use your Mobile Phone as a Gem Detector. You will receive a notification every time you find a Gem.\nMake sure you go alongside your parents on your Gem hunt. \nYou must enable Bluetooth on your mobile to find Gems.\n\nThe Coolest Projects Gem Hunt starts on June 17th in the RDS!  </string>
+    <string name="gems_button">View MY GEMS</string>
 
     <!-- Projects -->
     <string name="projects_label">Search projects exhibiting at Coolest Projects 2017</string>

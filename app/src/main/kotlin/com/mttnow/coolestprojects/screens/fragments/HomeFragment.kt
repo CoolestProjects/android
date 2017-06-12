@@ -14,6 +14,7 @@ import javax.inject.Inject
 import android.R.attr.button
 import android.text.method.LinkMovementMethod
 import android.widget.TextView
+import kotlinx.android.synthetic.main.home_beacon_layout.*
 import kotlinx.android.synthetic.main.home_parking_layout.*
 import kotlinx.android.synthetic.main.home_sponsors_edu_supp_layout.*
 
@@ -41,17 +42,25 @@ class HomeFragment : BaseFragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         load_sponsors_btn?.setOnClickListener {
-            val newFragment = SponsorsFragment()
-            val transaction = fragmentManager.beginTransaction()
-
-            transaction.replace(R.id.fragment_container, newFragment)
-            transaction.addToBackStack(null)
-            transaction.commit()
+           swapFragment(SponsorsFragment())
         }
 
         parking_desc?.movementMethod = LinkMovementMethod.getInstance()
+        home_beacon_layout?.setOnClickListener {
+            swapFragment(GemsFragment())
+        }
+        view_gems_page_btn?.setOnClickListener {
+            swapFragment(GemsFragment())
+        }
 
+    }
 
+    fun swapFragment(newFragment: Fragment) {
+        val transaction = fragmentManager.beginTransaction()
+
+        transaction.replace(R.id.fragment_container, newFragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 
 

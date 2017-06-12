@@ -24,4 +24,12 @@
     <color name="project_doyo_text_color">#F52A00</color>
     <color name="summit_name_color">#333333</color>
     <color name="divder">#CBCBCB</color>
+
+
+    <!-- Gems Page -->
+    <color name="gems_message_color_green">#53ff38</color>
+    <color name="gems_message_color_red">#f70800</color>
+    <color name="gems_message_color_blue">#0875ea</color>
+    <color name="gems_message_color_pink">#ee38ff</color>
+    <color name="gems_message_color_yellow">#fad500</color>
 </resources>

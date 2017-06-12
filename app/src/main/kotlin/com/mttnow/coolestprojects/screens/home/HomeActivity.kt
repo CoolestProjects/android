@@ -28,8 +28,9 @@ import android.widget.Button
 import kotlinx.android.synthetic.main.home_parking_layout.*
 import kotlinx.android.synthetic.main.home_sponsors_edu_supp_layout.*
 import android.widget.TextView
-
-
+import android.widget.ArrayAdapter
+import android.widget.ListView
+import kotlinx.android.synthetic.main.home_beacon_layout.*
 
 
 class HomeActivity : PresenterActivity() {
@@ -94,7 +95,6 @@ class HomeActivity : PresenterActivity() {
         return hompresenter
     }
 
-
     override fun onBackPressed() {
         if (homeView.onBackPressed()) {
             super.onBackPressed()
@@ -121,6 +121,31 @@ class HomeActivity : PresenterActivity() {
 
     override fun onStart() {
         super.onStart()
+        loadListeners()
+    }
 
+    fun loadListeners() {
+        load_sponsors_btn?.setOnClickListener {
+            homeView.swapFragment(SponsorsFragment())
+        }
+        home_beacon_layout?.setOnClickListener {
+            homeView.swapFragment(GemsFragment())
+        }
+
+        parking_desc?.movementMethod = LinkMovementMethod.getInstance()
+    }
+    fun createListView() {
+//        val mListView: ListView
+//        mListView = findViewById(R.id.messages_list_view) as ListView
+//// 1
+//        val messageList = BeaconManagerService.getMessages();
+//// 2
+//        for (i in 0..messageList.size() - 1) {
+//            val message = messageList.get(i)
+//            listItems[i] = message.title
+//        }
+//// 4
+//        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listItems)
+//        mListView.setAdapter(adapter)
     }
 }
