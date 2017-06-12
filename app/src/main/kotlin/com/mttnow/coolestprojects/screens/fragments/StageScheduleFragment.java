@@ -2,16 +2,20 @@ package com.mttnow.coolestprojects.screens.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.mttnow.coolestprojects.R;
+import com.mttnow.coolestprojects.app.CoolestProjectsApp;
 import com.mttnow.coolestprojects.models.Hall;
+import com.mttnow.coolestprojects.network.CoolestProjectsService;
 import com.mttnow.coolestprojects.screens.adapters.HallWorkshopAdapter;
 import com.mttnow.coolestprojects.screens.adapters.HallsAdapter;
 
+import java.util.ArrayList;
 import org.honorato.multistatetogglebutton.MultiStateToggleButton;
 import org.honorato.multistatetogglebutton.ToggleButton;
 
@@ -26,15 +30,22 @@ import rx.schedulers.Schedulers;
  * Created by Robbie on 5/31/2017.
  */
 
-public class StageScheduleFragment extends BaseFragment {
-    List<Hall> halls;
+public class StageScheduleFragment extends Fragment {
+
+    private final List<Hall> halls = new ArrayList<>();
     private ListView mStagesLv;
     private ListView workshop1Lv;
     private ListView workshop2Lv;
     private Hall selectedHall;
     private String hallInput;
     private MultiStateToggleButton toggleButton;
+    private CoolestProjectsService coolestProjectsService;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        coolestProjectsService = CoolestProjectsApp.get(getActivity()).getAppComponent().coolestProjectsService();
+    }
 
     @Nullable
     @Override
@@ -57,9 +68,7 @@ public class StageScheduleFragment extends BaseFragment {
         setUpListeners();
     }
 
-
-    @Override
-    public Subscription loadRxStuff() {
+    private Subscription loadRxStuff() {
         return coolestProjectsService.halls()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

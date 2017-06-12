@@ -1,151 +1,106 @@
 package com.mttnow.coolestprojects.screens.home
 
 import android.Manifest
+import android.app.AlertDialog
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
-import com.mttnow.coolestprojects.app.CoolestProjectsApp
-import com.mttnow.coolestprojects.screens.common.LifecyclePresenter
-import com.mttnow.coolestprojects.screens.common.PresenterActivity
-import com.mttnow.coolestprojects.screens.home.dagger.DaggerHomeComponent
-import com.mttnow.coolestprojects.screens.home.dagger.HomeModule
-import com.mttnow.coolestprojects.screens.home.mvp.HomePresenter
-import com.mttnow.coolestprojects.screens.home.mvp.HomeView
-import javax.inject.Inject
-import android.content.DialogInterface
-import android.app.AlertDialog
-
-import com.mttnow.coolestprojects.R
-import com.mttnow.coolestprojects.screens.fragments.*
-import com.mttnow.coolestprojects.services.BeaconManagerService
-import kotlinx.android.synthetic.main.activity_home.*
 import android.support.design.widget.BottomNavigationView
-import android.text.method.LinkMovementMethod
-import android.view.MenuItem
-import android.view.View
-import android.widget.Button
-import kotlinx.android.synthetic.main.home_parking_layout.*
-import kotlinx.android.synthetic.main.home_sponsors_edu_supp_layout.*
-import android.widget.TextView
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import kotlinx.android.synthetic.main.home_beacon_layout.*
+import android.support.v4.app.ActivityCompat
+import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
+import android.support.v7.app.AppCompatActivity
+import com.mttnow.coolestprojects.R
+import com.mttnow.coolestprojects.screens.fragments.AboutFragment
+import com.mttnow.coolestprojects.screens.fragments.HomeFragment
+import com.mttnow.coolestprojects.screens.fragments.MapsFragment
+import com.mttnow.coolestprojects.screens.fragments.ProjectsFragment
+import com.mttnow.coolestprojects.screens.fragments.StagesFragment
+import com.mttnow.coolestprojects.services.BeaconManagerService
 
+private val FRAGMENT_TAG = "FRAGMNET_TAG"
 
-class HomeActivity : PresenterActivity() {
+class HomeActivity : AppCompatActivity() {
 
-    val LOCATION_PERMISSION_REQUEST_ID: Int = 99
+  val LOCATION_PERMISSION_REQUEST_ID: Int = 99
+  private val bottomNav by lazy { findViewById(R.id.bottom_navigation) as BottomNavigationView }
 
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_home)
 
-    @Inject
-    lateinit var homeView: HomeView
-
-    @Inject
-    lateinit var hompresenter: HomePresenter
-
-
-    fun checkLocationPermission(): Boolean {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)) {
-                AlertDialog.Builder(this)
-                        .setTitle(R.string.location_permission_request_title)
-                        .setMessage(R.string.location_permission_request_message)
-                        .setPositiveButton(android.R.string.ok, DialogInterface.OnClickListener { dialogInterface, i ->
-                            //Prompt the user once explanation has been shown
-                            ActivityCompat.requestPermissions(this@HomeActivity, arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), LOCATION_PERMISSION_REQUEST_ID)
-                        })
-                        .create()
-                        .show()
-            } else {
-                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), LOCATION_PERMISSION_REQUEST_ID)
-            }
-            return false
-        } else {
-            return true
-        }
+    if (supportFragmentManager.findFragmentByTag(FRAGMENT_TAG) == null) {
+      swapFragment(HomeFragment())
     }
 
-    override fun onCreatePresenter(savedInstanceState: Bundle?): LifecyclePresenter? {
-        super.onCreatePresenter(savedInstanceState)
+    listenForBottomNavEvents()
+  }
 
-        DaggerHomeComponent.builder()
-                .homeModule(HomeModule(this))
-                .appComponent(CoolestProjectsApp.get(this).appComponent)
-                .build().intject(this)
+  private fun listenForBottomNavEvents() {
+    bottomNav.setOnNavigationItemSelectedListener { item ->
+      when (item.itemId) {
+        R.id.action_home -> swapFragment(HomeFragment())
+        R.id.action_halls -> swapFragment(StagesFragment())
+        R.id.action_maps -> swapFragment(MapsFragment())
+        R.id.action_info -> swapFragment(ProjectsFragment())
+        R.id.action_about -> swapFragment(AboutFragment())
+      }
+      true
+    }
+  }
 
-        setContentView(homeView)
+  override fun onBackPressed() {
+    if (supportFragmentManager.findFragmentByTag(FRAGMENT_TAG) !is HomeFragment) {
+      swapFragment(HomeFragment())
+    }
+    super.onBackPressed()
+  }
 
-        bottom_navigation.setOnNavigationItemSelectedListener(
-            object : BottomNavigationView.OnNavigationItemSelectedListener {
-                override fun onNavigationItemSelected(item: MenuItem): Boolean {
-                    when (item.getItemId()) {
-                        R.id.action_home -> homeView.swapFragment(HomeFragment())
-                        R.id.action_halls ->  homeView.swapFragment(StagesFragment())
-                        R.id.action_maps ->  homeView.swapFragment(MapsFragment())
-                        R.id.action_info -> homeView.swapFragment(ProjectsFragment())
-                        R.id.action_about ->  homeView.swapFragment(AboutFragment())
-                        else -> null
-                    }
-                    return true
-                }
+  override fun onResume() {
+    super.onResume()
+    if (checkLocationPermission()) {
+      if (ContextCompat.checkSelfPermission(this,
+          Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+        BeaconManagerService.start(this)
+      }
+    }
+  }
+
+  override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    when (requestCode) {
+      LOCATION_PERMISSION_REQUEST_ID -> {
+        if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        }
+      }
+    }
+  }
+
+  private fun swapFragment(fragment: Fragment) {
+    supportFragmentManager.beginTransaction()
+        .replace(R.id.fragment_container, fragment, FRAGMENT_TAG)
+        .commit()
+  }
+
+  private fun checkLocationPermission(): Boolean {
+    if (ContextCompat.checkSelfPermission(this,
+        Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+      if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)) {
+        AlertDialog.Builder(this)
+            .setTitle(R.string.location_permission_request_title)
+            .setMessage(R.string.location_permission_request_message)
+            .setPositiveButton(android.R.string.ok, { _, _ ->
+              //Prompt the user once explanation has been shown
+              ActivityCompat.requestPermissions(this@HomeActivity, arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION),
+                  LOCATION_PERMISSION_REQUEST_ID)
             })
-
-
-        return hompresenter
+            .create()
+            .show()
+      } else {
+        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION),
+            LOCATION_PERMISSION_REQUEST_ID)
+      }
+      return false
+    } else {
+      return true
     }
-
-    override fun onBackPressed() {
-        if (homeView.onBackPressed()) {
-            super.onBackPressed()
-        }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        if (checkLocationPermission()) {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission. ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                BeaconManagerService.start(this)
-            }
-        }
-    }
-
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        when (requestCode) {
-            LOCATION_PERMISSION_REQUEST_ID -> {
-                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                }
-            }
-        }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        loadListeners()
-    }
-
-    fun loadListeners() {
-        load_sponsors_btn?.setOnClickListener {
-            homeView.swapFragment(SponsorsFragment())
-        }
-        home_beacon_layout?.setOnClickListener {
-            homeView.swapFragment(GemsFragment())
-        }
-
-        parking_desc?.movementMethod = LinkMovementMethod.getInstance()
-    }
-    fun createListView() {
-//        val mListView: ListView
-//        mListView = findViewById(R.id.messages_list_view) as ListView
-//// 1
-//        val messageList = BeaconManagerService.getMessages();
-//// 2
-//        for (i in 0..messageList.size() - 1) {
-//            val message = messageList.get(i)
-//            listItems[i] = message.title
-//        }
-//// 4
-//        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listItems)
-//        mListView.setAdapter(adapter)
-    }
+  }
 }
