@@ -20,13 +20,13 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             debuggable false
-            signingConfig signingConfigs.releaseConfig
+//            signingConfig signingConfigs.releaseConfig
         }
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             debuggable true
-            signingConfig signingConfigs.releaseConfig
+       //     signingConfig signingConfigs.releaseConfig
         }
     }
     sourceSets {
