@@ -1,8 +1,8 @@
 package com.mttnow.coolestprojects.screens.fragments;
 
-
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +12,7 @@ import com.mttnow.coolestprojects.R;
 
 import rx.Subscription;
 
-public class AboutFragment extends BaseFragment {
+public class AboutFragment extends Fragment {
 
 //    private WebView mFirstDescrHtml;
 //    private WebView mSecondDescrHtml;
@@ -46,10 +46,5 @@ public class AboutFragment extends BaseFragment {
 //        mSecondDescrHtml.loadDataWithBaseURL(null, secondHtml, "text/html", "utf-8", null);
 //        String thirdHtml = getString(R.string.about_third_descr);
 //        mThirdDescrHtml.loadDataWithBaseURL(null, thirdHtml, "text/html", "utf-8", null);
-    }
-
-    @Override
-    public Subscription loadRxStuff() {
-        return null;
     }
 }

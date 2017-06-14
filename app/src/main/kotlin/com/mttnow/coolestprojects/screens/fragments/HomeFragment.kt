@@ -6,37 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.mttnow.coolestprojects.R
-import com.mttnow.coolestprojects.network.CoolestProjectsService
-import com.mttnow.coolestprojects.screens.home.mvp.HomeView
-import kotlinx.android.synthetic.main.home_sponsors_layout.*
-import rx.Subscription
-import javax.inject.Inject
-import android.R.attr.button
 import android.text.method.LinkMovementMethod
-import android.widget.TextView
 import kotlinx.android.synthetic.main.home_beacon_layout.*
 import kotlinx.android.synthetic.main.home_parking_layout.*
 import kotlinx.android.synthetic.main.home_sponsors_edu_supp_layout.*
 
-
-class HomeFragment : BaseFragment() {
-    override fun loadRxStuff(): Subscription? {
-        return null;
-    }
-    @Inject
-    lateinit var homeView: HomeView
-
-    companion object {
-        fun newInstance(): HomeFragment {
-            return HomeFragment()
-        }
-    }
+class HomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
         return inflater?.inflate(R.layout.fragment_home, container, false)
-
-
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
@@ -47,12 +25,11 @@ class HomeFragment : BaseFragment() {
 
         parking_desc?.movementMethod = LinkMovementMethod.getInstance()
         home_beacon_layout?.setOnClickListener {
-            swapFragment(GemsFragment())
+            //swapFragment(GemsFragment())
         }
         view_gems_page_btn?.setOnClickListener {
-            swapFragment(GemsFragment())
+            //swapFragment(GemsFragment())
         }
-
     }
 
     fun swapFragment(newFragment: Fragment) {
@@ -62,6 +39,4 @@ class HomeFragment : BaseFragment() {
         transaction.addToBackStack(null)
         transaction.commit()
     }
-
-
 }

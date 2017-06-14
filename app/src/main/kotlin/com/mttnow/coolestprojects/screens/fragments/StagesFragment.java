@@ -1,6 +1,5 @@
 package com.mttnow.coolestprojects.screens.fragments;
 
-
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,25 +10,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.mttnow.coolestprojects.R;
-import com.mttnow.coolestprojects.screens.home.mvp.HomeView;
 
-import javax.inject.Inject;
-
-import rx.Subscription;
-
-public class StagesFragment extends BaseFragment {
-    @Inject
-    HomeView homeview;
+public class StagesFragment extends Fragment {
 
     private TextView mStage1Btn;
     private TextView mStage2Btn;
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View contentView = inflater.inflate(R.layout.fragment_stages, container, false);
-        return contentView;
+        return inflater.inflate(R.layout.fragment_stages, container, false);
     }
 
     @Override
@@ -40,9 +30,8 @@ public class StagesFragment extends BaseFragment {
         mStage1Btn.setText("Explore The \n Microsoft Minecraft / STEAM Hall");
         mStage2Btn.setText("Explore The \n Smart Futures Hall");
         setupListeners();
-
-
     }
+
     public void swapFrag(Bundle bundle){
         Fragment newFragment = new StageScheduleFragment();
         newFragment.setArguments(bundle);
@@ -53,11 +42,6 @@ public class StagesFragment extends BaseFragment {
         transaction.commit();
     }
 
-
-    @Override
-    public Subscription loadRxStuff() {
-        return null;
-    }
     private void setupListeners() {
 
         mStage1Btn.setOnClickListener(new View.OnClickListener() {
@@ -80,8 +64,6 @@ public class StagesFragment extends BaseFragment {
 
             }
         });
-
-
     }
 
 }
