@@ -37,7 +37,7 @@ public class StagesFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         mStage1Btn = (TextView) view.findViewById(R.id.stage_1);
         mStage2Btn = (TextView) view.findViewById(R.id.stage_2);
-        mStage1Btn.setText("Explore The \n STEAM Hall");
+        mStage1Btn.setText("Explore The \n Microsoft Minecraft / STEAM Hall");
         mStage2Btn.setText("Explore The \n Smart Futures Hall");
         setupListeners();
 
