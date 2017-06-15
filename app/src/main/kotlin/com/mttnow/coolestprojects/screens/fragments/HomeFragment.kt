@@ -27,9 +27,10 @@ class HomeFragment : Fragment() {
         home_beacon_layout?.setOnClickListener {
             //swapFragment(GemsFragment())
         }
-        view_gems_page_btn?.setOnClickListener {
-            //swapFragment(GemsFragment())
-        }
+        //TODO: Add in if get messages on gems page
+//        view_gems_page_btn?.setOnClickListener {
+//            //swapFragment(GemsFragment())
+//        }
     }
 
     fun swapFragment(newFragment: Fragment) {
