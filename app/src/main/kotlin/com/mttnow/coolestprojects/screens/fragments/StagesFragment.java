@@ -48,7 +48,7 @@ public class StagesFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
-                bundle.putString("hall","STEAM");
+                bundle.putString("hall","steam");
                 swapFrag(bundle);
 
             }
@@ -59,7 +59,7 @@ public class StagesFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
-                bundle.putString("hall","SMART FUTURES");
+                bundle.putString("hall","iot");
                 swapFrag(bundle);
 
             }

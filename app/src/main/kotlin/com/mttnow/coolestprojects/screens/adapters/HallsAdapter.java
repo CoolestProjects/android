@@ -35,7 +35,7 @@ public class HallsAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int i) {
-        return hallPanels.get(i);
+        return i < hallPanels.size()? hallPanels.get(i): null;
     }
     @Override
     public long getItemId(int i) {
@@ -67,16 +67,17 @@ public class HallsAdapter extends BaseAdapter {
         ViewHolder holder = (ViewHolder) rowView.getTag();
         HallPanel hallWorkshop = (HallPanel) getItem(position);
         String names="";
-        for(HallSpeaker speaker : hallWorkshop.getPanelSpeakers()){
-            names += "\n" + speaker.getName() + "\n Title: " + speaker.getTitle() + "\n\n" ;
+        if(hallWorkshop != null) {
+            for (HallSpeaker speaker : hallWorkshop.getPanelSpeakers()) {
+                names += "\n" + speaker.getName() + "\n Title: " + speaker.getTitle() + "\n\n";
 
+            }
+
+            holder.name.setText(hallWorkshop.getName());
+            holder.desc.setText(hallWorkshop.getDescription());
+            holder.time.setText(hallWorkshop.getStartTime() + " - " + hallWorkshop.getEndTime());
+            holder.speakerName.setText(names);
         }
-
-        holder.name.setText(hallWorkshop.getName());
-        holder.desc.setText(hallWorkshop.getDescription());
-        holder.time.setText(hallWorkshop.getStartTime() + " - " + hallWorkshop.getEndTime());
-        holder.speakerName.setText(names);
-
         return rowView;
 
     }

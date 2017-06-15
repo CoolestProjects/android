@@ -54,13 +54,13 @@
             android:layout_below="@+id/gems_desc"
             android:src="@drawable/gem_hunt_image"/>
 
-        <Button
-            android:id="@+id/view_gems_page_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/gems_hunt_image"
-            android:clickable="true"
-            android:text="@string/gems_button"
-            android:theme="@style/PrimaryButton" />
+        <!--<Button-->
+            <!--android:id="@+id/view_gems_page_btn"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/gems_hunt_image"-->
+            <!--android:clickable="true"-->
+            <!--android:text="@string/gems_button"-->
+            <!--android:theme="@style/PrimaryButton" />-->
     </RelativeLayout>
 </LinearLayout>

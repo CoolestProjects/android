@@ -25,7 +25,9 @@ import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
-
+import rx.Subscription;
+import rx.functions.Action1;
+import rx.subscriptions.CompositeSubscription;
 /**
  * Created by Robbie on 5/31/2017.
  */
@@ -40,6 +42,20 @@ public class StageScheduleFragment extends Fragment {
     private String hallInput;
     private MultiStateToggleButton toggleButton;
     private CoolestProjectsService coolestProjectsService;
+    private CompositeSubscription compositeSubscription = new CompositeSubscription();
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        compositeSubscription.clear();
+        Subscription subscription = loadRxStuff();
+        if(subscription != null) {
+            addSubscription(subscription);
+         }
+    }
+    public void addSubscription(Subscription subscription) {
+               compositeSubscription.add(subscription);
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,6 +82,7 @@ public class StageScheduleFragment extends Fragment {
         toggleButton.setElements(R.array.stage_schedule_array, 0);
         setUpListViews();
         setUpListeners();
+
     }
 
     private Subscription loadRxStuff() {
@@ -125,7 +142,7 @@ public class StageScheduleFragment extends Fragment {
 
     public void filterHalls(List<Hall> mhalls) {
         for (Hall hall : mhalls) {
-            if (hallInput.equals(hall.getHall())) {
+            if (hallInput.equalsIgnoreCase(hall.getHallId())) {
                 selectedHall = hall;
             }
         }

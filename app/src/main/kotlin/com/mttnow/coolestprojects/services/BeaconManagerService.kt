@@ -25,6 +25,7 @@ import com.mttnow.coolestprojects.R
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.TaskStackBuilder
+import com.estimote.sdk.EstimoteSDK
 import com.mttnow.coolestprojects.models.BeaconRegionMessage
 
 
@@ -56,6 +57,10 @@ class BeaconManagerService : IntentService(BeaconManagerService::class.java.simp
         if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
 
             Log.d(TAG, "Bluetooth Low Engery is available")
+
+            EstimoteSDK.initialize(application, "coolest-projects-782","bc1d0eea387420e59c6480bd3c7ee1b4");
+            EstimoteSDK.enableDebugLogging(true);
+            EstimoteSDK.enableMonitoringAnalytics(true);
 
             beaconManager = BeaconManager(application)
 
