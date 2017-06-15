@@ -24,20 +24,26 @@
             android:layout_height="match_parent"
             android:stretchColumns="*">
             <TableRow >
-
+                <ImageView
+                    style="@style/sponsorLogoStyle"
+                    custom:layout_widthPercent="10%"
+                    android:src="@drawable/sponsors_blank_logo" />
                 <ImageView
                     android:id="@+id/intel_logo"
                     style="@style/sponsorLogoStyle"
-
-                    custom:layout_widthPercent="40%"
+                    custom:layout_widthPercent="30%"
                     android:src="@drawable/sponsors_intel_logo" />
 
                 <ImageView
                     android:id="@+id/microsoft_logo"
                     style="@style/sponsorLogoStyle"
+                    android:layout_weight="1.5"
                     custom:layout_widthPercent="40%"
                     android:src="@drawable/sponsors_microsoft_logo" />
-
+                <ImageView
+                    style="@style/sponsorLogoStyle"
+                    custom:layout_widthPercent="10%"
+                    android:src="@drawable/sponsors_blank_logo" />
             </TableRow>
         </TableLayout>
     </LinearLayout>
@@ -66,25 +72,26 @@
                 <ImageView
                     android:id="@+id/openet_logo"
                     style="@style/sponsorLogoStyle"
-                    custom:layout_widthPercent="30%"
+                    custom:layout_widthPercent="20%"
                     android:src="@drawable/sponsors_openet_logo" />
 
                 <ImageView
                     android:id="@+id/rte_logo"
                     style="@style/sponsorLogoStyle"
-                    custom:layout_widthPercent="20%"
+                    custom:layout_widthPercent="15%"
                     android:src="@drawable/sponsors_rte_logo" />
 
                 <ImageView
                     android:id="@+id/mastercard_logo"
                     style="@style/sponsorLogoStyle"
-                    custom:layout_widthPercent="20%"
+                    custom:layout_widthPercent="15%"
                     android:src="@drawable/sponsors_mastercard_logo" />
 
                 <ImageView
                     android:id="@+id/boi_logo"
                     style="@style/sponsorLogoStyle"
-                    custom:layout_widthPercent="30%"
+                    android:layout_weight="1.5"
+                    custom:layout_widthPercent="20%"
                     android:src="@drawable/sponsors_boi_logo" />
 
             </TableRow>
@@ -105,12 +112,14 @@
                 <ImageView
                     android:id="@+id/tdl_logo"
                     style="@style/sponsorLogoStyle"
+                    android:layout_weight="1.5"
                     custom:layout_widthPercent="30%"
                     android:src="@drawable/sponsors_travelport_digital" />
 
                 <ImageView
                     android:id="@+id/folens_logo"
                     style="@style/sponsorLogoStyle"
+                    android:layout_weight="1.5"
                     custom:layout_widthPercent="30%"
                     android:src="@drawable/sponsors_folens_logo" />
             </TableRow>

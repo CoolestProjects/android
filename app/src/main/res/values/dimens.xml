@@ -28,7 +28,7 @@
     <!-- Home Page -->
     <dimen name="home_desc_size">20dp</dimen>
     <dimen name="home_logo_text_width">350dp</dimen>
-    <dimen name="logo_sposnor_vertical_margin">16dp</dimen>
+    <dimen name="logo_sposnor_vertical_margin">20dp</dimen>
     <dimen name="home_desc_vertical_padding">16dp</dimen>
     <dimen name="home_hours_vertical_padding">18dp</dimen>
     <dimen name="sponsored_label_size">18dp</dimen>
@@ -53,7 +53,7 @@
     <dimen name="home_margin_bottom">60dp</dimen>
 
     <!-- Home Sponsors -->
-    <dimen name="sponsor_logo_padding">10dip</dimen>
+    <dimen name="sponsor_logo_padding">15dip</dimen>
     <dimen name="home_sponsor_tier_margin">10dp</dimen>
     <dimen name="home_sponsor_row_height">0dp</dimen>
 
