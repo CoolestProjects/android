@@ -10,7 +10,13 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical">
-
+        <RelativeLayout
+            android:id="@+id/home_beacon_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/contentWhiteBoxRoundedCornerStyle"
+            android:orientation="vertical"
+            android:clickable="true">
         <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
             android:id="@+id/hallName"
             android:layout_width="wrap_content"
@@ -26,7 +32,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/speaker_desc_color"
             android:textSize="@dimen/text_large_size"
-            custom:font="OpenSans-Regular.ttf"/>
+            android:layout_below="@id/hallName"
+            custom:font="OpenSans-Bold.ttf"/>
 
         <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
             android:id="@+id/hallTime"
@@ -34,7 +41,9 @@
             android:layout_height="wrap_content"
             android:textColor="@color/summit_time_text_color"
             android:textSize="@dimen/text_medium_size"
+            android:layout_below="@id/hallDesc"
             custom:font="OpenSans-Regular.ttf"/>
+        </RelativeLayout>
     </LinearLayout>
 
 </LinearLayout>

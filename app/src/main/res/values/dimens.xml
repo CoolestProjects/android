@@ -53,7 +53,7 @@
     <dimen name="home_margin_bottom">60dp</dimen>
 
     <!-- Home Sponsors -->
-    <dimen name="sponsor_logo_padding">15dip</dimen>
+    <dimen name="sponsor_logo_padding">20dip</dimen>
     <dimen name="home_sponsor_tier_margin">10dp</dimen>
     <dimen name="home_sponsor_row_height">0dp</dimen>
 

@@ -17,16 +17,6 @@
             android:text="@string/rds_map_label"
             custom:font="OpenSans-Regular.ttf"/>
 
-        <!-- TODO Remove after map is available -->
-        <com.mttnow.coolestprojects.screens.fragments.ui.CustomTextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Coming Soon!"
-            android:textSize="20dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginStart="50dp"
-            custom:font="OpenSans-Regular.ttf"/>
-
         <com.mttnow.coolestprojects.screens.fragments.ui.ZoomableImageView
             android:id="@+id/rds_map"
             android:layout_width="match_parent"

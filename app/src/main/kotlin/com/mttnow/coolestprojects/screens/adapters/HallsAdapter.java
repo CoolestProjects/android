@@ -5,17 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mttnow.coolestprojects.R;
 import com.mttnow.coolestprojects.models.HallPanel;
 import com.mttnow.coolestprojects.models.HallSpeaker;
-import com.mttnow.coolestprojects.models.Speaker;
 
 import java.util.List;
-import java.util.zip.Inflater;
 
 public class HallsAdapter extends BaseAdapter {
 
@@ -55,7 +51,7 @@ public class HallsAdapter extends BaseAdapter {
         View rowView = convertView;
         if (rowView == null) {
             LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-            rowView = inflater.inflate(R.layout.summit_row, null);
+            rowView = inflater.inflate(R.layout.stage_row, null);
             ViewHolder viewHolder = new ViewHolder();
             // viewHolder.img = (ImageView) rowView.findViewById(R.id.summit_img);
             viewHolder.name = (TextView) rowView.findViewById(R.id.hallName);
@@ -67,12 +63,11 @@ public class HallsAdapter extends BaseAdapter {
         ViewHolder holder = (ViewHolder) rowView.getTag();
         HallPanel hallWorkshop = (HallPanel) getItem(position);
         String names="";
-        if(hallWorkshop != null) {
+        if(hallWorkshop != null && hallWorkshop.getPanelSpeakers() != null) {
             for (HallSpeaker speaker : hallWorkshop.getPanelSpeakers()) {
-                names += "\n" + speaker.getName() + "\n Title: " + speaker.getTitle() + "\n\n";
+                names +=  speaker.getName() + ", " + speaker.getTitle() + "\n\n";
 
             }
-
             holder.name.setText(hallWorkshop.getName());
             holder.desc.setText(hallWorkshop.getDescription());
             holder.time.setText(hallWorkshop.getStartTime() + " - " + hallWorkshop.getEndTime());

@@ -74,7 +74,7 @@ class BeaconManagerService : IntentService(BeaconManagerService::class.java.simp
                             if (beaconMessage != null) {
 
                                 val mBuilder = NotificationCompat.Builder(this@BeaconManagerService)
-                                        .setSmallIcon(R.drawable.beacon_icon)
+                                        .setSmallIcon(R.drawable.coolest_projects_logo_small)
                                         .setContentTitle(beaconMessage.title)
                                         .setContentText(beaconMessage.message)
 
